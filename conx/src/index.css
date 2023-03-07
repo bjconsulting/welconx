@@ -2,16 +2,82 @@
 @tailwind components;
 @tailwind utilities;
 
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+
+* {
+  padding:0;
+  font-family: 'Inter', sans-serif;
+  margin:0;
+  vertical-align:baseline;
+  list-style:none;
+  border:0;
+  box-sizing: border-box;
+  transition-property: all; 
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+html {
+  font-size: 100%; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+  -ms-text-size-adjust: 100%; /* 2 */
+  scroll-behavior: smooth;
+}
+
+:focus {
+  outline: 0;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+ol, ul {
+  list-style: none;
+}
 body {
+  line-height: 1;
+  overflow-x: hidden;
+  font-size: 20px;
+  max-width: 100vw;
+  overflow-x: hidden;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+h1, h2, h3, h4 {
+  fon-weight: bold;
+}
+.hero {
+  background: linear-gradient(89.78deg, #465361 0.15%, rgba(70, 83, 97, 0.91) 19.87%, rgba(70, 83, 97, 0.22) 54.75%, rgba(70, 83, 97, 0) 99.78%);
+}
+
+
+
+.menu_item, .menu2 > button {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: .7em;
+  color: white;
+}
+
+.menu1 .menu_item {
+  padding: 20px 0;  
+}
+
+.m-r {
+  margin-left: 7.5%;
+  margin-right: 7.5%;
+}
+.head {
+  background: rgba(70, 83, 97, 0.29);
+}
+
+.hero_b{
+  filter: drop-shadow(3px 1px 7px rgba(253, 232, 220, 0.23));
 }
