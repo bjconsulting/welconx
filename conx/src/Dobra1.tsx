@@ -5,17 +5,17 @@ import { HiMapPin } from 'react-icons/hi2'
 
 function Dobra1() {
     return(
-        <div className='bg-bg-1 bg-[length:auto_100%] laptop:bg-[length:100%_100%] min-h-[100vh] desktop:min-h-[90vh]'>
-            <div className='hero z-10 min-h-[100vh] desktop:min-h-[90vh] relative'>
+        <div className='bg-bg-1 bg-[length:auto_100%] laptop:bg-[length:100%_100%] max-w-screen  desktop:min-h-[90vh]'>
+            <div className='hero z-10  desktop:min-h-[90vh] relative max-w-screen'>
                 <Header/>
 
-                <div className='m-r my-32 laptop:mt-24 flex flex-col items-center justify-center laptop:items-start laptop:justify-start desktop:max-w-[580px] gap-12 tablet:text-center laptop:text-left'>
+                <div className='m-r py-32 laptop:mt-24 flex flex-col items-center justify-center laptop:items-start laptop:justify-start desktop:max-w-[580px] gap-12 tablet:text-center laptop:text-left'>
                     
                     <p className='text-[#F3F3F3] font-medium text-[1em] uppercase '>
                         breve lançamento
                     </p>
 
-                    <h1 className='font-bold text-[2.4em] text-[#FEFEFE]'>
+                    <h1 className='font-bold text-[1.6em] laptop:text-[2.4em] text-[#FEFEFE]'>
                         O urbano que te envolve em um dos bairros mais desejados de São Paulo 
                     </h1>
 
