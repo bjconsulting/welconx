@@ -9,7 +9,7 @@ function Dobra1() {
             <div className='hero z-10  desktop:min-h-[90vh] relative max-w-screen'>
                 <Header/>
 
-                <div className='m-r py-32 laptop:pt-64 flex flex-col items-center justify-center laptop:items-start laptop:justify-start desktop:max-w-[580px] gap-12 tablet:text-center laptop:text-left'>
+                <div className='m-r py-32 pt-64 flex flex-col items-center justify-center laptop:items-start laptop:justify-start desktop:max-w-[580px] gap-12 tablet:text-center laptop:text-left'>
                     
                     <p className='text-[#F3F3F3] font-medium text-[1em] uppercase '>
                         breve lançamento
