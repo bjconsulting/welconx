@@ -66,6 +66,10 @@ h1, h2, h3, h4 {
   color: white;
 }
 
+.menu_item:hover {
+  color: #37414D;
+}
+
 .menu1 .menu_item {
   padding: 20px 0;  
 }
