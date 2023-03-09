@@ -100,6 +100,7 @@ function Dobra4() {
                 pop.current.addEventListener('mousemove', throttle(handleMouseMove, 100));
 
                 popImg.src = img.getAttribute('src') as string;
+                popImg.alt = img.getAttribute('alt') as string;
 
 
                 if (!close.current) return;
@@ -259,7 +260,7 @@ function Dobra4() {
             </div>
 
             <div ref={pop} className="popup-image hidden fixed top-0 left-0 bg-[rgba(0,_0,_0,_.9)] h-full w-full z-40">
-                <img src={img1} alt="" width='50%'  className='absolute top-1/2 left-1/2 translate-x-[-80%] -translate-y-1/2 object-cover rounded-lg' />
+                <img src={img1} alt="Galeria"  className='absolute top-1/2 left-1/2 laptop:translate-x-[-80%] -translate-x-1/2 -translate-y-1/2 object-cover rounded-lg max-w-[300px] laptop:max-w-[50%]' />
                 <div ref={rect} className="rect w-[250px] h-[150px] bg-slate-400 opacity-60 absolute pointer-events-none z-50 -translate-x-1/2 -translate-y-1/2"></div>
                 <span ref={close} className='absolute right-12 top-3 w-8 h-4 text-[3em]  rounded-full text-white cursor-pointer'>&times;</span>
             </div>

@@ -97,3 +97,9 @@ h1, h2, h3, h4 {
   padding-bottom: 30px;
   border-bottom: 2px solid #E5E7EB;
 }
+.glider-contain {
+  width: 50% !important;
+}
+.glider-slide {
+  width: 326px !important;
+}
