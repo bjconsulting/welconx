@@ -1,4 +1,4 @@
-import React, { useRef, useEffect }from 'react'
+import React, { useRef, useEffect, useState }from 'react'
 import img1 from './img/gal_1.jpg'
 import img2 from './img/gal_2.jpg'
 import img3 from './img/gal_3.jpg'
@@ -15,26 +15,105 @@ function Dobra4() {
     const img = useRef<Array<HTMLImageElement | null>>([])
     const pop = useRef<HTMLDivElement>(null)
     const close = useRef<HTMLSpanElement>(null)
+    const rect = useRef<HTMLDivElement>(null)
+    const zoom = useRef<HTMLDivElement>(null)
+    let ratio = 2
+
+    function throttle(cb:any, delay:number) {
+        let wait = false;
+
+        return (...args : any[]) => {
+            if (wait) {
+                return;
+            }
+
+            cb(...args);
+            wait = true;
+            setTimeout(() => {
+                wait = false;
+            }, delay);
+        }
+    }
+
 
     useEffect(() => {
+
         img.current.forEach(image => {
 
             const img = image as HTMLImageElement
 
             if (!img) return;
+
+            let hasAnyPending = false;
+            let x = 0;
+            let y = 0;
+            let xx=0;
+            let yy=0;
+
             img.onclick = () => {
-                if (!pop.current) return;
+                if (!pop.current || !zoom.current) return;
+
                 const popImg = document.querySelector('.popup-image img') as HTMLImageElement;
+
+                const handleMouseMove = (event: { clientX: any; clientY: any, movementX:number }) => {
+                    if (!popImg || !rect.current || !zoom.current) return;
+                    zoom.current.style.display = "block";
+                    zoom.current.style.backgroundSize = popImg.width * ratio + 'px ' + popImg.height * ratio + 'px'
+                    zoom.current.style.height = rect.current.offsetHeight * ratio + 'px'
+                    zoom.current.style.width = rect.current.offsetWidth * ratio + 'px' 
+                    zoom.current.style.backgroundImage = "url(" + popImg.src + ")"
+                    zoom.current.style.backgroundRepeat = "no repeat"
+
+                    const {top, bottom, left, right} = popImg.getClientRects()[0]
+
+                    if (
+                        event.clientX - (rect.current.offsetWidth / 2) < left
+                        || event.clientX + (rect.current.offsetWidth / 2) > right
+                        || event.clientY - (rect.current.offsetHeight / 2) < top
+                        || event.clientY + (rect.current.offsetHeight / 2) > bottom
+                    )
+                        return
+
+                    x = event.clientX
+                    y = event.clientY
+                    xx = x  - rect.current.offsetWidth 
+                    yy = y - rect.current.offsetHeight
+
+                    if (hasAnyPending) return
+                    hasAnyPending = true
+                    xx = xx *ratio
+                    yy = yy *ratio
+
+                    window.requestAnimationFrame((timestamp) => {
+                        hasAnyPending = false
+                        if (!rect?.current || !zoom?.current) return
+
+                        rect.current.style.left = x + 'px'
+                        rect.current.style.top = y + 'px'
+                        zoom.current.style.backgroundPosition = "-" + xx  + 'px ' + "-" + yy + 'px'
+                    })
+                };
+ 
                 pop.current.style.display = "block";
+
+
+                pop.current.addEventListener('mousemove', throttle(handleMouseMove, 100));
+
                 popImg.src = img.getAttribute('src') as string;
+
+
+                if (!close.current) return;
+                const handleClose = () => {
+                    if (!pop.current || !zoom.current)
+                        return
+                    pop.current.style.display = "none"
+                    zoom.current.style.display = "none"
+                    pop.current.removeEventListener('mousemove', handleMouseMove)
+                    close.current?.removeEventListener('click', handleClose)
+                }
+                close.current.onclick = handleClose
             }
         })
-
-        if (!close.current) return;
-        close.current.onclick = () => {
-            if (!pop.current) return;
-            pop.current.style.display = "none";
-        }
     });
 
    
@@ -179,10 +258,12 @@ function Dobra4() {
 
             </div>
 
-            <div ref={pop} className="popup-image hidden fixed top-0 left-0 bg-[rgba(0,_0,_0,_.9)] h-full w-full z-50">
-                <img src={img1} alt="" width='50%'  className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 object-cover rounded-lg' />
+            <div ref={pop} className="popup-image hidden fixed top-0 left-0 bg-[rgba(0,_0,_0,_.9)] h-full w-full z-40">
+                <img src={img1} alt="" width='50%'  className='absolute top-1/2 left-1/2 translate-x-[-80%] -translate-y-1/2 object-cover rounded-lg' />
+                <div ref={rect} className="rect w-[250px] h-[150px] bg-slate-400 opacity-60 absolute pointer-events-none z-50 -translate-x-1/2 -translate-y-1/2"></div>
                 <span ref={close} className='absolute right-12 top-3 w-8 h-4 text-[3em]  rounded-full text-white cursor-pointer'>&times;</span>
             </div>
+            <div ref={zoom} className="zoom z-50 rounded-lg hidden translate-x-[120%] fixed top-1/2"></div>
         </div>
     )
 }
