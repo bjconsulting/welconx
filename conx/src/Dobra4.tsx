@@ -19,6 +19,7 @@ function Dobra4() {
     const zoom = useRef<HTMLDivElement>(null)
     let ratio = 2
 
+    /*
     function throttle(cb:any, delay:number) {
         let wait = false;
 
@@ -34,7 +35,16 @@ function Dobra4() {
             }, delay);
         }
     }
+    */
 
+    const handleClose = () => {
+        if (!pop.current || !zoom.current)
+            return
+        pop.current.style.display = "none"
+        zoom.current.style.display = "none"
+        //pop.current.removeEventListener('mousemove', handleMouseMove)
+        //close.current?.removeEventListener('click', handleClose)
+    }
 
     useEffect(() => {
 
@@ -84,6 +94,7 @@ function Dobra4() {
                     xx = xx *ratio
                     yy = yy *ratio
 
+                    /*
                     window.requestAnimationFrame((timestamp) => {
                         hasAnyPending = false
                         if (!rect?.current || !zoom?.current) return
@@ -92,27 +103,16 @@ function Dobra4() {
                         rect.current.style.top = y + 'px'
                         zoom.current.style.backgroundPosition = "-" + xx  + 'px ' + "-" + yy + 'px'
                     })
+                    */
                 };
  
                 pop.current.style.display = "block";
 
 
-                pop.current.addEventListener('mousemove', throttle(handleMouseMove, 100));
+                //pop.current.addEventListener('mousemove', throttle(handleMouseMove, 100));
 
                 popImg.src = img.getAttribute('src') as string;
                 popImg.alt = img.getAttribute('alt') as string;
-
-
-                if (!close.current) return;
-                const handleClose = () => {
-                    if (!pop.current || !zoom.current)
-                        return
-                    pop.current.style.display = "none"
-                    zoom.current.style.display = "none"
-                    pop.current.removeEventListener('mousemove', handleMouseMove)
-                    close.current?.removeEventListener('click', handleClose)
-                }
-                close.current.onclick = handleClose
             }
         })
     });
@@ -260,9 +260,9 @@ function Dobra4() {
             </div>
 
             <div ref={pop} className="popup-image hidden fixed top-0 left-0 bg-[rgba(0,_0,_0,_.9)] h-full w-full z-40">
-                <img src={img1} alt="Galeria"  className='absolute top-1/2 left-1/2 laptop:translate-x-[-80%] -translate-x-1/2 -translate-y-1/2 object-cover rounded-lg max-w-[300px] laptop:max-w-[50%]' />
-                <div ref={rect} className="rect w-[250px] h-[150px] bg-slate-400 opacity-60 absolute pointer-events-none z-50 -translate-x-1/2 -translate-y-1/2"></div>
-                <span ref={close} className='absolute right-12 top-3 w-8 h-4 text-[3em]  rounded-full text-white cursor-pointer'>&times;</span>
+                <img src={img1} alt="Galeria"  className='absolute top-1/2 left-1/2 laptop:translate-x-[-50%] -translate-x-1/2 -translate-y-1/2 object-cover rounded-lg max-w-[300px] laptop:max-w-[50%]' />
+                {/* <div ref={rect} className="rect w-[250px] h-[150px] bg-slate-400 opacity-60 absolute pointer-events-none z-50 -translate-x-1/2 -translate-y-1/2"></div> */}
+                <span ref={close} className='absolute right-12 top-3 w-8 h-4 text-[3em]  rounded-full text-white cursor-pointer' onClick={handleClose}>&times;</span>
             </div>
             <div ref={zoom} className="zoom z-50 rounded-lg hidden translate-x-[120%] fixed top-1/2"></div>
         </div>
