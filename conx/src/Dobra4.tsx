@@ -15,9 +15,9 @@ function Dobra4() {
     const img = useRef<Array<HTMLImageElement | null>>([])
     const pop = useRef<HTMLDivElement>(null)
     const close = useRef<HTMLSpanElement>(null)
-    const rect = useRef<HTMLDivElement>(null)
+    //const rect = useRef<HTMLDivElement>(null)
     const zoom = useRef<HTMLDivElement>(null)
-    let ratio = 2
+    //let ratio = 2
 
     /*
     function throttle(cb:any, delay:number) {
@@ -54,11 +54,13 @@ function Dobra4() {
 
             if (!img) return;
 
+            /*
             let hasAnyPending = false;
             let x = 0;
             let y = 0;
             let xx=0;
             let yy=0;
+            */
 
             img.onclick = () => {
                 if (!pop.current || !zoom.current) return;
