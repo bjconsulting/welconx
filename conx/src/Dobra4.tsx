@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState }from 'react'
+import React, { useRef, useEffect }from 'react'
 import img1 from './img/gal_1.jpg'
 import img2 from './img/gal_2.jpg'
 import img3 from './img/gal_3.jpg'
@@ -65,6 +65,7 @@ function Dobra4() {
 
                 const popImg = document.querySelector('.popup-image img') as HTMLImageElement;
 
+                /*
                 const handleMouseMove = (event: { clientX: any; clientY: any, movementX:number }) => {
                     if (!popImg || !rect.current || !zoom.current) return;
                     zoom.current.style.display = "block";
@@ -94,7 +95,6 @@ function Dobra4() {
                     xx = xx *ratio
                     yy = yy *ratio
 
-                    /*
                     window.requestAnimationFrame((timestamp) => {
                         hasAnyPending = false
                         if (!rect?.current || !zoom?.current) return
@@ -103,8 +103,8 @@ function Dobra4() {
                         rect.current.style.top = y + 'px'
                         zoom.current.style.backgroundPosition = "-" + xx  + 'px ' + "-" + yy + 'px'
                     })
-                    */
                 };
+                */
  
                 pop.current.style.display = "block";
 
