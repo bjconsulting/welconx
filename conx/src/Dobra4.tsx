@@ -132,9 +132,9 @@ function Dobra4() {
                 </p>
             </div>
 
-            <div className='image-container flex flex-col laptop:flex-row laptop:flex-wrap items-center justify-center mx-auto  max-w-[80%] py-16 gap-8'>
+            <div className='image-container flex flex-col laptop:flex-row tablet:flex-wrap items-center justify-center mx-auto  laptop:max-w-[80%] py-16 gap-8'>
 
-                <div className='flex flex-col justify-center items-center gap-2 basis-[30%]'>
+                <div className='flex flex-col justify-center items-center gap-2 tablet:basis-[30%]'>
                     <div className='image relative overflow-hidden'>
                         <img ref={(element) => img.current.push(element)} src={img1} alt="PERSPECTIVA ILUSTRADA DO HALL SOCIAL" width='380px' className='aspect-[19/12] cursor-pointer object-cover'/>
 
@@ -147,7 +147,7 @@ function Dobra4() {
                         </p>
                 </div>
    
-                <div className='flex flex-col justify-center items-center gap-2 basis-[30%]'>
+                <div className='flex flex-col justify-center items-center gap-2 tablet:basis-[30%]'>
                     <div className='image relative overflow-hidden'>
                         <img ref={(element) => img.current.push(element)} src={img2} alt="PERSPECTIVA ILUSTRADA DO ESPAÇO GOURMETl" width='380px' className='aspect-[19/12] cursor-pointer object-cover'/>
 
@@ -160,7 +160,7 @@ function Dobra4() {
                         </p>
                 </div>
    
-                <div className='flex flex-col justify-center items-center gap-2 basis-[30%]'>
+                <div className='flex flex-col justify-center items-center gap-2 tablet:basis-[30%]'>
                     <div className='image relative overflow-hidden'>
                         <img ref={(element) => img.current.push(element)} src={img3} alt="PERSPECTIVA ILUSTRADA DO SALÃO DE FESTAS" width='380px' className='aspect-[19/12] cursor-pointer object-cover'/>
 
@@ -174,7 +174,7 @@ function Dobra4() {
                 </div>
 
 
-                <div className='flex flex-col justify-center items-center gap-2 basis-[30%]'>
+                <div className='flex flex-col justify-center items-center gap-2 tablet:basis-[30%]'>
                     <div className='image relative overflow-hidden'>
                         <img ref={(element) => img.current.push(element)} src={img4} alt="PERSPECTIVA ILUSTRADA DO FITNESS" width='380px' className='aspect-[19/12] cursor-pointer object-cover'/>
 
@@ -187,7 +187,7 @@ function Dobra4() {
                         </p>
                 </div>
 
-                <div className='flex flex-col justify-center items-center gap-2 basis-[30%]'>
+                <div className='flex flex-col justify-center items-center gap-2 tablet:basis-[30%]'>
                     <div className='image relative overflow-hidden'>
                         <img ref={(element) => img.current.push(element)} src={img5} alt="PERSPECTIVA ILUSTRADA DA CHURRASQUEIRA" width='380px' className='aspect-[19/12] cursor-pointer object-cover'/>
 
@@ -201,7 +201,7 @@ function Dobra4() {
                 </div>
                 
                 
-                <div className='flex flex-col justify-center items-center gap-2 basis-[30%]'>
+                <div className='flex flex-col justify-center items-center gap-2 tablet:basis-[30%]'>
                     <div className='image relative overflow-hidden'>
                         <img ref={(element) => img.current.push(element)} src={img6} alt="PERSPECTIVA ILUSTRADA DO COWORKING" width='380px' className='aspect-[19/12] cursor-pointer object-cover'/>
 
@@ -215,7 +215,7 @@ function Dobra4() {
                 </div>
                 
                 
-                <div className='flex flex-col justify-center items-center gap-2 basis-[30%]'>
+                <div className='flex flex-col justify-center items-center gap-2 tablet:basis-[30%]'>
                     <div className='image relative overflow-hidden'>
                         <img ref={(element) => img.current.push(element)} src={img7} alt="PERSPECTIVA ILUSTRADA DA PISCINA COM DECK MOLHADO" width='380px' className='aspect-[19/12] cursor-pointer object-cover'/>
 
@@ -229,7 +229,7 @@ function Dobra4() {
                 </div>
                 
                 
-                <div className='flex flex-col justify-center items-center gap-2 basis-[30%]'>
+                <div className='flex flex-col justify-center items-center gap-2 tablet:basis-[30%]'>
                     <div className='image relative overflow-hidden'>
                         <img ref={(element) => img.current.push(element)} src={img8} alt="PERSPECTIVA ILUSTRADA DA COBERTURA" width='380px' className='aspect-[19/12] cursor-pointer object-cover'/>
 
@@ -243,7 +243,7 @@ function Dobra4() {
                 </div>
                 
                 
-                <div className='flex flex-col justify-center items-center gap-2 basis-[30%]'>
+                <div className='flex flex-col justify-center items-center gap-2 tablet:basis-[30%]'>
                     <div className='image relative overflow-hidden'>
                         <img ref={(element) => img.current.push(element)} src={img9} alt="PERSPECTIVA ILUSTRADA DO PET PLACE" width='380px' className='aspect-[19/12] cursor-pointer object-cover'/>
 

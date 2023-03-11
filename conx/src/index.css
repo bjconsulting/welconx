@@ -97,9 +97,81 @@ h1, h2, h3, h4 {
   padding-bottom: 30px;
   border-bottom: 2px solid #E5E7EB;
 }
-.glider-contain {
-  width: 50% !important;
+
+.container-input {
+  background-color: #fff;
+  border-radius: 25px;
+  opacity: .9;
+  border: 1px solid #D8D8D8;
+  min-width: 100%;
+  margin-bottom: 15px;
 }
-.glider-slide {
-  width: 326px !important;
+
+#check {
+  all:unset;
+  border:1.5px white solid;
+  width: 13px;
+  height: 13px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+input[type=checkbox] + p::before{
+  content: '✓';
+  width: 13px;
+  height: 13px;
+  position: absolute;
+  cursor: pointer;
+  left: 2px;
+  display: none;
+}
+.button_f {
+  cursor: pointer;
+}
+.button_f p:hover + svg{
+  animation: bounce 1s infinite;
+}
+
+input[type=checkbox]:checked + p::before {
+  display: block;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="textarea"],
+select , textarea
+{
+  font-size: 0.7em;
+  width: 100%;
+  border-radius: 25px;
+  padding-left: 15px;
+}
+
+.pipe {
+  @apply text-[#DBE3FF] my-auto  pointer-events-none select-none;
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #2D2D2D !important;
+  opacity: 1; /* Firefox */
+}
+
+::-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #2D2D2D !important;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: #2D2D2D !important;
+}
+
+@keyframes bounce {
+    0% { transform:translateX(0px); }
+    50% { transform:translateX(20px); }
+    100% { transform:translateX(0px); }
+}
+
+.form-bg {
+  background-image: url(img/Ellipse 4.svg), url(img/Ellipse 5.svg);
+  background-repeat: no-repeat, no-repeat;
+  background-position: bottom center, top right;
 }
