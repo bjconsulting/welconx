@@ -1,6 +1,4 @@
 import { BsArrowRightShort } from 'react-icons/bs';
-import { AiOutlineUser } from 'react-icons/ai';
-// import { IoChatbubbles } from 'react-icons/io5';
 import user from './img/User.svg';
 import chat from './img/ChatsCircle.svg';
 import envelope from './img/Envelope.svg';
