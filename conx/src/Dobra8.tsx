@@ -54,7 +54,7 @@ function Dobra8(){
                             <span className='pipe'>
                                 |
                             </span>
-                            <input type="text" name='Nome' placeholder='Digite seu nome' required />
+                            <input type="text" name='Nome' placeholder='Digite seu E-mail' required />
                         </div>
 
                         <div className='container-input relative flex flex-row '>
@@ -64,7 +64,7 @@ function Dobra8(){
                             <span className='pipe'>
                                 |
                             </span>
-                            <input type="text" name='Nome' placeholder='Digite seu nome' required />
+                            <input type="text" name='Nome' placeholder='Digite seu telefone' required />
                         </div>
                        
                         <div className='container-input relative flex flex-row '>
