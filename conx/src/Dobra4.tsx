@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { PointerEvent, useRef } from 'react'
 import img1 from './img/gal_1.jpg'
 import img2 from './img/gal_2.jpg'
 import img3 from './img/gal_3.jpg'
@@ -19,10 +19,12 @@ function Dobra4() {
     const popImgRef = useRef<HTMLImageElement>(null)
     const ratio = 2
 
+    /*
     let mouseX = 0
     let mouseY = 0
     let bgX = 0
     let bgY = 0
+    */
 
     type RequestAnimationFrame = (callback: FrameRequestCallback) => number
     function throttle(timer:RequestAnimationFrame) {
@@ -47,22 +49,25 @@ function Dobra4() {
         zoom.current.style.display = "none"
     }
 
-    const handleMouseMove = (event: { clientX: any; clientY: any }) => {
+    const handleMouseMove = (event: PointerEvent) => {
+        event.preventDefault()
         const popImg = popImgRef.current
         if (!popImg || !rect.current || !zoom.current) return
 
         const { width: rectWidth, height: rectHeight } = rect.current.getBoundingClientRect()
-        const { top, bottom, left, right, width: piWidth, height: piHeight } = popImg.getBoundingClientRect() //getClientRects()[0]
+        const { top, bottom, left, right, width: piWidth, height: piHeight } = popImg.getBoundingClientRect()
 
-        if (zoom.current.style.display !== "block") {
-            rect.current.style.display = 'block'
-            zoom.current.style.display = "block"
-            zoom.current.style.backgroundSize = `${piWidth * ratio}px ${piHeight * ratio}px`
-            zoom.current.style.height = `${rectHeight * ratio}px`
-            zoom.current.style.width = `${rectWidth * ratio}px`
-            zoom.current.style.backgroundImage = `url(${popImg.src})`
-            zoom.current.style.backgroundRepeat = "no repeat"
+        rect.current.style.display = 'block'
+
+        const zoomStyle = {
+            "display": "block",
+            'backgroundSize': `${piWidth * ratio}px ${piHeight * ratio}px`,
+            'height': `${rectHeight * ratio}px`,
+            'width': `${rectWidth * ratio}px`,
+            'backgroundImage': `url(${popImg.src})`,
+            'backgroundRepeat': "no repeat"
         }
+        Object.assign(zoom.current.style, zoomStyle)
 
         if (
             event.clientX - (rectWidth / 2) < left
@@ -72,10 +77,10 @@ function Dobra4() {
         )
             return
 
-        mouseX = event.clientX
-        mouseY = event.clientY
-        bgX = mouseX - rectWidth
-        bgY = mouseY - rectHeight
+        const mouseX = event.clientX
+        const mouseY = event.clientY
+        const bgX = mouseX - rectWidth
+        const bgY = mouseY - rectHeight
 
         const updatePosition = (timestamp: number): void => {
             if (!rect?.current || !zoom?.current)
@@ -83,19 +88,14 @@ function Dobra4() {
 
             console.log({ timestamp, mouseX, mouseY })
 
-            var style = {
-                "left": `${mouseX}px`,
-                "top": `${mouseY}px`
-            }
-            Object.assign(rect.current.style, style)
-            /*
-            rect.current.style.left = `${mouseX}px`
-            rect.current.style.top = `${mouseY}px`
-            */
+            const { width: rectWidth, height: rectHeight } = rect.current.getBoundingClientRect()
+            
+            const distancePositionX = mouseX - (window.innerWidth / 2) - (rectWidth / 2)
+            const distancePositionY = mouseY - (window.innerHeight / 2) - (rectHeight / 2)
+            rect.current.style.transform = `translate(${distancePositionX}px) translateY(${distancePositionY}px)`
+
             zoom.current.style.backgroundPosition = `-${bgX}px -${bgY}px`
         }
-
-        //setTimeout(() => updatePosition(0), 0)
 
         const handler = throttle(requestAnimationFrame);
         handler(updatePosition)
