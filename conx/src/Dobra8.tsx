@@ -9,7 +9,7 @@ function Dobra8(){
     return(
         <div className="laptop:mx-16 my-8">
             <div className="flex flex-col laptop:flex-row justify-center items-start bg-prim p-4 laptop:p-12 laptop:mx-32 rounded-none laptop:rounded-3xl form-bg">
-                <div className="left flex flex-col justify-start items-start gap-12 basis-[50%] mt-[2em]">
+                <div className="left flex flex-col justify-start items-start gap-12 basis-[45%] mt-[2em]">
                     <h4 className="font-bold text-[2em] text-center laptop:text-left text-[#FEFEFE]">
                         Vamos conversar e esclarecer todas as suas dúvidas sobre o seu futuro lar.
                     </h4>
@@ -76,7 +76,7 @@ function Dobra8(){
                             <p> Concordo com a <a href='https://conx.com.br/politica-de-privacidade/' target='_blank' className="underline hover:text-sub" rel="noreferrer">Política de Privacidade.</a></p>
                         </label>
 
-                        <button className="bg-[#D0A388] items-center px-[71.55px] mx-auto laptop:mx-0 py-[15.4px] rounded-2xl uppercase text-white font-bold text-[13.81px] mt-3">
+                        <button className="bg-[#D0A388] items-center px-[71.55px] mx-auto laptop:mx-0 py-[15.4px] rounded-2xl uppercase text-white font-bold text-[13.81px] mt-3 hover:bg-[#94725E]">
                             <p>enviar</p>
                         </button>
 
