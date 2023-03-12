@@ -351,7 +351,7 @@ function Dobra4() {
             </div>
 
             <div ref={pop} className="popup-image hidden fixed top-0 left-0 bg-[rgba(0,_0,_0,_.9)] h-full w-full z-40" onPointerMove={handleMouseMove}>
-                <div className='flex flex-row justify-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 gap-5'>
+                <div className='flex flex-col tablet:flex-row justify-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 gap-5'>
                     <picture>
                         {/* <source srcSet='' type='image/avif'/>
                         <source srcSet='' type='image/webp'/> */}
