@@ -1,18 +1,23 @@
 import { PointerEvent, useRef } from 'react'
+
 import gal_1_a from './img/gal_1.avif'
 import gal_1_w from './img/gal_1.webp'
 import gal_1_j from './img/gal_1.jpg'
 import galm_1_a from './img/galm_1.avif'
 import galm_1_w from './img/galm_1.webp'
 import galm_1_j from './img/galm_1.jpg'
-import gal_2 from './img/gal_2.jpg'
-import gal_3 from './img/gal_3.jpg'
-import gal_4 from './img/gal_4.jpg'
-import gal_5 from './img/gal_5.jpg'
-import gal_6 from './img/gal_6.jpg'
-import gal_7 from './img/gal_7.jpg'
-import gal_8 from './img/gal_8.jpg'
-import gal_9 from './img/gal_9.jpg'
+import galt_1_a from './img/galt_1.avif'
+import galt_1_w from './img/galt_1.webp'
+import galt_1_j from './img/galt_1.jpg'
+
+import gal_2_j from './img/gal_2.jpg'
+import gal_3_j from './img/gal_3.jpg'
+import gal_4_j from './img/gal_4.jpg'
+import gal_5_j from './img/gal_5.jpg'
+import gal_6_j from './img/gal_6.jpg'
+import gal_7_j from './img/gal_7.jpg'
+import gal_8_j from './img/gal_8.jpg'
+import gal_9_j from './img/gal_9.jpg'
 
 function Dobra4() {
     const pop = useRef<HTMLDivElement>(null)
@@ -20,6 +25,7 @@ function Dobra4() {
     const rect = useRef<HTMLDivElement>(null)
     const zoom = useRef<HTMLDivElement>(null)
     const popImgRef = useRef<HTMLImageElement>(null)
+    const zoomImgRef = useRef<HTMLImageElement>(null)
     const ratio = 2
 
     type RequestAnimationFrame = (callback: FrameRequestCallback) => number
@@ -38,11 +44,8 @@ function Dobra4() {
     }
     
     const handleClose = () => {
-        if (!pop.current || !zoom.current)
-            return
-
-        pop.current.style.display = "none"
-        zoom.current.style.display = "none"
+        pop.current!.style.display = "none"
+        rect.current!.style.visibility = "hidden"
     }
 
     const handleMouseMove = (event: PointerEvent) => {
@@ -52,40 +55,63 @@ function Dobra4() {
 
         const { width: rectWidth, height: rectHeight } = rect.current.getBoundingClientRect()
         const { top, bottom, left, right, width: piWidth, height: piHeight } = popImg.getBoundingClientRect()
-
-        rect.current.style.display = 'block'
-
-        const zoomStyle = {
-            "display": "block",
-            'backgroundSize': `${piWidth * ratio}px ${piHeight * ratio}px`,
-            'height': `${rectHeight * ratio}px`,
-            'width': `${rectWidth * ratio}px`,
-            'backgroundImage': `url(${popImg.src})`,
-            'backgroundRepeat': "no repeat"
-        }
-        Object.assign(zoom.current.style, zoomStyle)
-
+        
         if (
-            event.clientX - (rectWidth / 2) < left
-            || event.clientX + (rectWidth / 2) > right
-            || event.clientY - (rectHeight / 2) < top
-            || event.clientY + (rectHeight / 2) > bottom
-        )
+            event.clientX < left
+            || event.clientX > right
+            || event.clientY < top
+            || event.clientY > bottom
+            )
             return
+
+        rect.current.style.visibility = 'visible'
+
+        if (zoom.current.style.backgroundImage !== `url(${popImg.src})`) {
+            const zoomStyle = {
+                "visibility": "visible",
+                //'backgroundSize': `${piWidth * ratio}px ${piHeight * ratio}px`,
+                'width': `${rectWidth * ratio}px`,
+                'height': `${rectHeight * ratio}px`,
+                // 'backgroundImage': `url(${popImg.src})`,
+                // 'backgroundRepeat': 'no-repeat'
+            }
+            Object.assign(zoom.current.style, zoomStyle)
+
+            const zoomImgStyle = {
+                'width': `${piWidth * ratio}px`,
+                'height': `${piHeight * ratio}px`,
+            }
+            Object.assign(zoomImgRef.current!.style, zoomImgStyle)
+        }
 
         const mouseX = event.clientX
         const mouseY = event.clientY
-        const bgX = mouseX - rectWidth
-        const bgY = mouseY - rectHeight
 
-        const updatePosition = (timestamp: number): void => {
-            if (!rect?.current || !zoom?.current)
+        const updatePosition = (): void => {
+            if (!rect.current || !zoom.current)
                 return
-            
-            rect.current.style.left = `${mouseX}px`
-            rect.current.style.top = `${mouseY}px`
+                
+            const {top: popTop, left: popLeft, width: popWidth, height: popHeight} = popImg.getBoundingClientRect()
 
-            zoom.current.style.backgroundPosition = `-${bgX}px -${bgY}px`
+            const newRectLeft = mouseX < popLeft + (popWidth / 2)
+                                ? Math.max(popLeft + (rectWidth / 2), mouseX)
+                                : Math.min(popLeft + popWidth - (rectWidth / 2), mouseX)
+
+            const newRectTop = mouseY < popTop + (popWidth / 2)
+                                ? Math.max(popTop + (rectHeight / 2), mouseY)
+                                : Math.min(popTop + popHeight - (rectHeight / 2), mouseY)
+            
+            rect.current.style.left = `${newRectLeft}px`
+            rect.current.style.top = `${newRectTop}px`
+
+            const {top: rectTop, left: rectLeft} = rect.current.getBoundingClientRect()
+
+            const bgX = (popLeft - rectLeft) * ratio
+            const bgY = (popTop - rectTop) * ratio
+
+            //zoom.current.style.backgroundPosition = `${bgX}px ${bgY}px`
+            zoomImgRef.current!.style.top = `${bgY}px`;
+            zoomImgRef.current!.style.left = `${bgX}px`;
         }
 
         const handler = throttle(requestAnimationFrame);
@@ -93,18 +119,45 @@ function Dobra4() {
     }
 
     const thumbClick = (event: React.MouseEvent<HTMLImageElement, MouseEvent>) => {
-        if (!pop.current || !popImgRef.current) return
+        const popImg = popImgRef.current! as HTMLElement
 
-        const popImg = popImgRef.current
-
-        pop.current.style.display = "block"
+        pop.current!.style.display = "block"
 
         const img = event.target as HTMLImageElement
         const pict = img.parentElement as HTMLPictureElement
-        console.log(pict.childNodes)
+        
+        //console.log(pict.childNodes)
 
-        popImg.src = img.src
-        popImg.alt = img.alt
+        const popPict = popImg.parentElement!
+        const popNodes = Array.from(popPict.childNodes)
+
+        const zoomNodes = Array.from(zoomImgRef.current!.parentElement!.childNodes)
+        
+        //console.log({popNodes, zoomNodes})
+
+        pict.childNodes.forEach((node, index) => {
+            const typed = node as HTMLElement
+            const popTyped = popNodes[index] as HTMLElement
+            
+            popTyped.setAttribute('src', typed.dataset['srcm']!)
+            popTyped.setAttribute('alt', typed.getAttribute('alt') ?? '')
+            
+            const zoomTyped = zoomNodes[index] as HTMLElement
+            zoomTyped.setAttribute('src', typed.dataset['src']!)
+            zoomTyped.setAttribute('alt', typed.getAttribute('alt') ?? '')
+        })
+
+        {
+            const { width: rectWidth, height: rectHeight } = rect.current!.getBoundingClientRect()
+
+            //console.log({rectWidth, rectHeight})
+
+            const zoomStyle = {
+                'height': `${rectHeight * ratio}px`,
+                'width': `${rectWidth * ratio}px`
+            }
+            Object.assign(zoom.current!.style, zoomStyle)
+        }
     }
 
     return (
@@ -123,9 +176,9 @@ function Dobra4() {
                 <div className='flex flex-col justify-center items-center gap-2 tablet:basis-[30%]'>
                     <div className='image relative overflow-hidden'>
                         <picture>
-                            <source srcSet={galm_1_a} data-src={gal_1_a} type='image/avif'/>
-                            <source srcSet={galm_1_w} data-src={gal_1_w} type='image/webp'/>
-                            <img src={galm_1_j} data-src={gal_1_j} alt="PERSPECTIVA ILUSTRADA DO HALL SOCIAL" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick}/>
+                            <source srcSet={galt_1_a} data-srcm={galm_1_a} data-src={gal_1_a} type='image/avif'/>
+                            <source srcSet={galt_1_w} data-srcm={galm_1_w} data-src={gal_1_w} type='image/webp'/>
+                            <img src={galt_1_j} data-srcm={galm_1_j} data-src={gal_1_j} alt="PERSPECTIVA ILUSTRADA DO HALL SOCIAL" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick}/>
                         </picture>
                         {/* <img src={gal_1} alt="PERSPECTIVA ILUSTRADA DO HALL SOCIAL" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} /> */}
 
@@ -140,7 +193,13 @@ function Dobra4() {
 
                 <div className='flex flex-col justify-center items-center gap-2 tablet:basis-[30%]'>
                     <div className='image relative overflow-hidden'>
-                        <img src={gal_2} alt="PERSPECTIVA ILUSTRADA DO ESPAÇO GOURMETl" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} />
+                        <picture>
+                            {/* <source srcSet={galt_2_a} data-srcm={galm_1_a} data-src={gal_2_a} type='image/avif'/>
+                            <source srcSet={galt_2_w} data-srcm={galm_1_w} data-src={gal_2_w} type='image/webp'/>
+                            <img src={galt_2_j} data-srcm={galm_2_j} data-src={gal_2_j} alt="PERSPECTIVA ILUSTRADA DO ESPAÇO GOURMET" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} /> */}
+                            <img src={gal_2_j} data-srcm={gal_2_j} data-src={gal_2_j} alt="PERSPECTIVA ILUSTRADA DO ESPAÇO GOURMET" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} />
+                        </picture>
+                        {/* <img src={gal_2} alt="PERSPECTIVA ILUSTRADA DO ESPAÇO GOURMET" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} /> */}
 
                         <p className='uppercase absolute right-3 bottom-3 text-[.3em] font-semibold text-white'>
                             PERSPECTIVA ILUSTRADA DO ESPAÇO GOURMET
@@ -153,7 +212,13 @@ function Dobra4() {
 
                 <div className='flex flex-col justify-center items-center gap-2 tablet:basis-[30%]'>
                     <div className='image relative overflow-hidden'>
-                        <img src={gal_3} alt="PERSPECTIVA ILUSTRADA DO SALÃO DE FESTAS" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} />
+                        <picture>
+                            {/* <source srcSet={galt_3_a} data-srcm={galm_3_a} data-src={gal_3_a} type='image/avif'/>
+                            <source srcSet={galt_3_w} data-srcm={galm_3_w} data-src={gal_3_w} type='image/webp'/>
+                            <img src={galt_3_j} data-srcm={galm_3_j} data-src={gal_3_j} alt="PERSPECTIVA ILUSTRADA DO SALÃO DE FESTAS" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} /> */}
+                            <img src={gal_3_j} data-srcm={gal_3_j} data-src={gal_3_j} alt="PERSPECTIVA ILUSTRADA DO SALÃO DE FESTAS" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} />
+                        </picture>
+                        {/* <img src={gal_3} alt="PERSPECTIVA ILUSTRADA DO SALÃO DE FESTAS" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} /> */}
 
                         <p className='uppercase absolute right-3 bottom-3 text-[.3em] font-semibold text-white'>
                             PERSPECTIVA ILUSTRADA DO SALÃO DE FESTAS
@@ -167,7 +232,13 @@ function Dobra4() {
 
                 <div className='flex flex-col justify-center items-center gap-2 tablet:basis-[30%]'>
                     <div className='image relative overflow-hidden'>
-                        <img src={gal_4} alt="PERSPECTIVA ILUSTRADA DO FITNESS" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} />
+                        <picture>
+                            {/* <source srcSet={galt_4_a} data-srcm={galm_4_a} data-src={gal_4_a} type='image/avif'/>
+                            <source srcSet={galt_4_w} data-srcm={galm_4_w} data-src={gal_4_w} type='image/webp'/>
+                            <img src={galt_4_j} data-srcm={galm_4_j} data-src={gal_4_j} alt="PERSPECTIVA ILUSTRADA DO ESPAÇO GOURMETl" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} /> */}
+                            <img src={gal_4_j} data-srcm={gal_4_j} data-src={gal_4_j} alt="PERSPECTIVA ILUSTRADA DO FITNESS" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} />
+                        </picture>
+                        {/* <img src={gal_4} alt="PERSPECTIVA ILUSTRADA DO FITNESS" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} /> */}
 
                         <p className='uppercase absolute right-3 bottom-3 text-[.3em] font-semibold text-white'>
                             PERSPECTIVA ILUSTRADA DO FITNESS
@@ -180,7 +251,13 @@ function Dobra4() {
 
                 <div className='flex flex-col justify-center items-center gap-2 tablet:basis-[30%]'>
                     <div className='image relative overflow-hidden'>
-                        <img src={gal_5} alt="PERSPECTIVA ILUSTRADA DA CHURRASQUEIRA" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} />
+                        <picture>
+                            {/* <source srcSet={galt_5_a} data-srcm={galm_5_a} data-src={gal_5_a} type='image/avif'/>
+                            <source srcSet={galt_5_w} data-srcm={galm_5_w} data-src={gal_5_w} type='image/webp'/>
+                            <img src={galt_5_j} data-srcm={galm_5_j} data-src={gal_5_j} alt="PERSPECTIVA ILUSTRADA DA CHURRASQUEIRA" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} /> */}
+                            <img src={gal_5_j} data-srcm={gal_5_j} data-src={gal_5_j} alt="PERSPECTIVA ILUSTRADA DA CHURRASQUEIRA" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} />
+                        </picture>
+                        {/* <img src={gal_5} alt="PERSPECTIVA ILUSTRADA DA CHURRASQUEIRA" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} /> */}
 
                         <p className='uppercase absolute right-3 bottom-3 text-[.3em] font-semibold text-white'>
                             PERSPECTIVA ILUSTRADA DA CHURRASQUEIRA
@@ -194,7 +271,13 @@ function Dobra4() {
 
                 <div className='flex flex-col justify-center items-center gap-2 tablet:basis-[30%]'>
                     <div className='image relative overflow-hidden'>
-                        <img src={gal_6} alt="PERSPECTIVA ILUSTRADA DO COWORKING" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} />
+                        <picture>
+                            {/* <source srcSet={galt_6_a} data-srcm={galm_6_a} data-src={gal_6_a} type='image/avif'/>
+                            <source srcSet={galt_6_w} data-srcm={galm_6_w} data-src={gal_6_w} type='image/webp'/>
+                            <img src={galt_6_j} data-srcm={galm_6_j} data-src={gal_6_j} alt="PERSPECTIVA ILUSTRADA DO COWORKING" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} /> */}
+                            <img src={gal_6_j} data-srcm={gal_6_j} data-src={gal_6_j} alt="PERSPECTIVA ILUSTRADA DO COWORKING" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} />
+                        </picture>
+                        {/* <img src={gal_6} alt="PERSPECTIVA ILUSTRADA DO COWORKING" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} /> */}
 
                         <p className='uppercase absolute right-3 bottom-3 text-[.3em] font-semibold text-white'>
                             PERSPECTIVA ILUSTRADA DO COWORKING
@@ -208,7 +291,13 @@ function Dobra4() {
 
                 <div className='flex flex-col justify-center items-center gap-2 tablet:basis-[30%]'>
                     <div className='image relative overflow-hidden'>
-                        <img src={gal_7} alt="PERSPECTIVA ILUSTRADA DA PISCINA COM DECK MOLHADO" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} />
+                        <picture>
+                            {/* <source srcSet={galt_7_a} data-srcm={galm_7_a} data-src={gal_7_a} type='image/avif'/>
+                            <source srcSet={galt_7_w} data-srcm={galm_7_w} data-src={gal_7_w} type='image/webp'/>
+                            <img src={galt_7_j} data-srcm={galm_7_j} data-src={gal_7_j} alt="PERSPECTIVA ILUSTRADA DA PISCINA COM DECK MOLHADO" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} /> */}
+                            <img src={gal_7_j} data-srcm={gal_7_j} data-src={gal_7_j} alt="PERSPECTIVA ILUSTRADA DA PISCINA COM DECK MOLHADO" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} />
+                        </picture>
+                        {/* <img src={gal_7} alt="PERSPECTIVA ILUSTRADA DA PISCINA COM DECK MOLHADO" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} /> */}
 
                         <p className='uppercase absolute right-3 bottom-3 text-[.3em] font-semibold text-white'>
                             PERSPECTIVA ILUSTRADA DA PISCINA COM DECK MOLHADO
@@ -222,7 +311,13 @@ function Dobra4() {
 
                 <div className='flex flex-col justify-center items-center gap-2 tablet:basis-[30%]'>
                     <div className='image relative overflow-hidden'>
-                        <img src={gal_8} alt="PERSPECTIVA ILUSTRADA DA COBERTURA" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} />
+                        <picture>
+                            {/* <source srcSet={galt_8_a} data-srcm={galm_8_a} data-src={gal_8_a} type='image/avif'/>
+                            <source srcSet={galt_8_w} data-srcm={galm_8_w} data-src={gal_8_w} type='image/webp'/>
+                            <img src={galt_8_j} data-srcm={galm_8_j} data-src={gal_8_j} alt="PERSPECTIVA ILUSTRADA DA COBERTURA" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} /> */}
+                            <img src={gal_8_j} data-srcm={gal_8_j} data-src={gal_8_j} alt="PERSPECTIVA ILUSTRADA DA COBERTURA" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} />
+                        </picture>
+                        {/* <img src={gal_8} alt="PERSPECTIVA ILUSTRADA DA COBERTURA" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} /> */}
 
                         <p className='uppercase absolute right-3 bottom-3 text-[.3em] font-semibold text-white'>
                             PERSPECTIVA ILUSTRADA DA COBERTURA
@@ -236,7 +331,13 @@ function Dobra4() {
 
                 <div className='flex flex-col justify-center items-center gap-2 tablet:basis-[30%]'>
                     <div className='image relative overflow-hidden'>
-                        <img src={gal_9} alt="PERSPECTIVA ILUSTRADA DO PET PLACE" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} />
+                        <picture>
+                            {/* <source srcSet={galt_9_a} data-srcm={galm_9_a} data-src={gal_9_a} type='image/avif'/>
+                            <source srcSet={galt_9_w} data-srcm={galm_9_w} data-src={gal_9_w} type='image/webp'/>
+                            <img src={galt_9_j} data-srcm={galm_9_j} data-src={gal_9_j} alt="PERSPECTIVA ILUSTRADA DO PET PLACE" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} /> */}
+                            <img src={gal_9_j} data-srcm={gal_9_j} data-src={gal_9_j} alt="PERSPECTIVA ILUSTRADA DO PET PLACE" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} />
+                        </picture>
+                        {/* <img src={gal_9} alt="PERSPECTIVA ILUSTRADA DO PET PLACE" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} /> */}
 
                         <p className='uppercase absolute right-3 bottom-3 text-[.3em] font-semibold text-white'>
                             PERSPECTIVA ILUSTRADA DO PET PLACE
@@ -250,16 +351,24 @@ function Dobra4() {
             </div>
 
             <div ref={pop} className="popup-image hidden fixed top-0 left-0 bg-[rgba(0,_0,_0,_.9)] h-full w-full z-40" onPointerMove={handleMouseMove}>
-                {/* <picture>
-                    <source srcSet='' type='image/avif'/>
-                    <source srcSet='' type='image/webp'/>
-                    <img src='' alt="PERSPECTIVA ILUSTRADA DO HALL SOCIAL" width='380px' className='aspect-[19/12] cursor-pointer object-cover'/>
-                </picture> */}
-                <img ref={popImgRef} alt="Galeria" className='absolute top-1/2 left-1/2 laptop:translate-x-[-80%] -translate-x-1/2 -translate-y-1/2 object-cover rounded-lg max-w-[300px] laptop:max-w-[50%]' />
-                <div ref={rect} className="hidden rect w-[250px] h-[150px] bg-slate-400 opacity-60 absolute pointer-events-none z-50 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
-                <span ref={close} className='absolute right-12 top-3 w-8 h-4 text-[3em]  rounded-full text-white cursor-pointer' onClick={handleClose}>&times;</span>
+                <div className='flex flex-row justify-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 gap-5'>
+                    <picture>
+                        {/* <source srcSet='' type='image/avif'/>
+                        <source srcSet='' type='image/webp'/> */}
+                        <img ref={popImgRef} src='' alt='' className='object-cover rounded-lg'/>
+                    </picture>
+                    {/* <img ref={popImgRef} alt="Galeria" className='absolute top-1/2 left-1/2 laptop:translate-x-[-80%] -translate-x-1/2 -translate-y-1/2 object-cover rounded-lg max-w-[300px] laptop:max-w-[50%]' /> */}
+                    <div ref={zoom} className="zoom z-50 invisible overflow-hidden relative object-cover rounded-lg shrink-0">
+                        <picture>
+                            {/* <source srcSet='' type='image/avif'/>
+                            <source srcSet='' type='image/webp'/> */}
+                            <img ref={zoomImgRef} src='' alt='' className='absolute max-w-none'/>
+                        </picture>
+                    </div>
+                </div>
+                <div ref={rect} className="invisible rect w-[250px] h-[150px] bg-slate-400 opacity-60 absolute pointer-events-none z-50 -translate-x-1/2 -translate-y-1/2"></div>
+                <span ref={close} className='absolute right-12 top-3 w-8 h-4 text-[3em] rounded-full text-white cursor-pointer' onClick={handleClose}>&times;</span>
             </div>
-            <div ref={zoom} className="zoom z-50 rounded-lg hidden translate-x-[120%] fixed top-1/2"></div>
         </div>
     )
 }
