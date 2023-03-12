@@ -1,5 +1,4 @@
-import './js-image-zoom'
-import { useEffect, useRef } from 'react'
+import { PointerEvent, useRef } from 'react'
 import img1 from './img/gal_1.jpg'
 import img2 from './img/gal_2.jpg'
 import img3 from './img/gal_3.jpg'
@@ -9,16 +8,30 @@ import img6 from './img/gal_6.jpg'
 import img7 from './img/gal_7.jpg'
 import img8 from './img/gal_8.jpg'
 import img9 from './img/gal_9.jpg'
-import jsImageZoom from './js-image-zoom'
 
 function Dobra4() {
-    
     const pop = useRef<HTMLDivElement>(null)
     const close = useRef<HTMLSpanElement>(null)
+    const rect = useRef<HTMLDivElement>(null)
     const zoom = useRef<HTMLDivElement>(null)
     const popImgRef = useRef<HTMLImageElement>(null)
-    const container = useRef<HTMLDivElement>(null)
+    const ratio = 2
 
+    type RequestAnimationFrame = (callback: FrameRequestCallback) => number
+    function throttle(timer:RequestAnimationFrame) {
+        let queuedCallback:FrameRequestCallback|null
+        return (callback:FrameRequestCallback) => {
+            if (!queuedCallback) {
+            timer((timespan) => {
+                const cb = queuedCallback
+                queuedCallback = null
+                cb!(timespan)
+            })
+            }
+            queuedCallback = callback
+        }
+    }
+    
     const handleClose = () => {
         if (!pop.current || !zoom.current)
             return
@@ -27,8 +40,55 @@ function Dobra4() {
         zoom.current.style.display = "none"
     }
 
+    const handleMouseMove = (event: PointerEvent) => {
+        event.preventDefault()
+        const popImg = popImgRef.current
+        if (!popImg || !rect.current || !zoom.current) return
+
+        const { width: rectWidth, height: rectHeight } = rect.current.getBoundingClientRect()
+        const { top, bottom, left, right, width: piWidth, height: piHeight } = popImg.getBoundingClientRect()
+
+        rect.current.style.display = 'block'
+
+        const zoomStyle = {
+            "display": "block",
+            'backgroundSize': `${piWidth * ratio}px ${piHeight * ratio}px`,
+            'height': `${rectHeight * ratio}px`,
+            'width': `${rectWidth * ratio}px`,
+            'backgroundImage': `url(${popImg.src})`,
+            'backgroundRepeat': "no repeat"
+        }
+        Object.assign(zoom.current.style, zoomStyle)
+
+        if (
+            event.clientX - (rectWidth / 2) < left
+            || event.clientX + (rectWidth / 2) > right
+            || event.clientY - (rectHeight / 2) < top
+            || event.clientY + (rectHeight / 2) > bottom
+        )
+            return
+
+        const mouseX = event.clientX
+        const mouseY = event.clientY
+        const bgX = mouseX - rectWidth
+        const bgY = mouseY - rectHeight
+
+        const updatePosition = (timestamp: number): void => {
+            if (!rect?.current || !zoom?.current)
+                return
+            
+            rect.current.style.left = `${mouseX}px`
+            rect.current.style.top = `${mouseY}px`
+
+            zoom.current.style.backgroundPosition = `-${bgX}px -${bgY}px`
+        }
+
+        const handler = throttle(requestAnimationFrame);
+        handler(updatePosition)
+    }
+
     const thumbClick = (event: React.MouseEvent<HTMLImageElement, MouseEvent>) => {
-        if (!pop.current || !zoom.current || !popImgRef.current) return
+        if (!pop.current || !popImgRef.current) return
 
         const popImg = popImgRef.current
 
@@ -38,16 +98,6 @@ function Dobra4() {
         popImg.src = img.src
         popImg.alt = img.alt
     }
-
-    useEffect(() => {
-        if (!container.current) return
-
-        var options = {
-            width: 400, // required
-        }
-        
-        jsImageZoom(container.current, options)
-    })
 
     return (
         <div className='relative min-w-screen bg-[#F9FAFB] flex flex-col justify-center items-center'>
@@ -186,10 +236,9 @@ function Dobra4() {
 
             </div>
 
-            <div ref={pop} className="popup-image hidden fixed top-0 left-0 bg-[rgba(0,_0,_0,_.9)] h-full w-full z-40">
-                <div ref={container} className="absolute top-1/2 left-1/2 laptop:translate-x-[-80%] -translate-x-1/2 -translate-y-1/2 max-w-[300px] laptop:max-w-[50%]">
-                    <img ref={popImgRef} src={img1} alt="Galeria" className='object-cover rounded-lg' />
-                </div>
+            <div ref={pop} className="popup-image hidden fixed top-0 left-0 bg-[rgba(0,_0,_0,_.9)] h-full w-full z-40" onPointerMove={handleMouseMove}>
+                <img ref={popImgRef} src={img1} alt="Galeria" className='absolute top-1/2 left-1/2 laptop:translate-x-[-80%] -translate-x-1/2 -translate-y-1/2 object-cover rounded-lg max-w-[300px] laptop:max-w-[50%]' />
+                <div ref={rect} className="hidden rect w-[250px] h-[150px] bg-slate-400 opacity-60 absolute pointer-events-none z-50 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
                 <span ref={close} className='absolute right-12 top-3 w-8 h-4 text-[3em]  rounded-full text-white cursor-pointer' onClick={handleClose}>&times;</span>
             </div>
             <div ref={zoom} className="zoom z-50 rounded-lg hidden translate-x-[120%] fixed top-1/2"></div>
