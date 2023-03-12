@@ -38,7 +38,7 @@ function Dobra8(){
                             <span className='pipe'>
                                 |
                             </span>
-                            <select name='Contato' required className='mr-6' defaultValue={''}>
+                            <select name='Contato' required className='mr-6 bg-white' defaultValue={''}>
                                 <option value={''} disabled>Como gostaria de receber o contato?</option>
                                 <option value="E-mail"> E-mail </option>
                                 <option value="WhatsApp"> WhatsApp </option>
