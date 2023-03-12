@@ -28,6 +28,10 @@ function Dobra4() {
     const zoomImgRef = useRef<HTMLImageElement>(null)
     const ratio = 2
 
+    let wbkp = ''
+    let hbkp = ''
+    let obkp = ''
+
     type RequestAnimationFrame = (callback: FrameRequestCallback) => number
     function throttle(timer:RequestAnimationFrame) {
         let queuedCallback:FrameRequestCallback|null
@@ -46,6 +50,11 @@ function Dobra4() {
     const handleClose = () => {
         pop.current!.style.display = "none"
         rect.current!.style.visibility = "hidden"
+
+        const body = document.querySelector('body')
+        body!.style.width = wbkp
+        body!.style.height = hbkp
+        body!.style.overflow = obkp
     }
 
     const handleMouseMove = (event: PointerEvent) => {
@@ -119,6 +128,15 @@ function Dobra4() {
     }
 
     const thumbClick = (event: React.MouseEvent<HTMLImageElement, MouseEvent>) => {
+        const body = document.querySelector('body')
+        wbkp = body!.style.width
+        hbkp = body!.style.height
+        obkp = body!.style.overflow
+
+        body!.style.width = '100vw'
+        body!.style.height = '100vh'
+        body!.style.overflow = 'hidden'
+
         const popImg = popImgRef.current! as HTMLElement
 
         pop.current!.style.display = "block"
@@ -350,7 +368,7 @@ function Dobra4() {
 
             </div>
 
-            <div ref={pop} className="popup-image hidden fixed top-0 left-0 bg-[rgba(0,_0,_0,_.9)] h-full w-full z-40" onPointerMove={handleMouseMove}>
+            <div ref={pop} className="popup-image hidden fixed overflow-hidden top-0 left-0 bg-[rgba(0,_0,_0,_.9)] h-full w-full z-40" onPointerMove={handleMouseMove}>
                 <div className='flex flex-col gap-5 w-full absolute mt-20 tablet:w-auto tablet:flex-row tablet:justify-center tablet:top-1/2 tablet:left-1/2 tablet:-translate-x-1/2 tablet:-translate-y-1/2'>
                     <picture>
                         {/* <source srcSet='' type='image/avif'/>
