@@ -16,23 +16,31 @@ export default function Form(props: Props) {
     const formData = new FormData(form)
 
     try {
+      
       const response = await fetch('email/form.php', {
         method: 'POST',
         body: formData
       })
 
-      const data = await response.text()
-      console.log({data, status: response.status})
-      //props.setSend(true)
+      if (response.status !== 200) {
+        const data = await response.text()
+        console.log(data)
+        throw new Error(`Resposta inesperada! ${response.status}`);
+      }
+
+      props.setSend(true)
+
     } catch (error) {
-      console.log(error)
+
+      console.error(error)
       alert("Error inesperado. Por favor, tente novamente mais tarde!")
+
     }
 
   }
 
   return(
-    <form onSubmit={submitForm}>
+    <form id="form-contato" onSubmit={submitForm}>
         <div className='container-input relative flex flex-row '>
             <div className=' p-4 flex'>
                 <img src={user} alt="user" width='30px' />
