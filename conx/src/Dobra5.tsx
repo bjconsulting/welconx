@@ -6,8 +6,8 @@ import { GiWashingMachine } from "react-icons/gi";
 import { RiStoreLine } from "react-icons/ri";
 import { FiPackage } from "react-icons/fi";
 import { BsBicycle } from "react-icons/bs";
-import { GrNext } from "react-icons/gr";
-import { GrPrevious } from "react-icons/gr";
+// import { GrNext } from "react-icons/gr";
+// import { GrPrevious } from "react-icons/gr";
 import img from './img/market.jpg'
 import well from './img/well-services.png'
 // import img2 from './img/lavanderia.jpg'
@@ -25,13 +25,13 @@ function Dobra5() {
                         <div className='relative image-container'>
                             <img className=' aspect-auto max-w-[250px] laptop:max-w-[400px] desktop:max-w-[700px] mx-auto' src={img} alt="Mini Market" />
                             <p className='absolute right-4 bottom-4 uppercase text-[.4em] text-white'> perspectiva ilustrada da lavanderia</p>
-                            <div className='p-2 tablet:p-4 rounded-full bg-[#FEFEFE] opacity-80 absolute top-[45%] right-8 hover:opacity-100 cursor-pointer'>
+                            {/* <div className='p-2 tablet:p-4 rounded-full bg-[#FEFEFE] opacity-80 absolute top-[45%] right-8 hover:opacity-100 cursor-pointer'>
                                 <GrNext className='fill-prim'/>
                             </div>
                             
                             <div className='p-2 tablet:p-4 rounded-full bg-[#FEFEFE] opacity-80 absolute top-[45%] left-8 hover:opacity-100 cursor-pointer'>
                                 <GrPrevious className='fill-prim'/>
-                            </div>
+                            </div> */}
                         </div>
 
 
