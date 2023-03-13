@@ -24,7 +24,7 @@ function Dobra5() {
                     <div className='left-container relative h-auto'>
                         <div className='relative image-container'>
                             <img className=' aspect-auto max-w-[250px] laptop:max-w-[400px] desktop:max-w-[700px] mx-auto' src={img} alt="Mini Market" />
-                            <p className='absolute right-4 bottom-4 uppercase text-[.4em] text-white'> perspectiva ilustrada da lavanderia</p>
+                            <p className='absolute right-4 bottom-4 uppercase text-[.4em] text-white'> perspectiva ilustrada do Mini Market</p>
                             {/* <div className='p-2 tablet:p-4 rounded-full bg-[#FEFEFE] opacity-80 absolute top-[45%] right-8 hover:opacity-100 cursor-pointer'>
                                 <GrNext className='fill-prim'/>
                             </div>
