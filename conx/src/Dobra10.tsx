@@ -1,4 +1,4 @@
-import conxVendas from './img/conx-vendas.png'
+import conxVendas from './img/conx-vendas2.png'
 import houzi from './img/houzi-logo.png'
 import conxLogo from './img/conx-logo.png'
 
