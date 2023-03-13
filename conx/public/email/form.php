@@ -112,6 +112,7 @@ try {
     $mensagem = GetPostSafe("mensagem");
     if($mensagem!=null){ $mensagem_Body = '<b>Mensagem:</b> '.$mensagem.' - '.$contato_Body.'<br/>'; }
 
+    $email = 'leads@conx.com.br';
     $to = $email;
     $subject = GetPostSafe("nome_form") . ' - Pinheiros';
 
