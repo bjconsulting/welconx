@@ -1,11 +1,11 @@
-import { PointerEvent, useRef } from 'react'
+import { useRef } from 'react'
 
 // import gal_1_a from './img/gal_1.avif'
 // import gal_1_w from './img/gal_1.webp'
 import gal_1_j from './img/gal_1.jpg'
 // import galm_1_a from './img/galm_1.avif'
 // import galm_1_w from './img/galm_1.webp'
-import galm_1_j from './img/galm_1.jpg'
+//import galm_1_j from './img/galm_1.jpg'
 // import galt_1_a from './img/galt_1.avif'
 // import galt_1_w from './img/galt_1.webp'
 import galt_1_j from './img/galt_1.jpg'
@@ -22,16 +22,19 @@ import gal_9_j from './img/gal_9.jpg'
 function Dobra4() {
     const pop = useRef<HTMLDivElement>(null)
     const close = useRef<HTMLSpanElement>(null)
+    /*
     const rect = useRef<HTMLDivElement>(null)
     const zoom = useRef<HTMLDivElement>(null)
+    */
     const popImgRef = useRef<HTMLImageElement>(null)
+    /*
     const zoomImgRef = useRef<HTMLImageElement>(null)
     const ratio = 2
-
+    */
     let wbkp = ''
     let hbkp = ''
     let obkp = ''
-
+    /*
     type RequestAnimationFrame = (callback: FrameRequestCallback) => number
     function throttle(timer:RequestAnimationFrame) {
         let queuedCallback:FrameRequestCallback|null
@@ -46,17 +49,17 @@ function Dobra4() {
             queuedCallback = callback
         }
     }
-    
+    */
     const handleClose = () => {
         pop.current!.style.display = "none"
-        rect.current!.style.visibility = "hidden"
+        //rect.current!.style.visibility = "hidden"
 
         const body = document.querySelector('body')
         body!.style.width = wbkp
         body!.style.height = hbkp
         body!.style.overflow = obkp
     }
-
+    /*
     const handleMouseMove = (event: PointerEvent) => {
         event.preventDefault()
         const popImg = popImgRef.current
@@ -126,7 +129,7 @@ function Dobra4() {
         const handler = throttle(requestAnimationFrame);
         handler(updatePosition)
     }
-
+    */
     const thumbClick = (event: React.MouseEvent<HTMLImageElement, MouseEvent>) => {
         const body = document.querySelector('body')
         wbkp = body!.style.width
@@ -145,11 +148,11 @@ function Dobra4() {
         const pict = img.parentElement as HTMLPictureElement
         
         //console.log(pict.childNodes)
-
+        
         const popPict = popImg.parentElement!
         const popNodes = Array.from(popPict.childNodes)
 
-        const zoomNodes = Array.from(zoomImgRef.current!.parentElement!.childNodes)
+        //const zoomNodes = Array.from(zoomImgRef.current!.parentElement!.childNodes)
         
         //console.log({popNodes, zoomNodes})
 
@@ -157,14 +160,18 @@ function Dobra4() {
             const typed = node as HTMLElement
             const popTyped = popNodes[index] as HTMLElement
             
-            popTyped.setAttribute('src', typed.dataset['srcm']!)
+            // popTyped.setAttribute('src', typed.dataset['srcm']!)
+            popTyped.setAttribute('src', typed.dataset['src']!)
             popTyped.setAttribute('alt', typed.getAttribute('alt') ?? '')
             
+            /*
             const zoomTyped = zoomNodes[index] as HTMLElement
             zoomTyped.setAttribute('src', typed.dataset['src']!)
             zoomTyped.setAttribute('alt', typed.getAttribute('alt') ?? '')
+            */
         })
 
+        /*
         {
             const { width: rectWidth, height: rectHeight } = rect.current!.getBoundingClientRect()
 
@@ -176,6 +183,7 @@ function Dobra4() {
             }
             Object.assign(zoom.current!.style, zoomStyle)
         }
+        */
     }
 
     return (
@@ -196,7 +204,8 @@ function Dobra4() {
                         <picture>
                             {/* <source srcSet={galt_1_a} data-srcm={galm_1_a} data-src={gal_1_a} type='image/avif'/>
                             <source srcSet={galt_1_w} data-srcm={galm_1_w} data-src={gal_1_w} type='image/webp'/> */}
-                            <img src={galt_1_j} data-srcm={galm_1_j} data-src={gal_1_j} alt="PERSPECTIVA ILUSTRADA DO HALL SOCIAL" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick}/>
+                            {/* <img src={galt_1_j} data-srcm={galm_1_j} data-src={gal_1_j} alt="PERSPECTIVA ILUSTRADA DO HALL SOCIAL" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick}/> */}
+                            <img src={galt_1_j} data-srcm={gal_1_j} data-src={gal_1_j} alt="PERSPECTIVA ILUSTRADA DO HALL SOCIAL" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick}/>
                         </picture>
                         {/* <img src={gal_1} alt="PERSPECTIVA ILUSTRADA DO HALL SOCIAL" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} /> */}
 
@@ -368,23 +377,26 @@ function Dobra4() {
 
             </div>
 
-            <div ref={pop} className="popup-image hidden fixed overflow-hidden top-0 left-0 bg-[rgba(0,_0,_0,_.9)] h-full w-full z-40" onPointerMove={handleMouseMove}>
-                <div className='flex flex-col gap-5 w-full absolute mt-20 tablet:w-auto tablet:flex-row tablet:justify-center tablet:top-1/2 tablet:left-1/2 tablet:-translate-x-1/2 tablet:-translate-y-1/2'>
+            {/* <div ref={pop} className="popup-image hidden fixed overflow-hidden top-0 left-0 bg-[rgba(0,_0,_0,_.9)] h-full w-full z-40" onPointerMove={handleMouseMove}> */}
+            <div ref={pop} className="popup-image hidden fixed overflow-hidden top-0 left-0 bg-[rgba(0,_0,_0,_.9)] h-full w-full z-40">
+                {/* <div className='flex flex-col gap-5 w-full absolute mt-20 tablet:w-auto tablet:flex-row tablet:justify-center tablet:top-1/2 tablet:left-1/2 tablet:-translate-x-1/2 tablet:-translate-y-1/2'> */}
+                <div className='w-full absolute tablet:flex-row tablet:justify-center tablet:top-1/2 tablet:left-1/2 tablet:-translate-x-1/2 tablet:-translate-y-1/2'>
                     <picture>
                         {/* <source srcSet='' type='image/avif'/>
                         <source srcSet='' type='image/webp'/> */}
-                        <img ref={popImgRef} src='' alt='' className='object-cover rounded-lg w-full'/>
+                        {/* <img ref={popImgRef} src='' alt='' className='object-cover rounded-lg w-full'/> */}
+                        <img ref={popImgRef} src='' alt='' className='object-cover rounded-lg max-w-[90%] max-h-[80%] mx-auto'/>
                     </picture>
                     {/* <img ref={popImgRef} alt="Galeria" className='absolute top-1/2 left-1/2 laptop:translate-x-[-80%] -translate-x-1/2 -translate-y-1/2 object-cover rounded-lg max-w-[300px] laptop:max-w-[50%]' /> */}
-                    <div ref={zoom} className="zoom z-50 invisible overflow-hidden relative object-cover rounded-lg shrink-0">
+                    {/* <div ref={zoom} className="zoom z-50 invisible overflow-hidden relative object-cover rounded-lg shrink-0">
                         <picture>
-                            {/* <source srcSet='' type='image/avif'/>
-                            <source srcSet='' type='image/webp'/> */}
+                            <source srcSet='' type='image/avif'/>
+                            <source srcSet='' type='image/webp'/>
                             <img ref={zoomImgRef} src='' alt='' className='absolute max-w-none'/>
                         </picture>
-                    </div>
+                    </div> */}
                 </div>
-                <div ref={rect} className="invisible rect w-[250px] h-[150px] bg-slate-400 opacity-60 absolute pointer-events-none z-50 -translate-x-1/2 -translate-y-1/2"></div>
+                {/* <div ref={rect} className="invisible rect w-[250px] h-[150px] bg-slate-400 opacity-60 absolute pointer-events-none z-50 -translate-x-1/2 -translate-y-1/2"></div> */}
                 <span ref={close} className='absolute right-12 top-1 w-8 h-4 text-[3em] rounded-full text-white cursor-pointer tablet:top-3' onClick={handleClose}>&times;</span>
             </div>
         </div>
