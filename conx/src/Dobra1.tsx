@@ -1,12 +1,10 @@
-import React, { useRef } from 'react'
+import React from 'react'
 import Header from './Header';
 import { HiMapPin } from 'react-icons/hi2'
 
-
-
 function Dobra1() {
     return(
-        <div className='bg-bg-1 bg-[length:auto_100%] laptop:bg-[length:100%_100%] max-w-screen  desktop:min-h-[90vh]'>
+        <div className='bg-bg-1 bg-[length:auto_100%] laptop:bg-[length:100%_100%] max-w-screen  desktop:min-h-[90vh]' id='home'>
             <div className='hero z-10  desktop:min-h-[90vh] relative max-w-screen'>
                 <Header/>
 
@@ -31,7 +29,8 @@ function Dobra1() {
                         Aptos. e Studios de 31 m² | lazer completo
                     </p>
 
-                    <button className='hero_b bg-sub text-white flex flex-row justify-center items-center gap-4 min-w-[217px] px-5 py-[10px] font-semibold rounded-md hover:bg-[#94725E]'>
+                    <button className='hero_b bg-sub text-white flex flex-row justify-center items-center gap-4 min-w-[217px] px-5 py-[10px] font-semibold rounded-md hover:bg-[#94725E]'
+                        onClick={() => { document.querySelector("#contato")?.scrollIntoView({block: 'start'}) }}>
                         Fale com um consultor
                     </button>
 
