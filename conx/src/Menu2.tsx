@@ -28,7 +28,8 @@ function Menu2() {
                 Contato
             </a>
 
-            <button className="flex justify-center items-center px-6 py-3 font-semibold bg-sub text-white rounded-md hover:bg-prim  transition-all">
+            <button className="flex justify-center items-center px-6 py-3 font-semibold bg-sub text-white rounded-md hover:bg-prim  transition-all"
+                onClick={() => { document.querySelector("#contato")?.scrollIntoView({ block: 'start' }) }}>
                 Fale com um corretor
             </button>
 

@@ -29,7 +29,8 @@ function Menu({ open }: { open: boolean }) {
                 Contato
             </a>
 
-            <button className="flex justify-start items-center  font-bold menu_item text-white">
+            <button className="flex justify-start items-center  font-bold menu_item text-white"
+                onClick={() => { document.querySelector("#contato")?.scrollIntoView({ block: 'start' }) }}>
                 Saiba mais
             </button>
 
