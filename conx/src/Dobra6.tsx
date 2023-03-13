@@ -11,7 +11,7 @@ function Dobra6(){
                 Plantas desenhadas para proporcionar a melhor perspectiva de viver.
             </h2>
 
-            <div className='flex flex-row'>
+            <div className='flex flex-col gap-8 tablet:gap-0 tablet:flex-row'>
                 <div className="flex flex-col gap-4 justify-center items-center">
                     <h3 className="uppercase font-bold text-sub text-2xl text-center">
                         STUDIO | 31 m²
