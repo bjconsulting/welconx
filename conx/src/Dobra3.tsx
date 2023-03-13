@@ -9,7 +9,7 @@ function Dobra3(){
 
             </div> */}
 
-            <img src={img} alt="" className='h-auto w-auto max-w-[85%] tablet:max-w-[100vw] mx-auto'/>
+            <img src={img} alt="" className='h-auto w-auto max-w-[85%] tablet:max-w-[100vw] mx-auto' id='lazer' />
         </>
     )
 }

@@ -24,7 +24,7 @@ function Menu2() {
                 Planta
             </a>
 
-            <a href="contato" className='menu_item'>
+            <a href="#contato" className='menu_item'>
                 Contato
             </a>
 

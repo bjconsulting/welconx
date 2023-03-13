@@ -87,7 +87,8 @@ function Dobra5() {
 
                 </div>
 
-                <button className='button_d5 rounded-md flex flex-row justify-center items-center px-5 py-6 max-w-[320px] bg-[#465361] text-sub font-bold uppercase mx-auto hover:bg-slate-800'>
+                <button className='button_d5 rounded-md flex flex-row justify-center items-center px-5 py-6 max-w-[320px] bg-[#465361] text-sub font-bold uppercase mx-auto hover:bg-slate-800'
+                    onClick={() => { document.querySelector("#contato")?.scrollIntoView({ block: 'start' }) }}>
                     Fale com um consultor
                 </button>
 

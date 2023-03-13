@@ -4,7 +4,7 @@ import { HiMapPin } from 'react-icons/hi2'
 
 function Dobra1() {
     return(
-        <div className='bg-bg-1 bg-[length:auto_100%] laptop:bg-[length:100%_100%] max-w-screen  desktop:min-h-[90vh]'>
+        <div className='bg-bg-1 bg-[length:auto_100%] laptop:bg-[length:100%_100%] max-w-screen  desktop:min-h-[90vh]' id='home'>
             <div className='hero z-10  desktop:min-h-[90vh] relative max-w-screen'>
                 <Header/>
 

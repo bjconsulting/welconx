@@ -25,7 +25,7 @@ function Menu({ open }: { open: boolean }) {
                 Planta
             </a>
 
-            <a href="contato" className='menu_item'>
+            <a href="#contato" className='menu_item'>
                 Contato
             </a>
 
