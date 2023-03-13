@@ -3,7 +3,7 @@ function Menu2() {
 
     return (
 
-        <nav className='hidden laptop:flex  menu2 flex-row justify-around gap-4 laptop:flex-wrap items-center  text-left p-[2em] laptop:w-[80%] desktop:w-[70%] transition-all '>
+        <nav className='hidden laptop:flex  menu2 flex-row justify-around gap-4 laptop:flex-wrap items-center  text-left p-[2em] laptop:py-[2em] laptop:px-0 laptop:w-[80%] desktop:w-[70%] transition-all'>
             <a href="#home" className='menu_item'>
                 Home
             </a>

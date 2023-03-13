@@ -1,8 +1,5 @@
-import React, { useRef } from 'react'
 import Header from './Header';
 import { HiMapPin } from 'react-icons/hi2'
-
-
 
 function Dobra1() {
     return(
