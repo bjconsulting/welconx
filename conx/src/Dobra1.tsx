@@ -1,4 +1,3 @@
-import React from 'react'
 import Header from './Header';
 import { HiMapPin } from 'react-icons/hi2'
 
@@ -29,10 +28,9 @@ function Dobra1() {
                         Aptos. e Studios de 31 m² | lazer completo
                     </p>
 
-                    <button className='hero_b bg-sub text-white flex flex-row justify-center items-center gap-4 min-w-[217px] px-5 py-[10px] font-semibold rounded-md hover:bg-[#94725E]'
-                        onClick={() => { document.querySelector("#contato")?.scrollIntoView({block: 'start'}) }}>
+                    <a href="#form-contato" className='hero_b bg-sub text-white flex flex-row justify-center items-center gap-4 min-w-[217px] px-5 py-[10px] font-semibold rounded-md hover:bg-[#94725E]'>
                         Fale com um consultor
-                    </button>
+                    </a>
 
 
 

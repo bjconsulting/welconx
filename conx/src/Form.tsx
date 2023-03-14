@@ -8,15 +8,39 @@ interface Props {
 }
 
 export default function Form(props: Props) {
-  const submitForm = (event: React.FormEvent) => {
+  const submitForm = async (event: React.FormEvent) => {
     event.preventDefault()
     event.stopPropagation()
 
-    props.setSend(true)
+    const form = event.target as HTMLFormElement
+    const formData = new FormData(form)
+
+    try {
+      
+      const response = await fetch('email/form.php', {
+        method: 'POST',
+        body: formData
+      })
+
+      if (response.status !== 200) {
+        const data = await response.text()
+        console.log(data)
+        throw new Error(`Resposta inesperada! ${response.status}`);
+      }
+
+      props.setSend(true)
+
+    } catch (error) {
+
+      console.error(error)
+      alert("Error inesperado. Por favor, tente novamente mais tarde!")
+
+    }
+
   }
 
   return(
-    <form onSubmit={submitForm}>
+    <form id="form-contato" onSubmit={submitForm}>
         <div className='container-input relative flex flex-row '>
             <div className=' p-4 flex'>
                 <img src={user} alt="user" width='30px' />
@@ -34,7 +58,7 @@ export default function Form(props: Props) {
             <span className='pipe'>
                 |
             </span>
-            <select name='Contato' required className='mr-6 bg-white' defaultValue={''}>
+            <select name='contato' required className='mr-6 bg-white' defaultValue={''}>
                 <option value={''} disabled>Como gostaria de receber o contato?</option>
                 <option value="E-mail"> E-mail </option>
                 <option value="WhatsApp"> WhatsApp </option>
@@ -60,15 +84,15 @@ export default function Form(props: Props) {
             <span className='pipe'>
                 |
             </span>
-            <input type="tel" name='phone' placeholder='Digite seu telefone' required />
+            <input type="tel" name='celular' placeholder='Digite seu telefone' required />
         </div>
 
         <div className='container-input relative flex flex-row '>
             <textarea name='mensagem' placeholder='Mensagem' className='resize-none pt-4 pl-4 min-h-[100px]' />
         </div>
 
-        <label htmlFor="check" className='text-white font-normal relative text-[0.6em] flex justify-start items-center gap-2'>
-            <input type="checkbox" id='check' required />
+        <label htmlFor="aceito" className='text-white font-normal relative text-[0.6em] flex justify-start items-center gap-2'>
+            <input type="checkbox" id='aceito' name='aceito' required />
             <p> Concordo com a <a href='https://conx.com.br/politica-de-privacidade/' target='_blank' className="underline hover:text-sub" rel="noreferrer">Política de Privacidade.</a></p>
         </label>
 
