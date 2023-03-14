@@ -100,43 +100,6 @@ try {
     print_r($e);
 }
 
-try {
-    $nome_form = GetPostSafe("nome");
-    if($nome_form!=null){ $nome_Body = '<b>Nome:</b> '.$nome_form.'<br/>'; }
-    $email_form = GetPostSafe("email");
-    if($email_form!=null){ $email_Body = '<b>Email:</b> '.$email_form.'<br/>'; }
-    $celular = GetPostSafe("celular");
-    if($celular!=null){ $celular_Body = '<b>Celular:</b> '.$celular.'<br/>'; }
-    $contato = GetPostSafe("contato");
-    if($contato!=null){ $contato_Body = '<b>Como gostaria de receber o contato:</b> '.$contato.'<br/>'; }
-    $mensagem = GetPostSafe("mensagem");
-    if($mensagem!=null){ $mensagem_Body = '<b>Mensagem:</b> '.$mensagem.' - '.$contato_Body.'<br/>'; }
-
-    $email = 'leads@conx.com.br';
-    $to = $email;
-    $subject = GetPostSafe("nome_form") . ' - Pinheiros';
-
-    echo "Subject: $subject\n";
-
-    // prepare email body text
-    $Body = '<div style="position:relative;margin:1rem auto;width:90%;border-radius:.5rem;background:#f5f5f5;border:1px solid #bbb;overflow:hidden"><div style="width:100%;font-size:1.2em;padding:1rem;background:#2154b2;color:#fff;box-sizing:border-box;">Formulário: <u>Contato</u></div><div style="width:100%;font-size:1.4em;line-height:1.8em;padding:2rem;">
-    '.$nome_Body.'
-    '.$email_Body.'
-    '.$celular_Body.'
-    '.$mensagem_Body.'
-    '.$campanha.'
-    </div>';
-
-    $headers = array('Content-Type: text/html; charset=UTF-8',
-        // 'From: '.get_the_title().' <contato@wsidm.com.br>;',
-        'From: '.get_the_title().' <leads@conx.com.br>;',
-        'Reply-To: '.$nome.' <'.$email.'>'
-    );
-
-    wp_mail( $to, $subject, $Body, $headers );
-} catch(Exception $e) {
-    print_r($e);
-}
 
 function EnviaZapier($campanha, $params) {
     $url = "https://hooks.zapier.com/hooks/catch/8493391/3beuarb/";
@@ -168,7 +131,7 @@ function EnviaZapier($campanha, $params) {
     );                         
 
     $response = curl_exec($ch);
-
+    
     // verifica errors.
     if(curl_errno($ch)){    
         throw new Exception(curl_error($ch));
@@ -185,9 +148,9 @@ function EnviaLeadSigavi360($campanha, $cookie, $params){
     $url = "https://conx.sigavi360.com.br/Sigavi/api/V2/Leads/NovoLead";
     $username = 'Integracao';
     $password = 'RuryHhN4IiE9rfT';
-
+    
     $message = GetPostSafe("contato").'-'.GetPostSafe('utm_campaign', $params).'-'.GetPostSafe('utm_term', $params).'-'.GetPostSafe('utm_content', $params).'-'.GetPostSafe('mensagem');
-
+    
     $data = array(
         "nome" => GetPostSafe('nome'), 
         "telefone" => GetPostSafe('celular'), 
@@ -198,7 +161,7 @@ function EnviaLeadSigavi360($campanha, $cookie, $params){
     );
 
     print_r($data); echo "\n";
-
+    
     $data_string = json_encode($data);     
     
     $ch = curl_init($url);  
@@ -221,7 +184,7 @@ function EnviaLeadSigavi360($campanha, $cookie, $params){
     // verifica retorno da API do Sigavi 360
     $response = EscapeJsonString($response);
     $response = json_decode($response,true);
-
+    
     if($response['Sucesso'] == 1)
     {
         echo 'Sucesso, IdSigavi:' . $response['Id'] . '\n';
@@ -236,5 +199,45 @@ function EscapeJsonString($value) {
     $replacements = array("\\/");
     $result = str_replace($escapers, $replacements, $value);
     return $result;
+}
+
+try {
+    $nome_form = GetPostSafe("nome");
+    if($nome_form!=null){ $nome_Body = '<b>Nome:</b> '.$nome_form.'<br/>'; }
+    $email_form = GetPostSafe("email");
+    if($email_form!=null){ $email_Body = '<b>Email:</b> '.$email_form.'<br/>'; }
+    $celular = GetPostSafe("celular");
+    if($celular!=null){ $celular_Body = '<b>Celular:</b> '.$celular.'<br/>'; }
+    $contato = GetPostSafe("contato");
+    if($contato!=null){ $contato_Body = '<b>Como gostaria de receber o contato:</b> '.$contato.'<br/>'; }
+    $mensagem = GetPostSafe("mensagem");
+    if($mensagem!=null){ $mensagem_Body = '<b>Mensagem:</b> '.$mensagem.' - '.$contato_Body.'<br/>'; }
+
+    $email = 'leads@conx.com.br';
+    $to = $email;
+    $subject = GetPostSafe("nome_form") . ' - Pinheiros';
+
+    echo "Subject: $subject\n";
+
+    // prepare email body text
+    $Body = '<div style="position:relative;margin:1rem auto;width:90%;border-radius:.5rem;background:#f5f5f5;border:1px solid #bbb;overflow:hidden"><div style="width:100%;font-size:1.2em;padding:1rem;background:#2154b2;color:#fff;box-sizing:border-box;">Formulário: <u>Contato</u></div><div style="width:100%;font-size:1.4em;line-height:1.8em;padding:2rem;">
+    '.$nome_Body.'
+    '.$email_Body.'
+    '.$celular_Body.'
+    '.$mensagem_Body.'
+    '.$campanha.'
+    </div>';
+
+    $headers = array('Content-Type: text/html; charset=UTF-8',
+        // 'From: '.get_the_title().' <contato@wsidm.com.br>;',
+        'From: leads@conx.com.br',
+        'Reply-To: '.$nome.' <'.$email.'>'
+    );
+
+    mail($to, $subject, $Body, implode("\r\n", $headers));
+    //wp_mail( $to, $subject, $Body, $headers );
+
+} catch(Exception $e) {
+    print_r($e);
 }
 ?>
