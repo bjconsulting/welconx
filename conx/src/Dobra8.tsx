@@ -21,7 +21,7 @@ function Dobra8(){
 
                 <div className='right basis-[45%] mt-12 laptop:mt-0 w-full'>
                     {
-                        isSent
+                        !isSent
                         ? <ThankYou />
                         : <Form setSend={setSend} />
                     }

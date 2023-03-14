@@ -17,7 +17,7 @@ function Dobra2() {
                     </h2>
                     <p className='text-[1em] font-normal leading-[1.6em]'>
                         Seja qual for o seu estilo, ele é parte de um novo jeito de viver.<br />
-                        Um bairro como Pinheiros, que abrange a pluralidade de etnias, gostos e costumes, só poderia oferecer o melhor das grandes cidades, como alta gastronomia, mobilidade, informação, cultura e experiências.
+                        Um bairro como Pinheiros, que abrange a pluralidade de etnias, gostos e costumes, só poderia oferecer o melhor das grandes cidades. Alta gastronomia, mobilidade, informação, cultura e experiências.
                     </p>
                 </div>
 

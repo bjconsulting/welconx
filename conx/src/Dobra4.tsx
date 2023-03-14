@@ -223,17 +223,17 @@ function Dobra4() {
                         <picture>
                             {/* <source srcSet={galt_2_a} data-srcm={galm_1_a} data-src={gal_2_a} type='image/avif'/>
                             <source srcSet={galt_2_w} data-srcm={galm_1_w} data-src={gal_2_w} type='image/webp'/>
-                            <img src={galt_2_j} data-srcm={galm_2_j} data-src={gal_2_j} alt="PERSPECTIVA ILUSTRADA DO ESPAÇO GOURMET" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} /> */}
-                            <img src={gal_2_j} data-srcm={gal_2_j} data-src={gal_2_j} alt="PERSPECTIVA ILUSTRADA DO ESPAÇO GOURMET" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} />
+                            <img src={galt_2_j} data-srcm={galm_2_j} data-src={gal_2_j} alt="PERSPECTIVA ILUSTRADA DO SALÃO DE FESTAS" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} /> */}
+                            <img src={gal_2_j} data-srcm={gal_2_j} data-src={gal_2_j} alt="PERSPECTIVA ILUSTRADA DO SALÃO DE FESTAS" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} />
                         </picture>
-                        {/* <img src={gal_2} alt="PERSPECTIVA ILUSTRADA DO ESPAÇO GOURMET" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} /> */}
+                        {/* <img src={gal_2} alt="PERSPECTIVA ILUSTRADA DO SALÃO DE FESTAS" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} /> */}
 
                         <p className='uppercase absolute right-3 bottom-3 text-[.3em] font-semibold text-white'>
-                            PERSPECTIVA ILUSTRADA DO ESPAÇO GOURMET
+                            PERSPECTIVA ILUSTRADA DO SALÃO DE FESTAS
                         </p>
                     </div>
                     <p className='font-semibold text-[1.2em] text-center'>
-                        Espaço gourmet
+                        Salão de festas
                     </p>
                 </div>
 
@@ -242,17 +242,17 @@ function Dobra4() {
                         <picture>
                             {/* <source srcSet={galt_3_a} data-srcm={galm_3_a} data-src={gal_3_a} type='image/avif'/>
                             <source srcSet={galt_3_w} data-srcm={galm_3_w} data-src={gal_3_w} type='image/webp'/>
-                            <img src={galt_3_j} data-srcm={galm_3_j} data-src={gal_3_j} alt="PERSPECTIVA ILUSTRADA DO SALÃO DE FESTAS" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} /> */}
-                            <img src={gal_3_j} data-srcm={gal_3_j} data-src={gal_3_j} alt="PERSPECTIVA ILUSTRADA DO SALÃO DE FESTAS" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} />
+                            <img src={galt_3_j} data-srcm={galm_3_j} data-src={gal_3_j} alt="PERSPECTIVA ILUSTRADA DO ESPAÇO GOURMET" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} /> */}
+                            <img src={gal_3_j} data-srcm={gal_3_j} data-src={gal_3_j} alt="PERSPECTIVA ILUSTRADA DO ESPAÇO GOURMET" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} />
                         </picture>
-                        {/* <img src={gal_3} alt="PERSPECTIVA ILUSTRADA DO SALÃO DE FESTAS" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} /> */}
+                        {/* <img src={gal_3} alt="PERSPECTIVA ILUSTRADA DO ESPAÇO GOURMET" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} /> */}
 
                         <p className='uppercase absolute right-3 bottom-3 text-[.3em] font-semibold text-white'>
-                            PERSPECTIVA ILUSTRADA DO SALÃO DE FESTAS
+                            PERSPECTIVA ILUSTRADA DO ESPAÇO GOURMET
                         </p>
                     </div>
                     <p className='font-semibold text-[1.2em] text-center'>
-                        Salão de festas
+                        Espaço gourmet
                     </p>
                 </div>
 

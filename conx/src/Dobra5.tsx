@@ -57,7 +57,7 @@ function Dobra5() {
 
                             <div className='flex flex-col gap-2'>
                                 <h3 className=' text-[#111827] text-center tablet:text-left font-semibold'>Mini market</h3>
-                                <p className=' text-[#6D7280] text-center tablet:text-left'>Produtos que não podem faltar, disponíveis  para você 24 horas por dia, 7 dias por semana.
+                                <p className=' text-[#6D7280] text-center tablet:text-left'>Produtos que não podem faltar, disponíveis para você 24 horas por dia, 7 dias por semana.
                                 </p>
                             </div>
                         </div>
@@ -80,7 +80,7 @@ function Dobra5() {
 
                             <div className='flex flex-col gap-2'>
                                 <h3 className=' text-[#111827] text-center tablet:text-left font-semibold'>Bike elétrica compartilhada</h3>
-                                <p className=' text-[#6D7280] text-center tablet:text-left'>Praticidade que favorece sua saúde, otimiza sua locomoção e a preservação do meio ambiente..</p>
+                                <p className=' text-[#6D7280] text-center tablet:text-left'>Praticidade que favorece sua saúde, otimiza sua locomoção e a preservação do meio ambiente.</p>
                             </div>
                         </div>
                     </div>

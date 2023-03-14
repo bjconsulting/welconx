@@ -14,7 +14,10 @@ function Dobra7(){
             </div>
 
             <div className=" basis-[45%] h-full">
-                <img src={fachada} alt="Fachada Eugênio"  className='max-w-[300px] laptop:max-w-[450px] laptop:absolute bottom-0 right-[10%] rounded-tl-lg rounded-tr-lg' loading='lazy'/>
+                <div className='max-w-[300px] laptop:max-w-[450px] laptop:absolute bottom-0 right-[10%]'>
+                    <img src={fachada} alt="Fachada Eugênio" loading='lazy' className='rounded-tl-lg rounded-tr-lg'/>
+                    <p className="absolute right-4 bottom-4 uppercase text-[.4em] text-white">PERSPECTIVA ILUSTRADA DA FACHADA</p>
+                </div>
             </div>
         </div>
     )

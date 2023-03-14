@@ -2,8 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+
+@font-face {
+  font-family: "SF-Pro-Display-Bold";
+  src: local("SF Pro Display"),
+    url("../public/fonts/SF-Pro-Display-Bold.otf");
+  font-display: swap;
+}
 
 * {
   padding:0;
