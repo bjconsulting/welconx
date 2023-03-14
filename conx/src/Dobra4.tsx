@@ -385,7 +385,7 @@ function Dobra4() {
                         {/* <source srcSet='' type='image/avif'/>
                         <source srcSet='' type='image/webp'/> */}
                         {/* <img ref={popImgRef} src='' alt='' className='object-cover rounded-lg w-full'/> */}
-                        <img ref={popImgRef} src='' alt='' className='object-cover rounded-lg max-w-[90%] max-h-[80%] mx-auto'/>
+                        <img ref={popImgRef} src='' alt='' className='object-cover rounded-lg max-w-[90%] max-h-[80%] mx-auto mt-20'/>
                     </picture>
                     {/* <img ref={popImgRef} alt="Galeria" className='absolute top-1/2 left-1/2 laptop:translate-x-[-80%] -translate-x-1/2 -translate-y-1/2 object-cover rounded-lg max-w-[300px] laptop:max-w-[50%]' /> */}
                     {/* <div ref={zoom} className="zoom z-50 invisible overflow-hidden relative object-cover rounded-lg shrink-0">
