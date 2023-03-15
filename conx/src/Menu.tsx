@@ -4,7 +4,7 @@ function Menu({ open }: { open: boolean }) {
 
     return (
 
-        <nav className='menu1 flex flex-col justify-center bg-prim h-[100vh] text-left p-[2em] absolute -top-8 -right-8 z-10 nav transition-all tablet:w-1/3'>
+        <nav className='menu1 flex flex-col justify-center bg-[rgba(253,_232,_220,_1)] h-[100svh] w-[100svw] text-left p-[2em] absolute -top-8 -right-8 z-10 nav transition-all  tablet:right-[-9%]'>
             <a href="#home" className='menu_item'>
                 Home
             </a>
@@ -31,7 +31,7 @@ function Menu({ open }: { open: boolean }) {
 
             <button className="flex justify-start items-center  font-bold menu_item text-white" aria-label="Clique para ir até o formulário"
                 onClick={() => { document.querySelector("#contato")?.scrollIntoView({ block: 'start' }) }}>
-                Saiba mais
+                Fale com um corretor
             </button>
 
         </nav>

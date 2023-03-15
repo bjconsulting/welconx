@@ -170,18 +170,18 @@ function Dobra4() {
 
     return (
         <div className='relative min-w-screen bg-[#F9FAFB] flex flex-col justify-center items-center' id='diferenciais'>
-            <div className='py-20 max-w-[60%] text-center mx-auto'>
-                <h2 className='font-bold mb-8 text-[#37414D] text-[1.8em] laptop:text-[2.6em]'>
+            <div className='py-20 max-w-[80%] laptop:max-w-[60%] text-center mx-auto'>
+                <h2 className='font-bold mb-8 text-[#37414D] text-[1.8em] laptop:text-[2.6em] leading-[50px]'>
                     A experiência de morar muito além dos metros quadrados.
                 </h2>
-                <p className='text-[#37414D] text-[1.2em]'>
+                <p className='text-[#37414D] text-[1.4em] leading-[37px]'>
                     Espaços completos para você relaxar, se reunir com a família, amigos e viver o melhor da vida com muito mais qualidade e praticidade.
                 </p>
             </div>
 
-            <div className='image-container flex flex-col laptop:flex-row tablet:flex-wrap items-center justify-center mx-auto  laptop:max-w-[80%] py-16 gap-8'>
+            <div className='image-container flex flex-col laptop:flex-row tablet:flex-wrap items-center justify-center mx-auto  laptop:max-w-[80%] py-16 gap-12'>
 
-                <div className='flex flex-col justify-center items-center gap-2 tablet:basis-[30%]'>
+                <div className='flex flex-col justify-center items-center gap-8 laptop:gap-6 tablet:basis-[30%]'>
                     <div className='image relative overflow-hidden'>
                         <picture>
                             <source srcSet={NextImgSrc("img/gal_1.avif")} data-src={NextImgSrc("img/gal_1.avif")} type='image/avif'/>
@@ -200,7 +200,7 @@ function Dobra4() {
                     </p>
                 </div>
 
-                <div className='flex flex-col justify-center items-center gap-2 tablet:basis-[30%]'>
+                <div className='flex flex-col justify-center items-center gap-8 laptop:gap-6 tablet:basis-[30%]'>
                     <div className='image relative overflow-hidden'>
                         <picture>
                             <source srcSet={NextImgSrc("img/gal_2.avif")} data-src={NextImgSrc("img/gal_2.avif")} type='image/avif'/>
@@ -221,7 +221,7 @@ function Dobra4() {
                     </p>
                 </div>
 
-                <div className='flex flex-col justify-center items-center gap-2 tablet:basis-[30%]'>
+                <div className='flex flex-col justify-center items-center gap-8 laptop:gap-6 tablet:basis-[30%]'>
                     <div className='image relative overflow-hidden'>
                         <picture>
                             <source srcSet={NextImgSrc("img/gal_3.avif")} data-src={NextImgSrc("img/gal_3.avif")} type='image/avif'/>
@@ -243,7 +243,7 @@ function Dobra4() {
                 </div>
 
 
-                <div className='flex flex-col justify-center items-center gap-2 tablet:basis-[30%]'>
+                <div className='flex flex-col justify-center items-center gap-8 laptop:gap-6 tablet:basis-[30%]'>
                     <div className='image relative overflow-hidden'>
                         <picture>
                             <source srcSet={NextImgSrc("img/gal_4.avif")} data-src={NextImgSrc("img/gal_4.avif")} type='image/avif'/>
@@ -264,7 +264,7 @@ function Dobra4() {
                     </p>
                 </div>
 
-                <div className='flex flex-col justify-center items-center gap-2 tablet:basis-[30%]'>
+                <div className='flex flex-col justify-center items-center gap-8 laptop:gap-6 tablet:basis-[30%]'>
                     <div className='image relative overflow-hidden'>
                         <picture>
                             <source srcSet={NextImgSrc("img/gal_5.avif")} data-src={NextImgSrc("img/gal_5.avif")} type='image/avif'/>
@@ -286,7 +286,7 @@ function Dobra4() {
                 </div>
 
 
-                <div className='flex flex-col justify-center items-center gap-2 tablet:basis-[30%]'>
+                <div className='flex flex-col justify-center items-center gap-8 laptop:gap-6 tablet:basis-[30%]'>
                     <div className='image relative overflow-hidden'>
                         <picture>
                             <source srcSet={NextImgSrc("img/gal_6.avif")} data-src={NextImgSrc("img/gal_6.avif")} type='image/avif'/>
@@ -308,7 +308,7 @@ function Dobra4() {
                 </div>
 
 
-                <div className='flex flex-col justify-center items-center gap-2 tablet:basis-[30%]'>
+                <div className='flex flex-col justify-center items-center gap-8 laptop:gap-6 tablet:basis-[30%]'>
                     <div className='image relative overflow-hidden'>
                         <picture>
                             <source srcSet={NextImgSrc("img/gal_7.avif")} data-src={NextImgSrc("img/gal_7.avif")} type='image/avif'/>
@@ -330,7 +330,7 @@ function Dobra4() {
                 </div>
 
 
-                <div className='flex flex-col justify-center items-center gap-2 tablet:basis-[30%]'>
+                <div className='flex flex-col justify-center items-center gap-8 laptop:gap-6 tablet:basis-[30%]'>
                     <div className='image relative overflow-hidden'>
                         <picture>
                             <source srcSet={NextImgSrc("img/gal_8.avif")} data-src={NextImgSrc("img/gal_8.avif")} type='image/avif'/>
@@ -352,7 +352,7 @@ function Dobra4() {
                 </div>
 
 
-                <div className='flex flex-col justify-center items-center gap-2 tablet:basis-[30%]'>
+                <div className='flex flex-col justify-center items-center gap-8 laptop:gap-6 tablet:basis-[30%]'>
                     <div className='image relative overflow-hidden'>
                         <picture>
                             <source srcSet={NextImgSrc("img/gal_9.avif")} data-src={NextImgSrc("img/gal_9.avif")} type='image/avif'/>

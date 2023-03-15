@@ -15,16 +15,16 @@ function Dobra2() {
                         Você na sua melhor versão.<br />
                         Você no lugar certo.
                     </h2>
-                    <p className='text-[1em] font-normal leading-[1.6em] desktop:max-w-[90%]'>
+                    <p className='text-[1em] font-normal leading-[1.6em] max-w-[90%]'>
                         Seja qual for o seu estilo, ele é parte de um novo jeito de viver.<br />
                         Um bairro como Pinheiros, que abrange a pluralidade de etnias, gostos e costumes, só poderia oferecer o melhor das grandes cidades. Alta gastronomia, mobilidade, informação, cultura e experiências.
                     </p>
                 </div>
 
-                <div className='flex flex-col basis-[45%] items-center gap-2 justify-center'>
+                <div className='flex flex-col basis-[45%] items-start gap-1 justify-start'>
 
-                    <div className='f-row flex flex-col tablet:flex-row items-end gap-2'>
-                        <div className='relative'>
+                    <div className='f-row flex tablet:flex-row items-end justify-start gap-2'>
+                        <div className='relative basis-[110%] tablet:basis-[60%] desktop:basis-[75%] desktop-big:basis-[60%] flex flex-end'>
                             <picture>
                                 <source srcSet={NextImgSrc("img/img1.avif")} type='image/avif'/>
                                 <source srcSet={NextImgSrc("img/img1.webp")} type='image/webp'/>
@@ -32,22 +32,22 @@ function Dobra2() {
                             </picture>
                             <p className='absolute bottom-3 right-3 text-[.4em] font-medium text-white uppercase'>Shopping Iguatemi</p>
                         </div>
-                        <div className='relative flex flex-row justify-start'>
+                        <div className='relative flex flex-row justify-start tablet:basis-[max-content]'>
                             <picture>
                                 <source srcSet={NextImgSrc("img/img2.avif")} type='image/avif'/>
                                 <source srcSet={NextImgSrc("img/img2.webp")} type='image/webp'/>
-                                <img src={NextImgSrc("img/img2.png")} alt="Mercado Municipal" width='295' height='197' loading='lazy' className='w-auto laptop:max-w-[90%] place-self-start' />
+                                <img src={NextImgSrc("img/img2.png")} alt="Mercado Municipal" width='295' height='197' loading='lazy' className='w-auto place-self-start max-w-[100%]' />
                             </picture>
                             <p className='absolute bottom-3 right-8 text-[.4em] font-medium text-white uppercase'>Mercado Municipal</p>
                         </div>
                     </div>
 
-                    <div className='s-row flex flex-col tablet:flex-row items-start gap-2'>
-                        <div className='relative flex flex-row items-start justify-end'>
+                    <div className='s-row flex tablet:flex-row items-start gap-2'>
+                        <div className='relative flex flex-row items-start justify-start tablet:basis-[max-content]'>
                             <picture>
                                 <source srcSet={NextImgSrc("img/img3.avif")} type='image/avif'/>
                                 <source srcSet={NextImgSrc("img/img3.webp")} type='image/webp'/>
-                                <img src={NextImgSrc("img/img3.png")} alt="Shopping Vila-lobos" width='295' height='197' loading='lazy' className='w-auto laptop:max-w-[90%]' />
+                                <img src={NextImgSrc("img/img3.png")} alt="Shopping Vila-lobos" width='295' height='197' loading='lazy' className='w-auto' />
                             </picture>
                             <p className='absolute bottom-3 right-3 text-[.4em] font-medium text-white uppercase'>Shopping Villa-Lobos</p>
                         </div>

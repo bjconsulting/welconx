@@ -48,11 +48,11 @@ function Dobra5() {
     return (
         <div className='bg-[rgba(243,_232,_225,_.64)] w-screen'>
             <div className='m-r flex flex-col mx-auto py-[2em] gap-12'>
-                <h2 className='text-[#243548] text-[1.4em] laptop:text-[2.4em] text-center font-bold max-w-[800px] mx-auto mb-9'>
+                <h2 className='text-[#243548] text-[1.8em] leading-[50px] laptop:text-[2.4em] text-center font-bold max-w-[800px] mx-auto mb-9'>
                     Seja para morar ou investir, diferenciais que surpreendem.
                 </h2>
 
-                <div className='flex flex-col laptop:flex-row gap-20 mx-auto justify-center'>
+                <div className='flex flex-col-reverse laptop:flex-row gap-20 mx-auto justify-center'>
                     <div className='left-container relative h-auto'>
                         <div className='relative'>
                             <div ref={panel} className='relative image-container hide-scroll overflow-x-scroll scroll-smooth snap-x snap-mandatory snap-always w-[700px] max-w-[326px] tablet:max-w-[680px] laptop:max-w-[300px] desktop:max-w-[500px] desktop-big:max-w-[700px]'>
@@ -105,48 +105,48 @@ function Dobra5() {
                     </div>
 
                     <div className="basis-[55%] flex flex-col gap-6">
-                        <div className="flex flex-col tablet:flex-row tablet:justify-start items-center gap-4 border-e">
-                            <div className='p-6 rounded-full bg-prim'>
-                                <GiWashingMachine className='w-8 h-8 fill-sub' />
+                        <div className="flex flex-row justify-start items-center gap-6 border-e">
+                            <div className='p-4 tablet:p-6 rounded-full bg-prim'>
+                                <GiWashingMachine className='w-8 h-8 fill-sub'/>
                             </div>
 
                             <div className='flex flex-col gap-2'>
-                                <h3 className=' text-[#111827] text-center tablet:text-left font-semibold'>Lavanderia compartilhada</h3>
-                                <p className=' text-[#6D7280] text-center tablet:text-left'>Completa e equipada com tecnologia de ponta para facilitar ainda mais a sua rotina.</p>
+                                <h3 className=' text-[#111827] text-left font-semibold leading-[30px]'>Lavanderia compartilhada</h3>
+                                <p className=' text-[#6D7280] text-left leading-[25px]'>Completa e equipada com tecnologia de ponta para facilitar ainda mais a sua rotina.</p>
                             </div>
                         </div>
 
-                        <div className="flex flex-col tablet:flex-row justify-start items-center gap-4 border-e">
-                            <div className='p-6 rounded-full bg-prim'>
+                        <div className="flex flex-row justify-start items-center gap-6 border-e">
+                            <div className='p-4 tablet:p-6 rounded-full bg-prim'>
                                 <RiStoreLine className='w-8 h-8 fill-sub' />
                             </div>
 
                             <div className='flex flex-col gap-2'>
-                                <h3 className=' text-[#111827] text-center tablet:text-left font-semibold'>Mini market</h3>
-                                <p className=' text-[#6D7280] text-center tablet:text-left'>Produtos que não podem faltar, disponíveis para você 24 horas por dia, 7 dias por semana.
+                                <h3 className=' text-[#111827] text-left font-semibold leading-[30px]'>Mini market</h3>
+                                <p className=' text-[#6D7280] text-left leading-[25px]'>Produtos que não podem faltar, disponíveis para você 24 horas por dia, 7 dias por semana.
                                 </p>
                             </div>
                         </div>
 
-                        <div className="flex flex-col tablet:flex-row justify-start items-center gap-4 border-e">
-                            <div className='p-6 rounded-full bg-prim'>
+                        <div className="flex flex-row justify-start items-center gap-6 border-e">
+                            <div className='p-4 tablet:p-6 rounded-full bg-prim'>
                                 <FiPackage className='w-8 h-8  stroke-sub' />
                             </div>
 
                             <div className='flex flex-col gap-2 '>
-                                <h3 className=' text-[#111827] text-center tablet:text-left font-semibold'>Espaço delivery</h3>
-                                <p className=' text-[#6D7280] text-center tablet:text-left'>Mais facilidade e segurança para receber suas encomendas.</p>
+                                <h3 className=' text-[#111827] text-left font-semibold leading-[30px]'>Espaço delivery</h3>
+                                <p className=' text-[#6D7280] text-left leading-[25px]'>Mais facilidade e segurança para receber suas encomendas.</p>
                             </div>
                         </div>
 
-                        <div className="flex flex-col tablet:flex-row justify-start items-center gap-4">
-                            <div className='p-6 rounded-full bg-prim'>
+                        <div className="flex flex-row justify-start items-center gap-4">
+                            <div className='p-4 tablet:p-6 rounded-full bg-prim'>
                                 <BsBicycle className='w-8 h-8 fill-sub' />
                             </div>
 
                             <div className='flex flex-col gap-2'>
-                                <h3 className=' text-[#111827] text-center tablet:text-left font-semibold'>Bike elétrica compartilhada</h3>
-                                <p className=' text-[#6D7280] text-center tablet:text-left'>Praticidade que favorece sua saúde, otimiza sua locomoção e a preservação do meio ambiente.</p>
+                                <h3 className=' text-[#111827] text-left font-semibold leading-[30px]'>Bike elétrica compartilhada</h3>
+                                <p className=' text-[#6D7280] text-left leading-[25px]'>Praticidade que favorece sua saúde, otimiza sua locomoção e a preservação do meio ambiente.</p>
                             </div>
                         </div>
                     </div>

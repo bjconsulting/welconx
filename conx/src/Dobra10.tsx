@@ -2,7 +2,7 @@ import NextImgSrc from "./NextImgSrc";
 
 export default function Dobra10() {
   return(
-    <div className='w-full flex flex-col tablet:flex-row items-start text-center justify-evenly gap-8 pt-20 pb-20 font-semibold text-base'>
+    <div className='w-full flex flex-col tablet:flex-row items-start text-center justify-evenly gap-32 laptop:gap-12 pt-20 pb-20 font-semibold text-base'>
       <div className='flex flex-col gap-8 mx-auto'>
         <div className='uppercase'>Intermediação:</div>
         <div className='flex flex-row gap-9 justify-center items-center'>
