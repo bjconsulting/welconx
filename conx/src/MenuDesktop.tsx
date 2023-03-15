@@ -1,5 +1,5 @@
 
-function Menu2() {
+function MenuDesktop() {
 
     return (
 
@@ -36,4 +36,4 @@ function Menu2() {
     )
 }
 
-export default Menu2;
+export default MenuDesktop;

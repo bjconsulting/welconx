@@ -1,5 +1,5 @@
 
-function Menu({ open }: { open: boolean }) {
+function MenuMobile({ open }: { open: boolean }) {
     if (!open) return null;
 
     return (
@@ -38,4 +38,4 @@ function Menu({ open }: { open: boolean }) {
     )
 }
 
-export default Menu;
+export default MenuMobile;
