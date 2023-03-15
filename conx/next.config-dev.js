@@ -1,5 +1,5 @@
 module.exports = {
-  basePath: '/welconxpinheiros-teste',
+  //basePath: '/welconxpinheiros-teste',
   images: {
     unoptimized: true
   }

@@ -93,7 +93,7 @@ export default function Form(props: Props) {
             <p> Concordo com a <a href='https://conx.com.br/politica-de-privacidade/' target='_blank' className="underline hover:text-sub" rel="noreferrer">Política de Privacidade.</a></p>
         </label>
 
-        <button className="bg-[#D0A388] items-center px-[71.55px] mx-auto laptop:mx-0 py-[15.4px] rounded-2xl uppercase text-white font-bold text-[13.81px] mt-3 hover:bg-[#94725E]">
+        <button className="bg-[#D0A388] items-center px-[71.55px] mx-auto laptop:mx-0 py-[15.4px] rounded-2xl uppercase text-white font-bold text-[13.81px] mt-3 hover:bg-[#94725E]" aria-label='Enviar dados do formulário'>
             <p>enviar</p>
         </button>
 

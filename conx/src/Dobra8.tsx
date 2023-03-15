@@ -8,7 +8,8 @@ function Dobra8(){
 
     return(
         <div className=" my-8" id='contato'>
-            <div className="flex flex-col laptop:flex-row justify-center items-start bg-prim p-4 laptop:p-12 laptop:mx-12 desktop-big:mx-32 rounded-none laptop:rounded-3xl form-bg laptop:gap-16">
+            {/* background-image: url('/img/Ellipse 4.svg'), url('/img/Ellipse 5.svg'); */}
+            <div className="flex flex-col laptop:flex-row justify-center items-start bg-prim p-4 laptop:p-12 laptop:mx-12 desktop-big:mx-32 rounded-none laptop:rounded-3xl form-bg laptop:gap-16" style={{backgroundImage: "url('img/Ellipse 4.svg'), url('img/Ellipse 5.svg')"}}>
                 <div className="left flex flex-col justify-start items-start gap-12 basis-[45%] mt-[2em]">
                     <h4 className="font-bold text-[1.6em] laptop:text-[1.6em] text-center laptop:text-left text-[#FEFEFE]">
                         Vamos conversar e esclarecer todas as suas dúvidas sobre o seu futuro lar.
