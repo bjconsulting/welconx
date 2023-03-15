@@ -40,7 +40,7 @@ export default function Form(props: Props) {
     <form onSubmit={submitForm}>
         <div className='container-input relative flex flex-row '>
             <div className=' p-4 flex'>
-                <img src={NextImgSrc("img/User.svg")} alt="user" width='30px' />
+                <img src={NextImgSrc("img/User.svg")} alt="Usuário" width='30' height='30' loading='lazy' />
             </div>
             <span className='pipe'>
                 |
@@ -50,7 +50,7 @@ export default function Form(props: Props) {
 
         <div className='container-input relative flex flex-row '>
             <div className='p-4 flex'>
-                <img src={NextImgSrc("img/ChatsCircle.svg")} alt="Como voce gostaria de receber o contato?" width='30px' />
+                <img src={NextImgSrc("img/ChatsCircle.svg")} alt="Como voce gostaria de receber o contato?" width='30' height='30' loading='lazy' />
             </div>
             <span className='pipe'>
                 |
@@ -66,7 +66,7 @@ export default function Form(props: Props) {
 
         <div className='container-input relative flex flex-row '>
             <div className=' p-4 flex'>
-                <img src={NextImgSrc("img/Envelope.svg")} alt="E-mail" width='30px' />
+                <img src={NextImgSrc("img/Envelope.svg")} alt="E-mail" width='30' height='30' loading='lazy' />
             </div>
             <span className='pipe'>
                 |
@@ -76,7 +76,7 @@ export default function Form(props: Props) {
 
         <div className='container-input relative flex flex-row '>
             <div className=' p-4 flex'>
-                <img src={NextImgSrc("img/Phone.svg")} alt="Contato" width='30px' />
+                <img src={NextImgSrc("img/Phone.svg")} alt="Contato" width='30' height='30' loading='lazy' />
             </div>
             <span className='pipe'>
                 |

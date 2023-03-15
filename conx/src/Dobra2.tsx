@@ -1,7 +1,11 @@
-import React from 'react'
-import NextImgSrc from './NextImgSrc';
+import React, { useEffect } from 'react'
+import CheckImgSupport from './CheckImgSupport'
+import NextImgSrc from './NextImgSrc'
 
 function Dobra2() {
+    
+    useEffect(() => CheckImgSupport('.bg-bg-2', 'bg-2.webp', 'bg-2.avif', 'bg-2.jpg') )
+
     return (
         <div className=' bg-bg-2 bg-cover'>
 
@@ -21,22 +25,38 @@ function Dobra2() {
 
                     <div className='f-row flex flex-col tablet:flex-row items-end gap-2'>
                         <div className='relative'>
-                            <img src={NextImgSrc("img/img1.png")} alt="Shopping Iguatemi" width='auto' />
+                            <picture>
+                                <source srcSet={NextImgSrc("img/img1.avif")} type='image/avif'/>
+                                <source srcSet={NextImgSrc("img/img1.webp")} type='image/webp'/>
+                                <img src={NextImgSrc("img/img1.png")} alt="Shopping Iguatemi" width='328' height='219' loading='lazy' />
+                            </picture>
                             <p className='absolute bottom-3 right-3 text-[.4em] font-medium text-white uppercase'>Shopping Iguatemi</p>
                         </div>
                         <div className='relative flex flex-row justify-start'>
-                            <img src={NextImgSrc("img/img2.png")} alt="Mercado Municipal" width='auto' className='w-auto laptop:max-w-[90%] place-self-start' />
+                            <picture>
+                                <source srcSet={NextImgSrc("img/img2.avif")} type='image/avif'/>
+                                <source srcSet={NextImgSrc("img/img2.webp")} type='image/webp'/>
+                                <img src={NextImgSrc("img/img2.png")} alt="Mercado Municipal" width='295' height='197' loading='lazy' className='w-auto laptop:max-w-[90%] place-self-start' />
+                            </picture>
                             <p className='absolute bottom-3 right-8 text-[.4em] font-medium text-white uppercase'>Mercado Municipal</p>
                         </div>
                     </div>
 
                     <div className='s-row flex flex-col tablet:flex-row items-start gap-2'>
                         <div className='relative flex flex-row items-start justify-end'>
-                            <img src={NextImgSrc("img/img3.png")} alt="Shopping Vila-lobos" width='auto' className='w-auto laptop:max-w-[90%]' />
+                            <picture>
+                                <source srcSet={NextImgSrc("img/img3.avif")} type='image/avif'/>
+                                <source srcSet={NextImgSrc("img/img3.webp")} type='image/webp'/>
+                                <img src={NextImgSrc("img/img3.png")} alt="Shopping Vila-lobos" width='295' height='197' loading='lazy' className='w-auto laptop:max-w-[90%]' />
+                            </picture>
                             <p className='absolute bottom-3 right-3 text-[.4em] font-medium text-white uppercase'>Shopping Villa-Lobos</p>
                         </div>
                         <div className='relative'>
-                            <img src={NextImgSrc("img/img4.png")} alt="Restaurante Brasserie Le Jazz" width='auto' />
+                            <picture>
+                                <source srcSet={NextImgSrc("img/img4.avif")} type='image/avif'/>
+                                <source srcSet={NextImgSrc("img/img4.webp")} type='image/webp'/>
+                                <img src={NextImgSrc("img/img4.png")} alt="Restaurante Brasserie Le Jazz" width='328' height='219' loading='lazy' />
+                            </picture>
                             <p className='absolute bottom-3 right-3 text-[.4em] font-medium text-white uppercase'>Restaurante Brasserie Le Jazz</p>
                         </div>
                     </div>

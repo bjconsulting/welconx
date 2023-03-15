@@ -17,7 +17,11 @@ function Dobra6(){
                     </h3>
 
                     <div className="flex flex-col justify-center items-center relative">
-                        <img src={NextImgSrc("img/planta1.jpg")} alt="Studio 31m²" className='max-w-[300px] laptop:max-w-[700px]' />
+                        <picture>
+                            <source srcSet={NextImgSrc("img/planta1.avif")} type='image/avif'/>
+                            <source srcSet={NextImgSrc("img/planta1.webp")} type='image/webp'/>
+                            <img src={NextImgSrc("img/planta1.jpg")} alt="Studio 31 m²" loading='lazy' className='max-w-[300px] laptop:max-w-[700px]' />
+                        </picture>
 
                         {/* <div className='p-2 tablet:p-4 rounded-full bg-sub opacity-80 absolute top-[30%] laptop:top-[45%] right-4 tablet:right-8 hover:opacity-100 cursor-pointer'>
                             <GrNext className='fill-[#D0A388]' />
@@ -40,7 +44,11 @@ function Dobra6(){
                     </h3>
 
                     <div className="flex flex-col justify-center items-center relative">
-                        <img src={NextImgSrc("img/planta2.jpg")} alt="Studio 31m²" className='max-w-[300px] laptop:max-w-[700px]' />
+                        <picture>
+                            <source srcSet={NextImgSrc("img/planta2.avif")} type='image/avif'/>
+                            <source srcSet={NextImgSrc("img/planta2.webp")} type='image/webp'/>
+                            <img src={NextImgSrc("img/planta2.jpg")} alt="Apartamento 31 m²" loading='lazy' className='max-w-[300px] laptop:max-w-[700px]' />
+                        </picture>
 
                         {/* <div className='p-2 tablet:p-4 rounded-full bg-sub opacity-80 absolute top-[30%] laptop:top-[45%] right-4 tablet:right-8 hover:opacity-100 cursor-pointer'>
                             <GrNext className='fill-[#D0A388]' />
