@@ -40,7 +40,7 @@ export default function Form(props: Props) {
   }
 
   return(
-    <form id="form-contato" onSubmit={submitForm}>
+    <form onSubmit={submitForm}>
         <div className='container-input relative flex flex-row '>
             <div className=' p-4 flex'>
                 <img src={user} alt="user" width='30px' />
