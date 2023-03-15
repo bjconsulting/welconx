@@ -52,11 +52,11 @@ export default function Carousel({ children, className, navButtonBgColor, navBut
           { children }
         </div>
       </div>
-      <div className={`p-2 bnext tablet:p-4 rounded-full ${navButtonBgColor} opacity-80 absolute top-[50%] -translate-y-1/2 right-8 hover:opacity-100 cursor-pointer`} onClick={next}>
+      <div className={`p-2 bnext tablet:p-4 rounded-full ${navButtonBgColor} opacity-80 absolute top-[50%] -translate-y-1/2 right-2 hover:opacity-100 cursor-pointer`} onClick={next}>
           <GrNext className={navButtonFillColor} />
       </div>
 
-      <div className={`p-2 bprev tablet:p-4 rounded-full ${navButtonBgColor} opacity-80 absolute top-[50%] -translate-y-1/2 left-8 hover:opacity-100 cursor-pointer`} onClick={prev}>
+      <div className={`p-2 bprev tablet:p-4 rounded-full ${navButtonBgColor} opacity-80 absolute top-[50%] -translate-y-1/2 left-2 hover:opacity-100 cursor-pointer`} onClick={prev}>
           <GrPrevious className={navButtonFillColor} />
       </div>
     </div>

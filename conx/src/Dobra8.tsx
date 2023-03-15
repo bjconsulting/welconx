@@ -14,7 +14,7 @@ function Dobra8(){
                     <h4 className="font-bold text-[1.6em] laptop:text-[1.6em] text-center laptop:text-left text-[#FEFEFE]">
                         Vamos conversar e esclarecer todas as suas dúvidas sobre o seu futuro lar.
                     </h4>
-                    <div className="bg-[#D0A388] button_f flex flex-row justify-around items-center px-14 mx-auto laptop:mx-0 py-2 gap-2 rounded-2xl uppercase text-white font-bold ">
+                    <div className="bg-[#D0A388] button_f flex flex-row justify-around items-center px-7 mx-auto tablet:px-14 laptop:mx-0 py-2 gap-2 rounded-2xl uppercase text-white font-bold ">
                         <p>fale conosco</p> 
                         <BsArrowRightShort size={'2em'} className='fill-white rotate-90 laptop:rotate-0'/>
                     </div>

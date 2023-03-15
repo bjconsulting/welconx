@@ -179,7 +179,7 @@ function Dobra4() {
                 </p>
             </div>
 
-            <div className='image-container flex flex-col laptop:flex-row tablet:flex-wrap items-center justify-center mx-auto  laptop:max-w-[80%] py-16 gap-12'>
+            <div className='image-container flex flex-col laptop:flex-row tablet:flex-wrap items-center justify-center mx-auto laptop:max-w-[80%] py-16 gap-12 px-2'>
 
                 <div className='flex flex-col justify-center items-center gap-8 laptop:gap-6 tablet:basis-[30%]'>
                     <div className='image relative overflow-hidden'>
