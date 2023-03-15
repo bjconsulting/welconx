@@ -1,6 +1,5 @@
-import planta1 from './img/planta1.jpg'
-import planta2 from './img/planta2.jpg'
-// import studio from './img/studio.jpg'
+import NextImgSrc from './NextImgSrc';
+// import studio from '../public/img/studio.jpg'
 // import { GrNext } from "react-icons/gr";
 // import { GrPrevious } from "react-icons/gr";
 
@@ -18,7 +17,7 @@ function Dobra6(){
                     </h3>
 
                     <div className="flex flex-col justify-center items-center relative">
-                        <img src={planta1} alt="Studio 31m²" className='max-w-[300px] laptop:max-w-[700px]' />
+                        <img src={NextImgSrc("img/planta1.jpg")} alt="Studio 31m²" className='max-w-[300px] laptop:max-w-[700px]' />
 
                         {/* <div className='p-2 tablet:p-4 rounded-full bg-sub opacity-80 absolute top-[30%] laptop:top-[45%] right-4 tablet:right-8 hover:opacity-100 cursor-pointer'>
                             <GrNext className='fill-[#D0A388]' />
@@ -41,7 +40,7 @@ function Dobra6(){
                     </h3>
 
                     <div className="flex flex-col justify-center items-center relative">
-                        <img src={planta2} alt="Studio 31m²" className='max-w-[300px] laptop:max-w-[700px]' />
+                        <img src={NextImgSrc("img/planta2.jpg")} alt="Studio 31m²" className='max-w-[300px] laptop:max-w-[700px]' />
 
                         {/* <div className='p-2 tablet:p-4 rounded-full bg-sub opacity-80 absolute top-[30%] laptop:top-[45%] right-4 tablet:right-8 hover:opacity-100 cursor-pointer'>
                             <GrNext className='fill-[#D0A388]' />

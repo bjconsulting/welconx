@@ -1,5 +1,5 @@
 import React from 'react'
-import img from './img/bg-3.jpg'
+import NextImgSrc from './NextImgSrc';
 
 function Dobra3(){
 
@@ -9,7 +9,7 @@ function Dobra3(){
 
             </div> */}
 
-            <img src={img} alt="" className='h-auto w-auto max-w-[85%] tablet:max-w-[100vw] mx-auto' id='lazer' />
+            <img src={NextImgSrc("img/bg-3.jpg")} alt="" className='h-auto w-auto max-w-[85%] tablet:max-w-[100vw] mx-auto' id='lazer' />
         </>
     )
 }
