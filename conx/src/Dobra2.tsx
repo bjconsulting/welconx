@@ -24,7 +24,7 @@ function Dobra2() {
                             <img src={NextImgSrc("img/img1.png")} alt="Shopping Iguatemi" width='auto' />
                             <p className='absolute bottom-3 right-3 text-[.4em] font-medium text-white uppercase'>Shopping Iguatemi</p>
                         </div>
-                        <div className='relative' flex flex-row justify-start'>
+                        <div className='relative flex flex-row justify-start'>
                             <img src={NextImgSrc("img/img2.png")} alt="Mercado Municipal" width='auto' className='w-auto laptop:max-w-[90%] place-self-start' />
                             <p className='absolute bottom-3 right-8 text-[.4em] font-medium text-white uppercase'>Mercado Municipal</p>
                         </div>
