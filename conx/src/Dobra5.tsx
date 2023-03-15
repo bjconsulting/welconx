@@ -8,7 +8,7 @@ import Carousel from './Carousel'
 function Dobra5() {
 
     return (
-        <div className='bg-[rgba(243,_232,_225,_.64)] w-screen'>
+        <div className='bg-[rgba(243,_232,_225,_.64)] w-screen' id='diferenciais'>
             <div className='m-r flex flex-col mx-auto py-[2em] gap-12'>
                 <h2 className='text-[#243548] text-[1.8em] leading-[50px] laptop:text-[2.4em] text-center font-bold max-w-[800px] mx-auto mb-9'>
                     Seja para morar ou investir, diferenciais que surpreendem.

@@ -11,7 +11,7 @@ function Dobra3(){
             <picture>
                 <source srcSet={NextImgSrc("img/bg-3.avif")} type='image/avif'/>
                 <source srcSet={NextImgSrc("img/bg-3.webp")} type='image/webp'/>
-                <img src={NextImgSrc("img/bg-3.jpg")} alt="" className='h-auto w-auto max-w-[100%] tablet:max-w-[100vw] mx-auto 4k:w-[100svw]' id='lazer' loading='lazy' />
+                <img src={NextImgSrc("img/bg-3.jpg")} alt="" className='h-auto w-auto max-w-[100%] tablet:max-w-[100vw] mx-auto 4k:w-[100svw]' loading='lazy' />
             </picture>
         </>
     )

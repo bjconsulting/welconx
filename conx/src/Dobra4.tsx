@@ -169,7 +169,7 @@ function Dobra4() {
     }
 
     return (
-        <div className='relative min-w-screen bg-[#F9FAFB] flex flex-col justify-center items-center' id='diferenciais'>
+        <div className='relative min-w-screen bg-[#F9FAFB] flex flex-col justify-center items-center' id='lazer'>
             <div className='py-20 max-w-[80%] laptop:max-w-[60%] text-center mx-auto'>
                 <h2 className='font-bold mb-8 text-[#37414D] text-[1.8em] laptop:text-[2.6em] leading-[50px]'>
                     A experiência de morar muito além dos metros quadrados.

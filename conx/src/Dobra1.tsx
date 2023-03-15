@@ -15,7 +15,7 @@ function Dobra1() {
                 <div className='m-r py-32 pt-34 laptop:pt-64 flex flex-col  justify-left items-start laptop:justify-start desktop:max-w-[580px] gap-12 tablet:text-left'>
                     
                     <p className='text-[#F3F3F3]  font-medium text-[1em] uppercase '>
-                        breve lançamento
+                        lançamento
                     </p>
 
                     <h1 className='font-bold text-[1.6em] laptop:text-[2.4em] text-[#FEFEFE]'>
