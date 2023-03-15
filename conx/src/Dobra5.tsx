@@ -54,48 +54,51 @@ function Dobra5() {
 
                 <div className='flex flex-col laptop:flex-row gap-20 mx-auto justify-center'>
                     <div className='left-container relative h-auto'>
-                        <div ref={panel} className='relative image-container hide-scroll aspect-[1.333333333333333] overflow-x-scroll scroll-smooth snap-x snap-mandatory snap-always max-w-[326px] laptop:max-w-[300px] desktop:max-w-[500px] desktop-big:max-w-[700px]'>
-                            <div className='flex flex-row'>
-                                <div className='relative snap-start'>
-                                    <picture>
-                                        <source srcSet={NextImgSrc("img/lavanderia.avif")} type='image/avif' />
-                                        <source srcSet={NextImgSrc("img/lavanderia.webp")} type='image/webp' />
-                                        <img className=' aspect-[1.47] w-[700px] max-w-[326px] laptop:max-w-[300px] desktop:max-w-[500px] desktop-big:max-w-[700px] mx-auto' src={NextImgSrc("img/lavanderia.jpg")} alt="Lavanderia" loading='lazy' />
-                                    </picture>
-                                    <p className='absolute right-4 bottom-4 uppercase text-[.4em] text-white'> perspectiva ilustrada da Lavanderia</p>
-                                </div>
-                                <div className='relative snap-start'>
-                                    <picture>
-                                        <source srcSet={NextImgSrc("img/market.avif")} type='image/avif' />
-                                        <source srcSet={NextImgSrc("img/market.webp")} type='image/webp' />
-                                        <img className=' aspect-[1.47] w-[700px] max-w-[326px] laptop:max-w-[300px] desktop:max-w-[500px] desktop-big:max-w-[700px] mx-auto' src={NextImgSrc("img/market.jpg")} alt="Mini Market" loading='lazy' />
-                                    </picture>
-                                    <p className='absolute right-4 bottom-4 uppercase text-[.4em] text-white'> perspectiva ilustrada do Mini Market</p>
-                                </div>
-                                <div className='relative snap-start'>
-                                    <picture>
-                                        <source srcSet={NextImgSrc("img/delivery.avif")} type='image/avif' />
-                                        <source srcSet={NextImgSrc("img/delivery.webp")} type='image/webp' />
-                                        <img className=' aspect-[1.47] w-[700px] max-w-[326px] laptop:max-w-[300px] desktop:max-w-[500px] desktop-big:max-w-[700px] mx-auto' src={NextImgSrc("img/delivery.jpg")} alt="Espaço Delivery" loading='lazy' />
-                                    </picture>
-                                    <p className='absolute right-4 bottom-4 uppercase text-[.4em] text-white'> perspectiva ilustrada do Espaço Delivery</p>
-                                </div>
-                                <div className='relative snap-start'>
-                                    <picture>
-                                        <source srcSet={NextImgSrc("img/bike.avif")} type='image/avif' />
-                                        <source srcSet={NextImgSrc("img/bike.webp")} type='image/webp' />
-                                        <img className=' aspect-[1.47] w-[700px] max-w-[326px] laptop:max-w-[300px] desktop:max-w-[500px] desktop-big:max-w-[700px] mx-auto' src={NextImgSrc("img/bike.jpg")} alt="Bike Elétrica Compartilhada" loading='lazy' />
-                                    </picture>
-                                    <p className='absolute right-4 bottom-4 uppercase text-[.4em] text-white'> perspectiva ilustrada de Bike Elétrica Compartilhada</p>
+                        <div className='relative'>
+                            <div ref={panel} className='relative image-container hide-scroll overflow-x-scroll scroll-smooth snap-x snap-mandatory snap-always w-[700px] max-w-[326px] tablet:max-w-[680px] laptop:max-w-[300px] desktop:max-w-[500px] desktop-big:max-w-[700px]'>
+                                <div className='flex flex-row'>
+                                    <div className='relative snap-start shrink-0 w-[700px] max-w-[326px] tablet:max-w-[680px] laptop:max-w-[300px] desktop:max-w-[500px] desktop-big:max-w-[700px]'>
+                                        <picture>
+                                            <source srcSet={NextImgSrc("img/lavanderia.avif")} type='image/avif' />
+                                            <source srcSet={NextImgSrc("img/lavanderia.webp")} type='image/webp' />
+                                            <img className=' aspect-[1.47] w-full' src={NextImgSrc("img/lavanderia.jpg")} alt="Lavanderia" loading='lazy' />
+                                        </picture>
+                                        <p className='absolute right-4 bottom-4 uppercase text-[.4em] text-white'> perspectiva ilustrada da Lavanderia</p>
+                                    </div>
+                                    <div className='relative snap-start shrink-0 w-[700px] max-w-[326px] tablet:max-w-[680px] laptop:max-w-[300px] desktop:max-w-[500px] desktop-big:max-w-[700px]'>
+                                        <picture>
+                                            <source srcSet={NextImgSrc("img/market.avif")} type='image/avif' />
+                                            <source srcSet={NextImgSrc("img/market.webp")} type='image/webp' />
+                                            <img className=' aspect-[1.47] w-full' src={NextImgSrc("img/market.jpg")} alt="Mini Market" loading='lazy' />
+                                        </picture>
+                                        <p className='absolute right-4 bottom-4 uppercase text-[.4em] text-white'> perspectiva ilustrada do Mini Market</p>
+                                    </div>
+                                    <div className='relative snap-start shrink-0 w-[700px] max-w-[326px] tablet:max-w-[680px] laptop:max-w-[300px] desktop:max-w-[500px] desktop-big:max-w-[700px]'>
+                                        <picture>
+                                            <source srcSet={NextImgSrc("img/delivery.avif")} type='image/avif' />
+                                            <source srcSet={NextImgSrc("img/delivery.webp")} type='image/webp' />
+                                            <img className=' aspect-[1.47] w-full' src={NextImgSrc("img/delivery.jpg")} alt="Espaço Delivery" loading='lazy' />
+                                        </picture>
+                                        <p className='absolute right-4 bottom-4 uppercase text-[.4em] text-white'> perspectiva ilustrada do Espaço Delivery</p>
+                                    </div>
+                                    <div className='relative snap-start shrink-0 w-[700px] max-w-[326px] tablet:max-w-[680px] laptop:max-w-[300px] desktop:max-w-[500px] desktop-big:max-w-[700px]'>
+                                        <picture>
+                                            <source srcSet={NextImgSrc("img/bike.avif")} type='image/avif' />
+                                            <source srcSet={NextImgSrc("img/bike.webp")} type='image/webp' />
+                                            <img className=' aspect-[1.47] w-full' src={NextImgSrc("img/bike.jpg")} alt="Bike Elétrica Compartilhada" loading='lazy' />
+                                        </picture>
+                                        <p className='absolute right-4 bottom-4 uppercase text-[.4em] text-white'> perspectiva ilustrada de Bike Elétrica Compartilhada</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div className='p-2 tablet:p-4 rounded-full bg-[#FEFEFE] opacity-80 absolute -mt-[50%] translate-y-1/2 right-8 hover:opacity-100 cursor-pointer' onClick={next}>
-                            <GrNext className='fill-prim' />
-                        </div>
 
-                        <div className='p-2 tablet:p-4 rounded-full bg-[#FEFEFE] opacity-80 absolute -mt-[50%] translate-y-1/2 left-8 hover:opacity-100 cursor-pointer' onClick={prev}>
-                            <GrPrevious className='fill-prim' />
+                            <div className='p-2 tablet:p-4 rounded-full bg-[#FEFEFE] opacity-80 absolute top-[50%] -translate-y-1/2 right-8 hover:opacity-100 cursor-pointer' onClick={next}>
+                                <GrNext className='fill-prim' />
+                            </div>
+
+                            <div className='p-2 tablet:p-4 rounded-full bg-[#FEFEFE] opacity-80 absolute top-[50%] -translate-y-1/2 left-8 hover:opacity-100 cursor-pointer' onClick={prev}>
+                                <GrPrevious className='fill-prim' />
+                            </div>
                         </div>
 
                         <img src={NextImgSrc("img/well-services.png")} alt="Well Services" loading='lazy' className='max-w-[300px] mt-6 mx-auto' />
