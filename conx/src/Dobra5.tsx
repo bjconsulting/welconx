@@ -19,10 +19,10 @@ function Dobra5() {
                     Seja para morar ou investir, diferenciais que surpreendem.
                 </h2>
 
-                <div className='flex flex-col laptop:flex-row gap-32 mx-auto justify-center'>
+                <div className='flex flex-col laptop:flex-row gap-20 mx-auto justify-center'>
                     <div className='left-container relative h-auto'>
                         <div className='relative image-container'>
-                            <img className=' aspect-auto max-w-[250px] laptop:max-w-[400px] desktop:max-w-[700px] mx-auto' src={NextImgSrc("img/market.jpg")} alt="Mini Market" />
+                            <img className=' aspect-auto max-w-[250px] laptop:max-w-[300px] desktop:max-w-[500px] desktop-big:max-w-[700px] mx-auto' src={NextImgSrc("img/market.jpg")} alt="Mini Market" />
                             <p className='absolute right-4 bottom-4 uppercase text-[.4em] text-white'> perspectiva ilustrada do Mini Market</p>
                             {/* <div className='p-2 tablet:p-4 rounded-full bg-[#FEFEFE] opacity-80 absolute top-[45%] right-8 hover:opacity-100 cursor-pointer'>
                                 <GrNext className='fill-prim'/>
@@ -37,7 +37,7 @@ function Dobra5() {
                         <img src={NextImgSrc("img/well-services.png")} alt="Well Services" className='max-w-[300px] mt-6 mx-auto' />
                     </div>
 
-                    <div className="basis-[50%] flex flex-col gap-6">
+                    <div className="basis-[55%] flex flex-col gap-6">
                         <div className="flex flex-col tablet:flex-row tablet:justify-start items-center gap-4 border-e">
                             <div className='p-6 rounded-full bg-prim'>
                                 <GiWashingMachine className='w-8 h-8 fill-sub'/>

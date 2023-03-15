@@ -15,6 +15,9 @@ module.exports = {
       
       'desktop': '1280px',
       // => @media (min-width: 1280px) { ... }
+      
+      'desktop-big': '1480px',
+      // => @media (min-width: 1280px) { ... }
     },
     extend: {
       colors:{
