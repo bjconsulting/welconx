@@ -64,6 +64,10 @@ h1, h2, h3, h4 {
 
 
 
+.menu1 .menu_item  {
+  font-weight: 700;
+  color: black;
+}
 .menu_item, .menu2 > button {
   text-transform: uppercase;
   font-weight: 600;
@@ -180,3 +184,8 @@ select , textarea
   background-repeat: no-repeat, no-repeat;
   background-position: bottom center, top right;
 }
+
+.button_d5 {
+  box-shadow: 5px 0px 13px rgba(0, 0, 0, 0.25);
+}
+

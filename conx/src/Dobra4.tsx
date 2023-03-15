@@ -170,18 +170,18 @@ function Dobra4() {
 
     return (
         <div className='relative min-w-screen bg-[#F9FAFB] flex flex-col justify-center items-center' id='diferenciais'>
-            <div className='py-20 max-w-[60%] text-center mx-auto'>
-                <h2 className='font-bold mb-8 text-[#37414D] text-[1.8em] laptop:text-[2.6em]'>
+            <div className='py-20 max-w-[80%] laptop:max-w-[60%] text-center mx-auto'>
+                <h2 className='font-bold mb-8 text-[#37414D] text-[1.8em] laptop:text-[2.6em] leading-[50px]'>
                     A experiência de morar muito além dos metros quadrados.
                 </h2>
-                <p className='text-[#37414D] text-[1.2em]'>
+                <p className='text-[#37414D] text-[1.4em] leading-[37px]'>
                     Espaços completos para você relaxar, se reunir com a família, amigos e viver o melhor da vida com muito mais qualidade e praticidade.
                 </p>
             </div>
 
-            <div className='image-container flex flex-col laptop:flex-row tablet:flex-wrap items-center justify-center mx-auto  laptop:max-w-[80%] py-16 gap-8'>
+            <div className='image-container flex flex-col laptop:flex-row tablet:flex-wrap items-center justify-center mx-auto  laptop:max-w-[80%] py-16 gap-12'>
 
-                <div className='flex flex-col justify-center items-center gap-2 tablet:basis-[30%]'>
+                <div className='flex flex-col justify-center items-center gap-8 laptop:gap-6 tablet:basis-[30%]'>
                     <div className='image relative overflow-hidden'>
                         <picture>
                             {/* <source srcSet={galt_1_a} data-srcm={galm_1_a} data-src={gal_1_a} type='image/avif'/>
@@ -200,7 +200,7 @@ function Dobra4() {
                     </p>
                 </div>
 
-                <div className='flex flex-col justify-center items-center gap-2 tablet:basis-[30%]'>
+                <div className='flex flex-col justify-center items-center gap-8 laptop:gap-6 tablet:basis-[30%]'>
                     <div className='image relative overflow-hidden'>
                         <picture>
                             {/* <source srcSet={galt_2_a} data-srcm={galm_1_a} data-src={gal_2_a} type='image/avif'/>
@@ -219,7 +219,7 @@ function Dobra4() {
                     </p>
                 </div>
 
-                <div className='flex flex-col justify-center items-center gap-2 tablet:basis-[30%]'>
+                <div className='flex flex-col justify-center items-center gap-8 laptop:gap-6 tablet:basis-[30%]'>
                     <div className='image relative overflow-hidden'>
                         <picture>
                             {/* <source srcSet={galt_3_a} data-srcm={galm_3_a} data-src={gal_3_a} type='image/avif'/>
@@ -239,7 +239,7 @@ function Dobra4() {
                 </div>
 
 
-                <div className='flex flex-col justify-center items-center gap-2 tablet:basis-[30%]'>
+                <div className='flex flex-col justify-center items-center gap-8 laptop:gap-6 tablet:basis-[30%]'>
                     <div className='image relative overflow-hidden'>
                         <picture>
                             {/* <source srcSet={galt_4_a} data-srcm={galm_4_a} data-src={gal_4_a} type='image/avif'/>
@@ -258,7 +258,7 @@ function Dobra4() {
                     </p>
                 </div>
 
-                <div className='flex flex-col justify-center items-center gap-2 tablet:basis-[30%]'>
+                <div className='flex flex-col justify-center items-center gap-8 laptop:gap-6 tablet:basis-[30%]'>
                     <div className='image relative overflow-hidden'>
                         <picture>
                             {/* <source srcSet={galt_5_a} data-srcm={galm_5_a} data-src={gal_5_a} type='image/avif'/>
@@ -278,7 +278,7 @@ function Dobra4() {
                 </div>
 
 
-                <div className='flex flex-col justify-center items-center gap-2 tablet:basis-[30%]'>
+                <div className='flex flex-col justify-center items-center gap-8 laptop:gap-6 tablet:basis-[30%]'>
                     <div className='image relative overflow-hidden'>
                         <picture>
                             {/* <source srcSet={galt_6_a} data-srcm={galm_6_a} data-src={gal_6_a} type='image/avif'/>
@@ -298,7 +298,7 @@ function Dobra4() {
                 </div>
 
 
-                <div className='flex flex-col justify-center items-center gap-2 tablet:basis-[30%]'>
+                <div className='flex flex-col justify-center items-center gap-8 laptop:gap-6 tablet:basis-[30%]'>
                     <div className='image relative overflow-hidden'>
                         <picture>
                             {/* <source srcSet={galt_7_a} data-srcm={galm_7_a} data-src={gal_7_a} type='image/avif'/>
@@ -318,7 +318,7 @@ function Dobra4() {
                 </div>
 
 
-                <div className='flex flex-col justify-center items-center gap-2 tablet:basis-[30%]'>
+                <div className='flex flex-col justify-center items-center gap-8 laptop:gap-6 tablet:basis-[30%]'>
                     <div className='image relative overflow-hidden'>
                         <picture>
                             {/* <source srcSet={galt_8_a} data-srcm={galm_8_a} data-src={gal_8_a} type='image/avif'/>
@@ -338,7 +338,7 @@ function Dobra4() {
                 </div>
 
 
-                <div className='flex flex-col justify-center items-center gap-2 tablet:basis-[30%]'>
+                <div className='flex flex-col justify-center items-center gap-8 laptop:gap-6 tablet:basis-[30%]'>
                     <div className='image relative overflow-hidden'>
                         <picture>
                             {/* <source srcSet={galt_9_a} data-srcm={galm_9_a} data-src={gal_9_a} type='image/avif'/>

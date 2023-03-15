@@ -11,32 +11,32 @@ function Dobra2() {
                         Você na sua melhor versão.<br />
                         Você no lugar certo.
                     </h2>
-                    <p className='text-[1em] font-normal leading-[1.6em] desktop:max-w-[90%]'>
+                    <p className='text-[1em] font-normal leading-[1.6em] max-w-[90%]'>
                         Seja qual for o seu estilo, ele é parte de um novo jeito de viver.<br />
                         Um bairro como Pinheiros, que abrange a pluralidade de etnias, gostos e costumes, só poderia oferecer o melhor das grandes cidades. Alta gastronomia, mobilidade, informação, cultura e experiências.
                     </p>
                 </div>
 
-                <div className='flex flex-col basis-[45%] items-center gap-2 justify-center'>
+                <div className='flex flex-col basis-[45%] items-start gap-1 justify-start'>
 
-                    <div className='f-row flex flex-col tablet:flex-row items-end gap-2'>
-                        <div className='relative'>
-                            <img src={NextImgSrc("img/img1.png")} alt="Shopping Iguatemi" width='auto' />
+                    <div className='f-row flex  tablet:flex-row items-end justify-start gap-2'>
+                        <div className='relative basis-[110%] tablet:basis-[60%] desktop:basis-[75%] desktop-big:basis-[60%] flex flex-end'>
+                            <img src={NextImgSrc("img/img1.png")} alt="Shopping Iguatemi" width='100%' />
                             <p className='absolute bottom-3 right-3 text-[.4em] font-medium text-white uppercase'>Shopping Iguatemi</p>
                         </div>
-                        <div className='relative flex flex-row justify-start'>
-                            <img src={NextImgSrc("img/img2.png")} alt="Mercado Municipal" width='auto' className='w-auto laptop:max-w-[90%] place-self-start' />
+                        <div className='relative flex flex-row justify-start tablet:basis-[max-content]'>
+                            <img src={NextImgSrc("img/img2.png")} alt="Mercado Municipal" width='100%' className='w-auto place-self-start max-w-[100%]' />
                             <p className='absolute bottom-3 right-8 text-[.4em] font-medium text-white uppercase'>Mercado Municipal</p>
                         </div>
                     </div>
 
-                    <div className='s-row flex flex-col tablet:flex-row items-start gap-2'>
-                        <div className='relative flex flex-row items-start justify-end'>
-                            <img src={NextImgSrc("img/img3.png")} alt="Shopping Vila-lobos" width='auto' className='w-auto laptop:max-w-[90%]' />
+                    <div className='s-row flex  tablet:flex-row items-start  gap-2'>
+                        <div className='relative flex flex-row items-start justify-start tablet:basis-[max-content]'>
+                            <img src={NextImgSrc("img/img3.png")} alt="Shopping Vila-lobos" width='auto' className='w-auto' />
                             <p className='absolute bottom-3 right-3 text-[.4em] font-medium text-white uppercase'>Shopping Villa-Lobos</p>
                         </div>
-                        <div className='relative'>
-                            <img src={NextImgSrc("img/img4.png")} alt="Restaurante Brasserie Le Jazz" width='auto' />
+                        <div className='relative basis-[110%] tablet:basis-[60%] laptop:basis-[60%]  desktop:basis-[75%] desktop-big:basis-[60%]'>
+                            <img src={NextImgSrc("img/img4.png")} alt="Restaurante Brasserie Le Jazz" width='100%' />
                             <p className='absolute bottom-3 right-3 text-[.4em] font-medium text-white uppercase'>Restaurante Brasserie Le Jazz</p>
                         </div>
                     </div>
