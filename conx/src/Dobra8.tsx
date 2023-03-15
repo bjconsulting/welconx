@@ -19,7 +19,7 @@ function Dobra8(){
                     </div>
                 </div>
 
-                <div className='right basis-[45%] mt-12 laptop:mt-0 w-full '>
+                <div id="form-contato" className='right basis-[45%] mt-1 pt-12 laptop:-mt-12 w-full'>
                     {
                         isSent
                         ? <ThankYou />

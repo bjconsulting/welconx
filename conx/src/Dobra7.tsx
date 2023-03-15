@@ -1,4 +1,4 @@
-import fachada from './img/fachada.jpg'
+import NextImgSrc from './NextImgSrc';
 
 function Dobra7(){
     return(
@@ -14,10 +14,8 @@ function Dobra7(){
             </div>
 
             <div className="relative basis-[45%] h-full w-full">
-                <img src={fachada} alt="Fachada Eugênio" className='max-w-[300px] laptop:max-w-[300px] desktop:max-w-[320px] desktop-big:max-w-[360px] laptop:absolute bottom-0 right-2 rounded-tl-lg rounded-tr-lg' loading='lazy'/>
-                <p className='absolute right-8 bottom-3 uppercase text-[12px] text-white'>
-                    PERSPECTIVA ILUSTRADA DA FACHADA
-                </p>
+                <img src={NextImgSrc("img/fachada.jpg")} alt="Fachada Eugênio" className='max-w-[300px] laptop:max-w-[300px] desktop:max-w-[320px] desktop-big:max-w-[360px] laptop:absolute bottom-0 right-2 rounded-tl-lg rounded-tr-lg' loading='lazy'/>
+                <p className='absolute right-8 bottom-3 uppercase text-[12px] text-white'>PERSPECTIVA ILUSTRADA DA FACHADA</p>
             </div>
         </div>
     )

@@ -2,8 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+
+@font-face {
+  font-family: "SF-Pro-Display-Bold";
+  src: local("SF Pro Display"),
+    url("../public/fonts/SF-Pro-Display-Bold.otf");
+  font-display: swap;
+}
 
 * {
   padding:0;
@@ -50,7 +56,7 @@ body {
 }
 
 h1, h2, h3, h4 {
-  fon-weight: bold;
+  font-weight: bold;
 }
 .hero {
   background: linear-gradient(89.78deg, #465361 0.15%, rgba(70, 83, 97, 0.91) 19.87%, rgba(70, 83, 97, 0.22) 54.75%, rgba(70, 83, 97, 0) 99.78%);
@@ -171,7 +177,7 @@ select , textarea
 }
 
 .form-bg {
-  background-image: url(img/Ellipse 4.svg), url(img/Ellipse 5.svg);
+  background-image: url('/img/Ellipse 4.svg'), url('/img/Ellipse 5.svg');
   background-repeat: no-repeat, no-repeat;
   background-position: bottom center, top right;
 }

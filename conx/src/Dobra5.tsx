@@ -8,9 +8,8 @@ import { FiPackage } from "react-icons/fi";
 import { BsBicycle } from "react-icons/bs";
 // import { GrNext } from "react-icons/gr";
 // import { GrPrevious } from "react-icons/gr";
-import img from './img/market.jpg'
-import well from './img/well-services.png'
-// import img2 from './img/lavanderia.jpg'
+import NextImgSrc from './NextImgSrc';
+// import img2 from '../public/img/lavanderia.jpg'
 
 function Dobra5() {
     return(
@@ -23,7 +22,7 @@ function Dobra5() {
                 <div className='flex flex-col laptop:flex-row gap-20 mx-auto justify-center'>
                     <div className='left-container relative h-auto'>
                         <div className='relative image-container'>
-                            <img className=' aspect-auto max-w-[250px] laptop:max-w-[300px] desktop:max-w-[500px] desktop-big:max-w-[700px] mx-auto' src={img} alt="Mini Market" />
+                            <img className=' aspect-auto max-w-[250px] laptop:max-w-[300px] desktop:max-w-[500px] desktop-big:max-w-[700px] mx-auto' src={NextImgSrc("img/market.jpg")} alt="Mini Market" />
                             <p className='absolute right-4 bottom-4 uppercase text-[.4em] text-white'> perspectiva ilustrada do Mini Market</p>
                             {/* <div className='p-2 tablet:p-4 rounded-full bg-[#FEFEFE] opacity-80 absolute top-[45%] right-8 hover:opacity-100 cursor-pointer'>
                                 <GrNext className='fill-prim'/>
@@ -35,7 +34,7 @@ function Dobra5() {
                         </div>
 
 
-                        <img src={well} alt="Well Services" className='max-w-[300px] mt-6 mx-auto' />
+                        <img src={NextImgSrc("img/well-services.png")} alt="Well Services" className='max-w-[300px] mt-6 mx-auto' />
                     </div>
 
                     <div className="basis-[55%] flex flex-col gap-6">
@@ -57,7 +56,7 @@ function Dobra5() {
 
                             <div className='flex flex-col gap-2'>
                                 <h3 className=' text-[#111827] text-center tablet:text-left font-semibold'>Mini market</h3>
-                                <p className=' text-[#6D7280] text-center tablet:text-left'>Produtos que não podem faltar, disponíveis  para você 24 horas por dia, 7 dias por semana.
+                                <p className=' text-[#6D7280] text-center tablet:text-left'>Produtos que não podem faltar, disponíveis para você 24 horas por dia, 7 dias por semana.
                                 </p>
                             </div>
                         </div>
@@ -80,14 +79,14 @@ function Dobra5() {
 
                             <div className='flex flex-col gap-2'>
                                 <h3 className=' text-[#111827] text-center tablet:text-left font-semibold'>Bike elétrica compartilhada</h3>
-                                <p className=' text-[#6D7280] text-center tablet:text-left'>Praticidade que favorece sua saúde, otimiza sua locomoção e a preservação do meio ambiente..</p>
+                                <p className=' text-[#6D7280] text-center tablet:text-left'>Praticidade que favorece sua saúde, otimiza sua locomoção e a preservação do meio ambiente.</p>
                             </div>
                         </div>
                     </div>
 
                 </div>
 
-                <a href="#form-contato" className='button_d5 rounded-md flex flex-row justify-center items-center px-5 py-6 max-w-[320px] bg-[#465361] text-sub font-bold uppercase mx-auto hover:bg-slate-800'>
+                <a href="#form-contato" className='button_d5 rounded-md flex flex-row justify-center items-center px-3 py-6 max-w-[320px] bg-[#465361] text-sub font-bold uppercase mx-auto hover:bg-slate-800 tablet:px-5'>
                     Fale com um consultor
                 </a>
 

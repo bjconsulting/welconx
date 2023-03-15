@@ -20,7 +20,7 @@ function Dobra1() {
                     <div className='flex flex-row gap-2 justify-start items-start'>
                         <HiMapPin className="fill-[#FDE8DC]"/>
                         <p className='text-[#FDE8DC] font-bold'>
-                            More a 150m da estação Pinheiros
+                            More a 150 m da estação Pinheiros
                         </p>
                     </div>
 

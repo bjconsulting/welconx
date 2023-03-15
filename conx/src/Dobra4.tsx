@@ -1,23 +1,5 @@
 import { useRef } from 'react'
-
-// import gal_1_a from './img/gal_1.avif'
-// import gal_1_w from './img/gal_1.webp'
-import gal_1_j from './img/gal_1.jpg'
-// import galm_1_a from './img/galm_1.avif'
-// import galm_1_w from './img/galm_1.webp'
-//import galm_1_j from './img/galm_1.jpg'
-// import galt_1_a from './img/galt_1.avif'
-// import galt_1_w from './img/galt_1.webp'
-import galt_1_j from './img/galt_1.jpg'
-
-import gal_2_j from './img/gal_2.jpg'
-import gal_3_j from './img/gal_3.jpg'
-import gal_4_j from './img/gal_4.jpg'
-import gal_5_j from './img/gal_5.jpg'
-import gal_6_j from './img/gal_6.jpg'
-import gal_7_j from './img/gal_7.jpg'
-import gal_8_j from './img/gal_8.jpg'
-import gal_9_j from './img/gal_9.jpg'
+import NextImgSrc from './NextImgSrc'
 
 function Dobra4() {
     const pop = useRef<HTMLDivElement>(null)
@@ -205,7 +187,7 @@ function Dobra4() {
                             {/* <source srcSet={galt_1_a} data-srcm={galm_1_a} data-src={gal_1_a} type='image/avif'/>
                             <source srcSet={galt_1_w} data-srcm={galm_1_w} data-src={gal_1_w} type='image/webp'/> */}
                             {/* <img src={galt_1_j} data-srcm={galm_1_j} data-src={gal_1_j} alt="PERSPECTIVA ILUSTRADA DO HALL SOCIAL" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick}/> */}
-                            <img src={galt_1_j} data-srcm={gal_1_j} data-src={gal_1_j} alt="PERSPECTIVA ILUSTRADA DO HALL SOCIAL" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick}/>
+                            <img src={NextImgSrc("img/gal_1.jpg")} data-srcm={NextImgSrc("img/gal_1.jpg")} data-src={NextImgSrc("img/gal_1.jpg")} alt="PERSPECTIVA ILUSTRADA DO HALL SOCIAL" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick}/>
                         </picture>
                         {/* <img src={gal_1} alt="PERSPECTIVA ILUSTRADA DO HALL SOCIAL" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} /> */}
 
@@ -223,29 +205,10 @@ function Dobra4() {
                         <picture>
                             {/* <source srcSet={galt_2_a} data-srcm={galm_1_a} data-src={gal_2_a} type='image/avif'/>
                             <source srcSet={galt_2_w} data-srcm={galm_1_w} data-src={gal_2_w} type='image/webp'/>
-                            <img src={galt_2_j} data-srcm={galm_2_j} data-src={gal_2_j} alt="PERSPECTIVA ILUSTRADA DO ESPAÇO GOURMET" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} /> */}
-                            <img src={gal_2_j} data-srcm={gal_2_j} data-src={gal_2_j} alt="PERSPECTIVA ILUSTRADA DO ESPAÇO GOURMET" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} />
+                            <img src={galt_2_j} data-srcm={galm_2_j} data-src={NextImgSrc("img/gal_2.jpg")} alt="PERSPECTIVA ILUSTRADA DO SALÃO DE FESTAS" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} /> */}
+                            <img src={NextImgSrc("img/gal_2.jpg")} data-srcm={NextImgSrc("img/gal_2.jpg")} data-src={NextImgSrc("img/gal_2.jpg")} alt="PERSPECTIVA ILUSTRADA DO SALÃO DE FESTAS" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} />
                         </picture>
-                        {/* <img src={gal_2} alt="PERSPECTIVA ILUSTRADA DO ESPAÇO GOURMET" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} /> */}
-
-                        <p className='uppercase absolute right-3 bottom-3 text-[.3em] font-semibold text-white'>
-                            PERSPECTIVA ILUSTRADA DO ESPAÇO GOURMET
-                        </p>
-                    </div>
-                    <p className='font-semibold text-[1.2em] text-center'>
-                        Espaço gourmet
-                    </p>
-                </div>
-
-                <div className='flex flex-col justify-center items-center gap-2 tablet:basis-[30%]'>
-                    <div className='image relative overflow-hidden'>
-                        <picture>
-                            {/* <source srcSet={galt_3_a} data-srcm={galm_3_a} data-src={gal_3_a} type='image/avif'/>
-                            <source srcSet={galt_3_w} data-srcm={galm_3_w} data-src={gal_3_w} type='image/webp'/>
-                            <img src={galt_3_j} data-srcm={galm_3_j} data-src={gal_3_j} alt="PERSPECTIVA ILUSTRADA DO SALÃO DE FESTAS" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} /> */}
-                            <img src={gal_3_j} data-srcm={gal_3_j} data-src={gal_3_j} alt="PERSPECTIVA ILUSTRADA DO SALÃO DE FESTAS" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} />
-                        </picture>
-                        {/* <img src={gal_3} alt="PERSPECTIVA ILUSTRADA DO SALÃO DE FESTAS" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} /> */}
+                        {/* <img src={gal_2} alt="PERSPECTIVA ILUSTRADA DO SALÃO DE FESTAS" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} /> */}
 
                         <p className='uppercase absolute right-3 bottom-3 text-[.3em] font-semibold text-white'>
                             PERSPECTIVA ILUSTRADA DO SALÃO DE FESTAS
@@ -256,14 +219,33 @@ function Dobra4() {
                     </p>
                 </div>
 
+                <div className='flex flex-col justify-center items-center gap-2 tablet:basis-[30%]'>
+                    <div className='image relative overflow-hidden'>
+                        <picture>
+                            {/* <source srcSet={galt_3_a} data-srcm={galm_3_a} data-src={gal_3_a} type='image/avif'/>
+                            <source srcSet={galt_3_w} data-srcm={galm_3_w} data-src={gal_3_w} type='image/webp'/>
+                            <img src={galt_3_j} data-srcm={galm_3_j} data-src={NextImgSrc("img/gal_3.jpg")} alt="PERSPECTIVA ILUSTRADA DO ESPAÇO GOURMET" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} /> */}
+                            <img src={NextImgSrc("img/gal_3.jpg")} data-srcm={NextImgSrc("img/gal_3.jpg")} data-src={NextImgSrc("img/gal_3.jpg")} alt="PERSPECTIVA ILUSTRADA DO ESPAÇO GOURMET" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} />
+                        </picture>
+                        {/* <img src={gal_3} alt="PERSPECTIVA ILUSTRADA DO ESPAÇO GOURMET" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} /> */}
+
+                        <p className='uppercase absolute right-3 bottom-3 text-[.3em] font-semibold text-white'>
+                            PERSPECTIVA ILUSTRADA DO ESPAÇO GOURMET
+                        </p>
+                    </div>
+                    <p className='font-semibold text-[1.2em] text-center'>
+                        Espaço gourmet
+                    </p>
+                </div>
+
 
                 <div className='flex flex-col justify-center items-center gap-2 tablet:basis-[30%]'>
                     <div className='image relative overflow-hidden'>
                         <picture>
                             {/* <source srcSet={galt_4_a} data-srcm={galm_4_a} data-src={gal_4_a} type='image/avif'/>
                             <source srcSet={galt_4_w} data-srcm={galm_4_w} data-src={gal_4_w} type='image/webp'/>
-                            <img src={galt_4_j} data-srcm={galm_4_j} data-src={gal_4_j} alt="PERSPECTIVA ILUSTRADA DO ESPAÇO GOURMETl" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} /> */}
-                            <img src={gal_4_j} data-srcm={gal_4_j} data-src={gal_4_j} alt="PERSPECTIVA ILUSTRADA DO FITNESS" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} />
+                            <img src={galt_4_j} data-srcm={galm_4_j} data-src={NextImgSrc("img/gal_4.jpg")} alt="PERSPECTIVA ILUSTRADA DO ESPAÇO GOURMETl" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} /> */}
+                            <img src={NextImgSrc("img/gal_4.jpg")} data-srcm={NextImgSrc("img/gal_4.jpg")} data-src={NextImgSrc("img/gal_4.jpg")} alt="PERSPECTIVA ILUSTRADA DO FITNESS" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} />
                         </picture>
                         {/* <img src={gal_4} alt="PERSPECTIVA ILUSTRADA DO FITNESS" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} /> */}
 
@@ -281,8 +263,8 @@ function Dobra4() {
                         <picture>
                             {/* <source srcSet={galt_5_a} data-srcm={galm_5_a} data-src={gal_5_a} type='image/avif'/>
                             <source srcSet={galt_5_w} data-srcm={galm_5_w} data-src={gal_5_w} type='image/webp'/>
-                            <img src={galt_5_j} data-srcm={galm_5_j} data-src={gal_5_j} alt="PERSPECTIVA ILUSTRADA DA CHURRASQUEIRA" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} /> */}
-                            <img src={gal_5_j} data-srcm={gal_5_j} data-src={gal_5_j} alt="PERSPECTIVA ILUSTRADA DA CHURRASQUEIRA" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} />
+                            <img src={galt_5_j} data-srcm={galm_5_j} data-src={NextImgSrc("img/gal_5.jpg")} alt="PERSPECTIVA ILUSTRADA DA CHURRASQUEIRA" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} /> */}
+                            <img src={NextImgSrc("img/gal_5.jpg")} data-srcm={NextImgSrc("img/gal_5.jpg")} data-src={NextImgSrc("img/gal_5.jpg")} alt="PERSPECTIVA ILUSTRADA DA CHURRASQUEIRA" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} />
                         </picture>
                         {/* <img src={gal_5} alt="PERSPECTIVA ILUSTRADA DA CHURRASQUEIRA" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} /> */}
 
@@ -301,8 +283,8 @@ function Dobra4() {
                         <picture>
                             {/* <source srcSet={galt_6_a} data-srcm={galm_6_a} data-src={gal_6_a} type='image/avif'/>
                             <source srcSet={galt_6_w} data-srcm={galm_6_w} data-src={gal_6_w} type='image/webp'/>
-                            <img src={galt_6_j} data-srcm={galm_6_j} data-src={gal_6_j} alt="PERSPECTIVA ILUSTRADA DO COWORKING" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} /> */}
-                            <img src={gal_6_j} data-srcm={gal_6_j} data-src={gal_6_j} alt="PERSPECTIVA ILUSTRADA DO COWORKING" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} />
+                            <img src={galt_6_j} data-srcm={galm_6_j} data-src={NextImgSrc("img/gal_6.jpg")} alt="PERSPECTIVA ILUSTRADA DO COWORKING" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} /> */}
+                            <img src={NextImgSrc("img/gal_6.jpg")} data-srcm={NextImgSrc("img/gal_6.jpg")} data-src={NextImgSrc("img/gal_6.jpg")} alt="PERSPECTIVA ILUSTRADA DO COWORKING" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} />
                         </picture>
                         {/* <img src={gal_6} alt="PERSPECTIVA ILUSTRADA DO COWORKING" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} /> */}
 
@@ -321,8 +303,8 @@ function Dobra4() {
                         <picture>
                             {/* <source srcSet={galt_7_a} data-srcm={galm_7_a} data-src={gal_7_a} type='image/avif'/>
                             <source srcSet={galt_7_w} data-srcm={galm_7_w} data-src={gal_7_w} type='image/webp'/>
-                            <img src={galt_7_j} data-srcm={galm_7_j} data-src={gal_7_j} alt="PERSPECTIVA ILUSTRADA DA PISCINA COM DECK MOLHADO" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} /> */}
-                            <img src={gal_7_j} data-srcm={gal_7_j} data-src={gal_7_j} alt="PERSPECTIVA ILUSTRADA DA PISCINA COM DECK MOLHADO" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} />
+                            <img src={galt_7_j} data-srcm={galm_7_j} data-src={NextImgSrc("img/gal_7.jpg")} alt="PERSPECTIVA ILUSTRADA DA PISCINA COM DECK MOLHADO" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} /> */}
+                            <img src={NextImgSrc("img/gal_7.jpg")} data-srcm={NextImgSrc("img/gal_7.jpg")} data-src={NextImgSrc("img/gal_7.jpg")} alt="PERSPECTIVA ILUSTRADA DA PISCINA COM DECK MOLHADO" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} />
                         </picture>
                         {/* <img src={gal_7} alt="PERSPECTIVA ILUSTRADA DA PISCINA COM DECK MOLHADO" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} /> */}
 
@@ -341,8 +323,8 @@ function Dobra4() {
                         <picture>
                             {/* <source srcSet={galt_8_a} data-srcm={galm_8_a} data-src={gal_8_a} type='image/avif'/>
                             <source srcSet={galt_8_w} data-srcm={galm_8_w} data-src={gal_8_w} type='image/webp'/>
-                            <img src={galt_8_j} data-srcm={galm_8_j} data-src={gal_8_j} alt="PERSPECTIVA ILUSTRADA DA COBERTURA" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} /> */}
-                            <img src={gal_8_j} data-srcm={gal_8_j} data-src={gal_8_j} alt="PERSPECTIVA ILUSTRADA DA COBERTURA" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} />
+                            <img src={galt_8_j} data-srcm={galm_8_j} data-src={NextImgSrc("img/gal_8.jpg")} alt="PERSPECTIVA ILUSTRADA DA COBERTURA" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} /> */}
+                            <img src={NextImgSrc("img/gal_8.jpg")} data-srcm={NextImgSrc("img/gal_8.jpg")} data-src={NextImgSrc("img/gal_8.jpg")} alt="PERSPECTIVA ILUSTRADA DA COBERTURA" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} />
                         </picture>
                         {/* <img src={gal_8} alt="PERSPECTIVA ILUSTRADA DA COBERTURA" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} /> */}
 
@@ -361,8 +343,8 @@ function Dobra4() {
                         <picture>
                             {/* <source srcSet={galt_9_a} data-srcm={galm_9_a} data-src={gal_9_a} type='image/avif'/>
                             <source srcSet={galt_9_w} data-srcm={galm_9_w} data-src={gal_9_w} type='image/webp'/>
-                            <img src={galt_9_j} data-srcm={galm_9_j} data-src={gal_9_j} alt="PERSPECTIVA ILUSTRADA DO PET PLACE" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} /> */}
-                            <img src={gal_9_j} data-srcm={gal_9_j} data-src={gal_9_j} alt="PERSPECTIVA ILUSTRADA DO PET PLACE" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} />
+                            <img src={galt_9_j} data-srcm={galm_9_j} data-src={NextImgSrc("img/gal_9.jpg")} alt="PERSPECTIVA ILUSTRADA DO PET PLACE" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} /> */}
+                            <img src={NextImgSrc("img/gal_9.jpg")} data-srcm={NextImgSrc("img/gal_9.jpg")} data-src={NextImgSrc("img/gal_9.jpg")} alt="PERSPECTIVA ILUSTRADA DO PET PLACE" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} />
                         </picture>
                         {/* <img src={gal_9} alt="PERSPECTIVA ILUSTRADA DO PET PLACE" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} /> */}
 
@@ -385,7 +367,7 @@ function Dobra4() {
                         {/* <source srcSet='' type='image/avif'/>
                         <source srcSet='' type='image/webp'/> */}
                         {/* <img ref={popImgRef} src='' alt='' className='object-cover rounded-lg w-full'/> */}
-                        <img ref={popImgRef} src='' alt='' className='object-cover rounded-lg max-w-[90%] max-h-[80%] mx-auto'/>
+                        <img ref={popImgRef} src='' alt='' className='object-cover rounded-lg max-w-[90%] max-h-[80%] mx-auto mt-20'/>
                     </picture>
                     {/* <img ref={popImgRef} alt="Galeria" className='absolute top-1/2 left-1/2 laptop:translate-x-[-80%] -translate-x-1/2 -translate-y-1/2 object-cover rounded-lg max-w-[300px] laptop:max-w-[50%]' /> */}
                     {/* <div ref={zoom} className="zoom z-50 invisible overflow-hidden relative object-cover rounded-lg shrink-0">
