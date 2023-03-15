@@ -16,7 +16,11 @@ function Dobra7(){
             </div>
 
             <div className="relative basis-[45%] h-full w-full">
-                <img src={NextImgSrc("img/fachada.jpg")} alt="Fachada Eugênio" className='rounded-md mx-auto max-w-[300px] laptop:max-w-[300px] desktop:max-w-[320px] desktop-big:max-w-[360px] 4k:-bottom-10 4k:max-w-[500px] laptop:absolute bottom-0 right-2 rounded-tl-lg rounded-tr-lg' loading='lazy'/>
+                <picture>
+                    <source srcSet={NextImgSrc("img/fachada.avif")} type='image/avif'/>
+                    <source srcSet={NextImgSrc("img/fachada.webp")} type='image/webp'/>
+                    <img src={NextImgSrc("img/fachada.jpg")} alt="Fachada Eugênio" className='rounded-md mx-auto max-w-[300px] laptop:max-w-[300px] desktop:max-w-[320px] desktop-big:max-w-[360px] 4k:-bottom-10 4k:max-w-[500px] laptop:absolute bottom-0 right-2 rounded-tl-lg rounded-tr-lg' loading='lazy'/>
+                </picture>
                 <p className='absolute right-12 tablet:right-56 laptop:right-8 bottom-3 uppercase text-[12px] text-white'>PERSPECTIVA ILUSTRADA DA FACHADA</p>
             </div>
         </div>

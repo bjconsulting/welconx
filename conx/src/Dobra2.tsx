@@ -1,7 +1,11 @@
-import React from 'react'
-import NextImgSrc from './NextImgSrc';
+import React, { useEffect } from 'react'
+import CheckImgSupport from './CheckImgSupport'
+import NextImgSrc from './NextImgSrc'
 
 function Dobra2() {
+    
+    useEffect(() => CheckImgSupport('.bg-bg-2', 'bg-2.webp', 'bg-2.avif', 'bg-2.jpg') )
+
     return (
         <div className=' bg-bg-2 bg-cover'>
 
@@ -19,24 +23,40 @@ function Dobra2() {
 
                 <div className='flex flex-col basis-[45%] items-start gap-1 justify-start'>
 
-                    <div className='f-row flex  tablet:flex-row items-end justify-start gap-2'>
+                    <div className='f-row flex tablet:flex-row items-end justify-start gap-2'>
                         <div className='relative basis-[110%] tablet:basis-[60%] desktop:basis-[75%] desktop-big:basis-[60%] flex flex-end'>
-                            <img src={NextImgSrc("img/img1.png")} alt="Shopping Iguatemi" width='100%' />
+                            <picture>
+                                <source srcSet={NextImgSrc("img/img1.avif")} type='image/avif'/>
+                                <source srcSet={NextImgSrc("img/img1.webp")} type='image/webp'/>
+                                <img src={NextImgSrc("img/img1.png")} alt="Shopping Iguatemi" width='328' height='219' loading='lazy' />
+                            </picture>
                             <p className='absolute bottom-3 right-3 text-[.4em] font-medium text-white uppercase'>Shopping Iguatemi</p>
                         </div>
                         <div className='relative flex flex-row justify-start tablet:basis-[max-content]'>
-                            <img src={NextImgSrc("img/img2.png")} alt="Mercado Municipal" width='100%' className='w-auto place-self-start max-w-[100%]' />
+                            <picture>
+                                <source srcSet={NextImgSrc("img/img2.avif")} type='image/avif'/>
+                                <source srcSet={NextImgSrc("img/img2.webp")} type='image/webp'/>
+                                <img src={NextImgSrc("img/img2.png")} alt="Mercado Municipal" width='295' height='197' loading='lazy' className='w-auto place-self-start max-w-[100%]' />
+                            </picture>
                             <p className='absolute bottom-3 right-8 text-[.4em] font-medium text-white uppercase'>Mercado Municipal</p>
                         </div>
                     </div>
 
-                    <div className='s-row flex  tablet:flex-row items-start  gap-2'>
+                    <div className='s-row flex tablet:flex-row items-start gap-2'>
                         <div className='relative flex flex-row items-start justify-start tablet:basis-[max-content]'>
-                            <img src={NextImgSrc("img/img3.png")} alt="Shopping Vila-lobos" width='auto' className='w-auto' />
+                            <picture>
+                                <source srcSet={NextImgSrc("img/img3.avif")} type='image/avif'/>
+                                <source srcSet={NextImgSrc("img/img3.webp")} type='image/webp'/>
+                                <img src={NextImgSrc("img/img3.png")} alt="Shopping Vila-lobos" width='295' height='197' loading='lazy' className='w-auto' />
+                            </picture>
                             <p className='absolute bottom-3 right-3 text-[.4em] font-medium text-white uppercase'>Shopping Villa-Lobos</p>
                         </div>
-                        <div className='relative basis-[110%] tablet:basis-[60%] laptop:basis-[60%]  desktop:basis-[75%] desktop-big:basis-[60%]'>
-                            <img src={NextImgSrc("img/img4.png")} alt="Restaurante Brasserie Le Jazz" width='100%' />
+                        <div className='relative'>
+                            <picture>
+                                <source srcSet={NextImgSrc("img/img4.avif")} type='image/avif'/>
+                                <source srcSet={NextImgSrc("img/img4.webp")} type='image/webp'/>
+                                <img src={NextImgSrc("img/img4.png")} alt="Restaurante Brasserie Le Jazz" width='328' height='219' loading='lazy' />
+                            </picture>
                             <p className='absolute bottom-3 right-3 text-[.4em] font-medium text-white uppercase'>Restaurante Brasserie Le Jazz</p>
                         </div>
                     </div>

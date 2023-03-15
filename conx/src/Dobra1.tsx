@@ -1,7 +1,12 @@
 import Header from './Header';
 import { HiMapPin } from 'react-icons/hi2'
+import { useEffect } from 'react'
+import CheckImgSupport from './CheckImgSupport'
 
 function Dobra1() {
+
+    useEffect(() => CheckImgSupport('.bg-bg-1', 'bg-1.webp', 'bg-1.avif', 'bg-1.jpg') )
+
     return(
         <div className='bg-bg-1 bg-[length:auto_100%] laptop:bg-[length:100%_100%] bg-[73%] max-w-screen desktop:min-h-[90vh]' id='home'>
             <div className='hero z-10  desktop:min-h-[90svh] relative max-w-screen'>
