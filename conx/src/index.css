@@ -180,3 +180,12 @@ select , textarea
   background-repeat: no-repeat, no-repeat;
   background-position: bottom center, top right;
 }
+
+.hide-scroll {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hide-scroll::-webkit-scrollbar{
+  display: none;
+}
