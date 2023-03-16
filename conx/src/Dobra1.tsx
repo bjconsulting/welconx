@@ -5,7 +5,16 @@ import CheckImgSupport from './CheckImgSupport'
 
 function Dobra1() {
 
-    useEffect(() => CheckImgSupport('.bg-bg-1', 'bg-1.webp', 'bg-1.avif', 'bg-1.jpg') )
+    useEffect(() => {
+        if (!window) return
+
+        setTimeout(() => {
+            if (window.innerWidth <= 640)
+                CheckImgSupport('.bg-bg-1', 'bg-1.webp', 'bg-1.avif', 'bg-1.jpg')
+            else
+                CheckImgSupport('.bg-bg-1', 'bgm-1.webp', 'bgm-1.avif', 'bgm-1.jpg')
+        }, 0)
+    })
 
     return(
         <div className='bg-bg-1 bg-[length:auto_100%] laptop:bg-[length:100%_100%] bg-[73%] max-w-screen desktop:min-h-[90vh]' id='home'>

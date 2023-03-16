@@ -4,7 +4,16 @@ import NextImgSrc from './NextImgSrc'
 
 function Dobra2() {
     
-    useEffect(() => CheckImgSupport('.bg-bg-2', 'bg-2.webp', 'bg-2.avif', 'bg-2.jpg') )
+    useEffect(() => {
+        if (!window) return
+
+        setTimeout(() => {
+            if (window.innerWidth <= 640)
+                CheckImgSupport('.bg-bg-2', 'bg-2.webp', 'bg-2.avif', 'bg-2.jpg')
+            else
+                CheckImgSupport('.bg-bg-2', 'bgm-2.webp', 'bgm-2.avif', 'bgm-2.jpg')
+            }, 0)
+    })
 
     return (
         <div className=' bg-bg-2 bg-cover'>
