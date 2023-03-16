@@ -45,8 +45,8 @@ function Dobra6(){
                 Plantas desenhadas para proporcionar a melhor perspectiva de viver.
             </h2>
 
-            <div className='relative'>
-                <Carousel navButtonBgColor='bg-sub' navButtonFillColor='fill-[#D0A388]' className='relative image-container hide-scroll overflow-x-scroll scroll-smooth snap-x snap-mandatory snap-always max-w-[300px] laptop:max-w-[700px]'>
+            <div className='relative mt-10 laptop:mt-0'>
+                <Carousel navButtonBgColor='bg-sub' navButtonFillColor='fill-[#D0A388]' className='relative mx-auto image-container hide-scroll overflow-x-scroll scroll-smooth snap-x snap-mandatory snap-always max-w-[300px] laptop:max-w-[700px]'>
                     <div className="relative snap-start flex flex-col gap-4 justify-center items-center w-[754px] max-w-[300px] shrink-0 laptop:max-w-[700px]">
                         <h3 className="uppercase font-bold text-sub text-2xl text-center">
                             STUDIO | 31 m²
