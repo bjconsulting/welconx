@@ -81,7 +81,7 @@ export default function Form(props: Props) {
             <span className='pipe'>
                 |
             </span>
-            <input type="tel" name='celular' placeholder='Digite seu telefone' required />
+            <input type="tel" name='celular' placeholder='Digite seu telefone' required minLength={9} />
         </div>
 
         <div className='container-input relative flex flex-row '>

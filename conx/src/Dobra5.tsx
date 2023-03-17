@@ -16,8 +16,8 @@ function Dobra5() {
 
                 <div className='flex flex-col-reverse laptop:flex-row gap-20 mx-auto justify-center'>
                     <div className='left-container relative h-auto'>
-                        <Carousel navButtonBgColor="bg-[#FEFEFE]" navButtonFillColor="fill-prim" className='relative image-container hide-scroll overflow-x-scroll scroll-smooth snap-x snap-mandatory snap-always w-[700px] max-w-[90vw] tablet:max-w-[680px] laptop:max-w-[300px] desktop:max-w-[500px] desktop-big:max-w-[700px]'>
-                            <div className='relative snap-start shrink-0 w-[700px] max-w-[90vw] tablet:max-w-[680px] laptop:max-w-[300px] desktop:max-w-[500px] desktop-big:max-w-[700px]'>
+                        <Carousel navButtonBgColor="bg-[#FEFEFE]" navButtonFillColor="fill-prim" className='relative image-container hide-scroll overflow-x-scroll scroll-smooth snap-x snap-mandatory snap-always w-full max-w-[90vw] laptop:max-w-[300px] desktop:max-w-[500px] desktop-big:max-w-[700px]'>
+                            <div className='relative snap-start shrink-0 w-full max-w-[90vw] laptop:max-w-[300px] desktop:max-w-[500px] desktop-big:max-w-[700px]'>
                                 <picture>
                                     <source srcSet={NextImgSrc("img/lavanderia.avif")} type='image/avif' />
                                     <source srcSet={NextImgSrc("img/lavanderia.webp")} type='image/webp' />
@@ -25,7 +25,7 @@ function Dobra5() {
                                 </picture>
                                 <p className='absolute right-4 bottom-4 uppercase text-[.4em] text-white'> perspectiva ilustrada da Lavanderia</p>
                             </div>
-                            <div className='relative snap-start shrink-0 w-[700px] max-w-[90vw] tablet:max-w-[680px] laptop:max-w-[300px] desktop:max-w-[500px] desktop-big:max-w-[700px]'>
+                            <div className='relative snap-start shrink-0 w-full max-w-[90vw] laptop:max-w-[300px] desktop:max-w-[500px] desktop-big:max-w-[700px]'>
                                 <picture>
                                     <source srcSet={NextImgSrc("img/market.avif")} type='image/avif' />
                                     <source srcSet={NextImgSrc("img/market.webp")} type='image/webp' />
@@ -33,7 +33,7 @@ function Dobra5() {
                                 </picture>
                                 <p className='absolute right-4 bottom-4 uppercase text-[.4em] text-white'> perspectiva ilustrada do Mini Market</p>
                             </div>
-                            <div className='relative snap-start shrink-0 w-[700px] max-w-[90vw] tablet:max-w-[680px] laptop:max-w-[300px] desktop:max-w-[500px] desktop-big:max-w-[700px]'>
+                            <div className='relative snap-start shrink-0 w-full max-w-[90vw] laptop:max-w-[300px] desktop:max-w-[500px] desktop-big:max-w-[700px]'>
                                 <picture>
                                     <source srcSet={NextImgSrc("img/delivery.avif")} type='image/avif' />
                                     <source srcSet={NextImgSrc("img/delivery.webp")} type='image/webp' />
@@ -41,7 +41,7 @@ function Dobra5() {
                                 </picture>
                                 <p className='absolute right-4 bottom-4 uppercase text-[.4em] text-white'>IMAGEM ILUSTRATIVA</p>
                             </div>
-                            <div className='relative snap-start shrink-0 w-[700px] max-w-[90vw] tablet:max-w-[680px] laptop:max-w-[300px] desktop:max-w-[500px] desktop-big:max-w-[700px]'>
+                            <div className='relative snap-start shrink-0 w-full max-w-[90vw] laptop:max-w-[300px] desktop:max-w-[500px] desktop-big:max-w-[700px]'>
                                 <picture>
                                     <source srcSet={NextImgSrc("img/bike.avif")} type='image/avif' />
                                     <source srcSet={NextImgSrc("img/bike.webp")} type='image/webp' />
