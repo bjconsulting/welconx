@@ -24,7 +24,7 @@ function Dobra1() {
                 <div className='m-r py-32 pt-34 laptop:pt-64 flex flex-col  justify-left items-start laptop:justify-start desktop:max-w-[580px] gap-12 tablet:text-left'>
                     
                     <p className='text-[#F3F3F3]  font-medium text-[1em] uppercase '>
-                        lançamento
+                        breve lançamento
                     </p>
 
                     <h1 className='font-bold text-[1.6em] laptop:text-[2.4em] text-[#FEFEFE]'>
@@ -42,7 +42,7 @@ function Dobra1() {
                         Aptos. e Studios de 31 m² |<br className='laptop:hidden'/> lazer completo
                     </p>
 
-                    <a href="#form-contato" className='hero_b bg-sub text-white flex flex-row justify-center items-center gap-4 min-w-[217px] px-5 py-[10px] font-semibold rounded-md hover:bg-[#94725E]'>
+                    <a href="#form-contato" className='hero_b uppercase bg-sub text-white flex flex-row justify-center items-center gap-4 min-w-[217px] px-5 py-[10px] font-semibold rounded-md hover:bg-[#94725E]'>
                         Fale com um consultor
                     </a>
 
