@@ -29,9 +29,9 @@ function MenuMobile({ open }: { open: boolean }) {
                 Contato
             </a>
 
-            <button className="flex justify-start items-center  font-bold menu_item text-white" aria-label="Clique para ir até o formulário"
+            <button className="uppercase flex justify-start items-center  font-bold menu_item text-white" aria-label="Clique para ir até o formulário"
                 onClick={() => { document.querySelector("#contato")?.scrollIntoView({ block: 'start' }) }}>
-                Fale com um corretor
+                Fale com um consultor
             </button>
 
         </nav>

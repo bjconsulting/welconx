@@ -39,7 +39,7 @@ function Dobra5() {
                                     <source srcSet={NextImgSrc("img/delivery.webp")} type='image/webp' />
                                     <img className=' aspect-[1.47] w-full' src={NextImgSrc("img/delivery.jpg")} alt="Espaço Delivery" loading='lazy' />
                                 </picture>
-                                <p className='absolute right-4 bottom-4 uppercase text-[.4em] text-white'> perspectiva ilustrada do Espaço Delivery</p>
+                                <p className='absolute right-4 bottom-4 uppercase text-[.4em] text-white'>IMAGEM ILUSTRATIVA</p>
                             </div>
                             <div className='relative snap-start shrink-0 w-[700px] max-w-[90vw] tablet:max-w-[680px] laptop:max-w-[300px] desktop:max-w-[500px] desktop-big:max-w-[700px]'>
                                 <picture>
@@ -47,7 +47,7 @@ function Dobra5() {
                                     <source srcSet={NextImgSrc("img/bike.webp")} type='image/webp' />
                                     <img className=' aspect-[1.47] w-full' src={NextImgSrc("img/bike.jpg")} alt="Bike Elétrica Compartilhada" loading='lazy' />
                                 </picture>
-                                <p className='absolute right-4 bottom-4 uppercase text-[.4em] text-white'> perspectiva ilustrada de Bike Elétrica Compartilhada</p>
+                                <p className='absolute right-4 bottom-4 uppercase text-[.4em] text-white'> IMAGEM ILUSTRATIVA</p>
                             </div>
                         </Carousel>
 
