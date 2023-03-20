@@ -1,5 +1,8 @@
 import { useRef } from 'react'
 import NextImgSrc from './NextImgSrc'
+import { GrNext } from "react-icons/gr";
+import { GrPrevious } from "react-icons/gr";
+
 
 function Dobra4() {
     const pop = useRef<HTMLDivElement>(null)
@@ -428,12 +431,12 @@ function Dobra4() {
             {/* <div ref={pop} className="popup-image hidden fixed overflow-hidden top-0 left-0 bg-[rgba(0,_0,_0,_.9)] h-full w-full z-40" onPointerMove={handleMouseMove}> */}
             <div ref={pop} className="popup-image hidden fixed overflow-hidden top-0 left-0 bg-[rgba(0,_0,_0,_.9)] h-full w-full z-40">
                 {/* <div className='flex flex-col gap-5 w-full absolute mt-20 tablet:w-auto tablet:flex-row tablet:justify-center tablet:top-1/2 tablet:left-1/2 tablet:-translate-x-1/2 tablet:-translate-y-1/2'> */}
-                <div className='w-full absolute tablet:flex-row tablet:justify-center tablet:top-1/2 tablet:left-1/2 tablet:-translate-x-1/2 tablet:-translate-y-1/2'>
+                <div className='w-full mx-auto absolute tablet:flex-row tablet:justify-center tablet:top-1/2 tablet:left-1/2 tablet:-translate-x-1/2 tablet:-translate-y-1/2'>
                     <picture onTouchStart={touchStart} onTouchEnd={touchEnd}>
                         <source srcSet='' type='image/avif'/>
                         <source srcSet='' type='image/webp'/>
                         {/* <img ref={popImgRef} src='' alt='' className='object-cover rounded-lg w-full'/> */}
-                        <img ref={popImgRef} src='' alt='' className='object-cover rounded-lg max-w-[90%] max-h-[80%] mx-auto mt-20' loading='lazy'/>
+                        <img ref={popImgRef} src='' alt='' className='object-cover rounded-lg max-w-[80%] max-h-[80%] mx-auto mt-40 tablet:mt-0' loading='lazy'/>
                     </picture>
                     {/* <img ref={popImgRef} alt="Galeria" className='absolute top-1/2 left-1/2 laptop:translate-x-[-80%] -translate-x-1/2 -translate-y-1/2 object-cover rounded-lg max-w-[300px] laptop:max-w-[50%]' /> */}
                     {/* <div ref={zoom} className="zoom z-50 invisible overflow-hidden relative object-cover rounded-lg shrink-0">
@@ -446,9 +449,9 @@ function Dobra4() {
 
                 </div>
                 {/* <div ref={rect} className="invisible rect w-[250px] h-[150px] bg-slate-400 opacity-60 absolute pointer-events-none z-50 -translate-x-1/2 -translate-y-1/2"></div> */}
-                <span ref={close} className='absolute right-12 top-1 w-8 h-4 text-[3em] rounded-full text-white cursor-pointer select-none tablet:top-3' onClick={handleClose}>&times;</span>
-                <span className='text-white cursor-pointer absolute top-1/2 left-3 text-9xl select-none' onClick={prev}>&lt;</span>
-                <span className='text-white cursor-pointer absolute top-1/2 right-3 text-9xl select-none' onClick={next}>&gt;</span>
+                <span ref={close} className='absolute right-12 top-1 w-2 h-2 text-[3em] rounded-full text-white cursor-pointer select-none tablet:top-3' onClick={handleClose}>&times;</span>
+                <span className='p-3 border border-solid border-white rounded-full cursor-pointer absolute top-1/2 left-10 laptop:left-3 text-2xl laptop:text-7xl select-none' onClick={prev}><GrPrevious className='fill-white'/></span>
+                <span className='p-3 border border-solid border-white rounded-full cursor-pointer absolute top-1/2 right-10 laptop:right-3 text-2xl laptop:text-7xl select-none' onClick={next}><GrNext /></span>
             </div>
         </div>
     )

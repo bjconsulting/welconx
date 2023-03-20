@@ -195,3 +195,9 @@ select , textarea
 .hide-scroll::-webkit-scrollbar{
   display: none;
 }
+
+
+.popup-image > span > svg > polyline {
+  stroke: white !important;
+  border-radius: 50%;
+}
