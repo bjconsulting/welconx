@@ -153,6 +153,8 @@ function Dobra4() {
             */
         })
 
+        popPict.dataset['index'] = pict.dataset['index']
+
         /*
         {
             const { width: rectWidth, height: rectHeight } = rect.current!.getBoundingClientRect()
@@ -166,6 +168,54 @@ function Dobra4() {
             Object.assign(zoom.current!.style, zoomStyle)
         }
         */
+    }
+
+    const prev = () => {
+        const pict = document.querySelector('.popup-image picture') as HTMLPictureElement
+        const imgs = document.querySelectorAll('.image picture img') as NodeListOf<HTMLImageElement>
+        const index = parseInt(pict.dataset['index']!)
+
+        const prevIndex = index - 1 === -1
+                            ? imgs.length - 1
+                            : index - 1
+
+        const img = imgs[prevIndex] as HTMLImageElement
+        img.click()
+    }
+
+    const next = () => {
+        const pict = document.querySelector('.popup-image picture') as HTMLPictureElement
+        const imgs = document.querySelectorAll('.image picture img') as NodeListOf<HTMLImageElement>
+        const index = parseInt(pict.dataset['index']!)
+        
+        const nextIndex = index + 1 === imgs.length
+                            ? 0
+                            : index + 1
+
+        const img = document.querySelectorAll('.image picture img')[nextIndex] as HTMLImageElement
+        img.click()
+    }
+
+    let pos = 0
+    const touchStart = (e: React.TouchEvent<HTMLElement>) => {
+        console.log('Drag start', e.changedTouches)
+        e.preventDefault()
+        const posStart = e.changedTouches[0].screenX
+        pos = posStart
+    }
+
+    const touchEnd = (e: React.TouchEvent<HTMLElement>) => {
+        console.log('Drag end', e.changedTouches)
+        e.preventDefault()
+        const posEnd = e.changedTouches[0].screenX
+
+        const delta = posEnd - pos
+
+        if (delta === 0) return
+
+        if (delta > 0) prev()
+
+        if (delta < 0) next()
     }
 
     return (
@@ -183,7 +233,7 @@ function Dobra4() {
 
                 <div className='flex flex-col justify-center items-center gap-8 laptop:gap-6 tablet:basis-[30%]'>
                     <div className='image relative overflow-hidden'>
-                        <picture>
+                        <picture data-index="0">
                             <source srcSet={NextImgSrc("img/gal_1.avif")} data-src={NextImgSrc("img/gal_1.avif")} type='image/avif'/>
                             <source srcSet={NextImgSrc("img/gal_1.webp")} data-src={NextImgSrc("img/gal_1.webp")} type='image/webp'/>
                             {/* <img src={galt_1_j} data-srcm={galm_1_j} data-src={gal_1_j} alt="PERSPECTIVA ILUSTRADA DO HALL SOCIAL" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick}/> */}
@@ -202,7 +252,7 @@ function Dobra4() {
 
                 <div className='flex flex-col justify-center items-center gap-8 laptop:gap-6 tablet:basis-[30%]'>
                     <div className='image relative overflow-hidden'>
-                        <picture>
+                        <picture data-index="1">
                             <source srcSet={NextImgSrc("img/gal_2.avif")} data-src={NextImgSrc("img/gal_2.avif")} type='image/avif'/>
                             <source srcSet={NextImgSrc("img/gal_2.webp")} data-src={NextImgSrc("img/gal_2.webp")} type='image/webp'/>
                             {/* <source srcSet={galt_2_a} data-srcm={galm_1_a} data-src={gal_2_a} type='image/avif'/>
@@ -223,7 +273,7 @@ function Dobra4() {
 
                 <div className='flex flex-col justify-center items-center gap-8 laptop:gap-6 tablet:basis-[30%]'>
                     <div className='image relative overflow-hidden'>
-                        <picture>
+                        <picture data-index="2">
                             <source srcSet={NextImgSrc("img/gal_3.avif")} data-src={NextImgSrc("img/gal_3.avif")} type='image/avif'/>
                             <source srcSet={NextImgSrc("img/gal_3.webp")} data-src={NextImgSrc("img/gal_3.webp")} type='image/webp'/>
                             {/* <source srcSet={galt_3_a} data-srcm={galm_3_a} data-src={gal_3_a} type='image/avif'/>
@@ -245,7 +295,7 @@ function Dobra4() {
 
                 <div className='flex flex-col justify-center items-center gap-8 laptop:gap-6 tablet:basis-[30%]'>
                     <div className='image relative overflow-hidden'>
-                        <picture>
+                        <picture data-index="3">
                             <source srcSet={NextImgSrc("img/gal_4.avif")} data-src={NextImgSrc("img/gal_4.avif")} type='image/avif'/>
                             <source srcSet={NextImgSrc("img/gal_4.webp")} data-src={NextImgSrc("img/gal_4.webp")} type='image/webp'/>
                             {/* <source srcSet={galt_4_a} data-srcm={galm_4_a} data-src={gal_4_a} type='image/avif'/>
@@ -266,7 +316,7 @@ function Dobra4() {
 
                 <div className='flex flex-col justify-center items-center gap-8 laptop:gap-6 tablet:basis-[30%]'>
                     <div className='image relative overflow-hidden'>
-                        <picture>
+                        <picture data-index="4">
                             <source srcSet={NextImgSrc("img/gal_5.avif")} data-src={NextImgSrc("img/gal_5.avif")} type='image/avif'/>
                             <source srcSet={NextImgSrc("img/gal_5.webp")} data-src={NextImgSrc("img/gal_5.webp")} type='image/webp'/>
                             {/* <source srcSet={galt_5_a} data-srcm={galm_5_a} data-src={gal_5_a} type='image/avif'/>
@@ -288,7 +338,7 @@ function Dobra4() {
 
                 <div className='flex flex-col justify-center items-center gap-8 laptop:gap-6 tablet:basis-[30%]'>
                     <div className='image relative overflow-hidden'>
-                        <picture>
+                        <picture data-index="5">
                             <source srcSet={NextImgSrc("img/gal_6.avif")} data-src={NextImgSrc("img/gal_6.avif")} type='image/avif'/>
                             <source srcSet={NextImgSrc("img/gal_6.webp")} data-src={NextImgSrc("img/gal_6.webp")} type='image/webp'/>
                             {/* <source srcSet={galt_6_a} data-srcm={galm_6_a} data-src={gal_6_a} type='image/avif'/>
@@ -310,7 +360,7 @@ function Dobra4() {
 
                 <div className='flex flex-col justify-center items-center gap-8 laptop:gap-6 tablet:basis-[30%]'>
                     <div className='image relative overflow-hidden'>
-                        <picture>
+                        <picture data-index="6">
                             <source srcSet={NextImgSrc("img/gal_7.avif")} data-src={NextImgSrc("img/gal_7.avif")} type='image/avif'/>
                             <source srcSet={NextImgSrc("img/gal_7.webp")} data-src={NextImgSrc("img/gal_7.webp")} type='image/webp'/>
                             {/* <source srcSet={galt_7_a} data-srcm={galm_7_a} data-src={gal_7_a} type='image/avif'/>
@@ -332,7 +382,7 @@ function Dobra4() {
 
                 <div className='flex flex-col justify-center items-center gap-8 laptop:gap-6 tablet:basis-[30%]'>
                     <div className='image relative overflow-hidden'>
-                        <picture>
+                        <picture data-index="7">
                             <source srcSet={NextImgSrc("img/gal_8.avif")} data-src={NextImgSrc("img/gal_8.avif")} type='image/avif'/>
                             <source srcSet={NextImgSrc("img/gal_8.webp")} data-src={NextImgSrc("img/gal_8.webp")} type='image/webp'/>
                             {/* <source srcSet={galt_8_a} data-srcm={galm_8_a} data-src={gal_8_a} type='image/avif'/>
@@ -354,7 +404,7 @@ function Dobra4() {
 
                 <div className='flex flex-col justify-center items-center gap-8 laptop:gap-6 tablet:basis-[30%]'>
                     <div className='image relative overflow-hidden'>
-                        <picture>
+                        <picture data-index="8">
                             <source srcSet={NextImgSrc("img/gal_9.avif")} data-src={NextImgSrc("img/gal_9.avif")} type='image/avif'/>
                             <source srcSet={NextImgSrc("img/gal_9.webp")} data-src={NextImgSrc("img/gal_9.webp")} type='image/webp'/>
                             {/* <source srcSet={galt_9_a} data-srcm={galm_9_a} data-src={gal_9_a} type='image/avif'/>
@@ -379,7 +429,7 @@ function Dobra4() {
             <div ref={pop} className="popup-image hidden fixed overflow-hidden top-0 left-0 bg-[rgba(0,_0,_0,_.9)] h-full w-full z-40">
                 {/* <div className='flex flex-col gap-5 w-full absolute mt-20 tablet:w-auto tablet:flex-row tablet:justify-center tablet:top-1/2 tablet:left-1/2 tablet:-translate-x-1/2 tablet:-translate-y-1/2'> */}
                 <div className='w-full absolute tablet:flex-row tablet:justify-center tablet:top-1/2 tablet:left-1/2 tablet:-translate-x-1/2 tablet:-translate-y-1/2'>
-                    <picture>
+                    <picture onTouchStart={touchStart} onTouchEnd={touchEnd}>
                         <source srcSet='' type='image/avif'/>
                         <source srcSet='' type='image/webp'/>
                         {/* <img ref={popImgRef} src='' alt='' className='object-cover rounded-lg w-full'/> */}
@@ -393,9 +443,12 @@ function Dobra4() {
                             <img ref={zoomImgRef} src='' alt='' className='absolute max-w-none'/>
                         </picture>
                     </div> */}
+
                 </div>
                 {/* <div ref={rect} className="invisible rect w-[250px] h-[150px] bg-slate-400 opacity-60 absolute pointer-events-none z-50 -translate-x-1/2 -translate-y-1/2"></div> */}
-                <span ref={close} className='absolute right-12 top-1 w-8 h-4 text-[3em] rounded-full text-white cursor-pointer tablet:top-3' onClick={handleClose}>&times;</span>
+                <span ref={close} className='absolute right-12 top-1 w-8 h-4 text-[3em] rounded-full text-white cursor-pointer select-none tablet:top-3' onClick={handleClose}>&times;</span>
+                <span className='text-white cursor-pointer absolute top-1/2 left-3 text-9xl select-none' onClick={prev}>&lt;</span>
+                <span className='text-white cursor-pointer absolute top-1/2 right-3 text-9xl select-none' onClick={next}>&gt;</span>
             </div>
         </div>
     )
