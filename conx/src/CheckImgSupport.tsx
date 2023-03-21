@@ -25,11 +25,11 @@ export default function CheckImgSupport(selector:string, webpImg: string, avifIm
     const element = document.querySelector(selector)! as HTMLElement
   
     if (await supportsAvif()) {
-      element.style.backgroundImage = `url(${avifImg})`
+      element.style.backgroundImage = `url(${NextImgSrc(avifImg)})`
     } else if (await supportsWebp()) {
-      element.style.backgroundImage = `url(${webpImg})`
+      element.style.backgroundImage = `url(${NextImgSrc(webpImg)})`
     } else {
-      element.style.backgroundImage = `url(${fallbackImg})`
+      element.style.backgroundImage = `url(${NextImgSrc(fallbackImg)})`
     }
   }
   

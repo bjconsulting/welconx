@@ -13,8 +13,13 @@ export default function Form(props: Props) {
     const formData = new FormData(form)
 
     try {
-      
-      const response = await fetch('email/form.php', {
+      const base = window.location.pathname
+
+      const url = base.endsWith('/')
+                  ? `${base}email/form.php`
+                  : `${base}/email/form.php`
+
+      const response = await fetch(url, {
         method: 'POST',
         body: formData
       })
@@ -30,7 +35,7 @@ export default function Form(props: Props) {
     } catch (error) {
 
       console.error(error)
-      alert("Error inesperado. Por favor, tente novamente mais tarde!")
+      alert("Erro inesperado. Por favor, tente novamente mais tarde!")
 
     }
 

@@ -1,6 +1,6 @@
 import { useRef } from 'react'
-import NextImgSrc from './NextImgSrc'
 import { GrNext } from "react-icons/gr";
+import NextImgSrc from './NextImgSrc'
 import { GrPrevious } from "react-icons/gr";
 
 
@@ -35,14 +35,17 @@ function Dobra4() {
         }
     }
     */
+    const activateBackScroll = () => {
+        const body = document.querySelector('body');
+        body!.style.width = wbkp;
+        body!.style.height = hbkp;
+        body!.style.overflow = obkp;
+    }
     const handleClose = () => {
         pop.current!.style.display = "none"
         //rect.current!.style.visibility = "hidden"
 
-        const body = document.querySelector('body')
-        body!.style.width = wbkp
-        body!.style.height = hbkp
-        body!.style.overflow = obkp
+        activateBackScroll()
     }
     /*
     const handleMouseMove = (event: PointerEvent) => {
@@ -182,6 +185,8 @@ function Dobra4() {
                             ? imgs.length - 1
                             : index - 1
 
+        activateBackScroll()
+
         const img = imgs[prevIndex] as HTMLImageElement
         img.click()
     }
@@ -194,6 +199,8 @@ function Dobra4() {
         const nextIndex = index + 1 === imgs.length
                             ? 0
                             : index + 1
+
+        activateBackScroll()
 
         const img = document.querySelectorAll('.image picture img')[nextIndex] as HTMLImageElement
         img.click()
