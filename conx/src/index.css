@@ -133,7 +133,7 @@ h1, h2, h3, h4 {
 }
 
 input[type=checkbox] + p::before{
-  content: '✓';
+  //content: '✓';
   width: 13px;
   height: 13px;
   position: absolute;
