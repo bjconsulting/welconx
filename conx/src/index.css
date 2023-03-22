@@ -114,6 +114,14 @@ h1, h2, h3, h4 {
   min-width: 100%;
   margin-bottom: 15px;
 }
+.input2 {
+    min-width: 20%;
+}
+@media (max-width:1024px){
+  .input2, .container-input2{
+    min-width: 100%;
+  }
+}
 
 #check {
   all:unset;
