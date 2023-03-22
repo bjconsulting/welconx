@@ -10,7 +10,7 @@ export default function DobraForm() {
             <div className="p-4 flex flex-col mx-auto px-[5%]">
 
                 {
-                    !isSent
+                    isSent
                         ? <ThankYouTopo />
                         : 
                             <>
