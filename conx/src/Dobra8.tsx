@@ -12,7 +12,7 @@ function Dobra8(){
             <div className="flex mx-4 rounded-3xl pb-10 flex-col laptop:flex-row justify-center items-center bg-prim p-4 laptop:p-12 laptop:mx-12 desktop-big:mx-32  laptop:rounded-3xl form-bg laptop:gap-16" style={{backgroundImage: "url('img/Ellipse 4.svg'), url('img/Ellipse 5.svg')"}}>
                 <div className="left flex flex-col justify-start items-start gap-12 basis-[45%]">
                     <h4 className="font-bold text-[1.6em] laptop:text-[2em] text-center laptop:text-left text-[#FEFEFE]">
-                        Vamos conversar e esclarecer todas as suas dúvidas sobre o seu futuro lar.
+                        Vamos conversar e esclarecer todas as suas dúvidas sobre o seu futuro apartamento.
                     </h4>
                     {/* <div className="bg-[#D0A388] button_f flex flex-row justify-around items-center px-7 mx-auto tablet:px-14 laptop:mx-0 py-2 gap-2 rounded-2xl uppercase text-white font-bold ">
                         <p>fale conosco</p> 
