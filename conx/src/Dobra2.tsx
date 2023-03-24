@@ -64,9 +64,9 @@ function Dobra2() {
                             <picture style={{width:'100%'}}>
                                 <source srcSet={NextImgSrc("img/img4.avif")} type='image/avif'/>
                                 <source srcSet={NextImgSrc("img/img4.webp")} type='image/webp'/>
-                                <img src={NextImgSrc("img/img4.png")} alt="Restaurante Brasserie Le Jazz" width='100%' height='100%' loading='lazy' />
+                                <img src={NextImgSrc("img/img4.png")} alt="Le Jazz Brasserie" width='100%' height='100%' loading='lazy' />
                             </picture>
-                            <p className='absolute bottom-3 right-3 text-[.4em] font-medium text-white uppercase'>Restaurante Brasserie Le Jazz</p>
+                            <p className='absolute bottom-3 right-3 text-[.4em] font-medium text-white uppercase'>LE JAZZ BRASSERIE</p>
                         </div>
                     </div>
 

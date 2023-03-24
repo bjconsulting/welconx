@@ -398,16 +398,16 @@ function Dobra4() {
                             {/* <source srcSet={galt_8_a} data-srcm={galm_8_a} data-src={gal_8_a} type='image/avif'/>
                             <source srcSet={galt_8_w} data-srcm={galm_8_w} data-src={gal_8_w} type='image/webp'/>
                             <img src={galt_8_j} data-srcm={galm_8_j} data-src={NextImgSrc("img/gal_8.jpg")} alt="PERSPECTIVA ILUSTRADA DA COBERTURA" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} /> */}
-                            <img src={NextImgSrc("img/gal_8.jpg")} data-srcm={NextImgSrc("img/gal_8.jpg")} data-src={NextImgSrc("img/gal_8.jpg")} alt="PERSPECTIVA ILUSTRADA DA COBERTURA" width='380px' loading='lazy' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} />
+                            <img src={NextImgSrc("img/gal_8.jpg")} data-srcm={NextImgSrc("img/gal_8.jpg")} data-src={NextImgSrc("img/gal_8.jpg")} alt="PERSPECTIVA ILUSTRADA DO ROOFTOP" width='380px' loading='lazy' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} />
                         </picture>
                         {/* <img src={gal_8} alt="PERSPECTIVA ILUSTRADA DA COBERTURA" width='380px' className='aspect-[19/12] cursor-pointer object-cover' onClick={thumbClick} /> */}
 
                         <p className='uppercase absolute right-3 bottom-3 text-[.3em] font-semibold text-white'>
-                            PERSPECTIVA ILUSTRADA DA COBERTURA
+                            PERSPECTIVA ILUSTRADA DO ROOFTOP
                         </p>
                     </div>
                     <p className='font-semibold text-[1.2em] text-center'>
-                        Cobertura
+                        Rooftop
                     </p>
                 </div>
 
