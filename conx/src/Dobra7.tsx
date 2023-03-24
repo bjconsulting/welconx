@@ -11,7 +11,7 @@ function Dobra7(){
                 </h3>
 
                 <p className="font-light laptop:text-2xl laptop:leading-[1.8rem] text-left text-[#FEFEFE] pb-8 laptop:text-[1em] ">
-                    Novas formas de viver, um novo jeito de pertencer. Agora, suas escolhas são prioridades. É você na sua melhor versão, é você no lugar certo. Onde o urbano se envolve e conecta. Onde tudo é intenso, possível e acontece ao mesmo tempo. Morar com estilo e praticidade, somado ao privilégio de estar em um dos bairros mais desejados da cidade, com o mundo ao seu alcance.
+                    Novas formas de viver, um novo jeito de pertencer. Agora, suas escolhas são prioridades. É você na sua melhor versão, é você no lugar certo. Onde o urbano te envolve e conecta. Onde tudo é intenso, possível e acontece ao mesmo tempo. Morar com estilo e praticidade, somado ao privilégio de estar em um dos bairros mais desejados da cidade, com o mundo ao seu alcance.
                 </p>
             </div>
 
@@ -21,7 +21,7 @@ function Dobra7(){
                     <source srcSet={NextImgSrc("img/fachada.webp")} type='image/webp'/>
                     <img src={NextImgSrc("img/fachada.jpg")} alt="Fachada Eugênio" className='rounded-md mx-auto max-w-[300px] bottom-0 right-2 rounded-tl-lg rounded-tr-lg laptop:max-w-[300px] laptop:absolute desktop:max-w-[320px] desktop-big:max-w-[360px] 4k:-bottom-10 4k:max-w-[500px]' loading='lazy'/>
                 </picture>
-                <p className='absolute right-12 tablet:right-64 laptop:right-8 bottom-3 uppercase text-[12px] text-white'>PERSPECTIVA ILUSTRADA DA FACHADA</p>
+                <p className='absolute mobile-sm:right-12 right-2 tablet:right-56 laptop:right-5 bottom-3 uppercase text-[8px] text-white'>PERSPECTIVA ILUSTRADA DA FACHADA</p>
             </div>
         </div>
     )
