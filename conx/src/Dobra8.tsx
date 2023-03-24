@@ -7,19 +7,20 @@ function Dobra8(){
     const [isSent, setSend] = useState<boolean>(false)
 
     return(
-        <div className="laptop:mx-16 my-8" id='contato'>
-            <div className="flex flex-col laptop:flex-row justify-center items-start bg-prim p-4 laptop:p-12 laptop:mx-32 rounded-none laptop:rounded-3xl form-bg">
-                <div className="left flex flex-col justify-start items-start gap-12 basis-[45%] mt-[2em]">
-                    <h4 className="font-bold text-[2em] text-center laptop:text-left text-[#FEFEFE]">
-                        Vamos conversar e esclarecer todas as suas dúvidas sobre o seu futuro lar.
+        <div className=" my-8" id='contato'>
+            {/* background-image: url('/img/Ellipse 4.svg'), url('/img/Ellipse 5.svg'); */}
+            <div className="flex mx-4 rounded-3xl pb-10 flex-col laptop:flex-row justify-center items-center bg-prim p-4 laptop:p-12 laptop:mx-12 desktop-big:mx-32  laptop:rounded-3xl form-bg laptop:gap-16" style={{backgroundImage: "url('img/Ellipse 4.svg'), url('img/Ellipse 5.svg')"}}>
+                <div className="left flex flex-col justify-start items-start gap-12 basis-[45%]">
+                    <h4 className="font-bold text-[1.6em] laptop:text-[2em] text-center laptop:text-left text-[#FEFEFE]">
+                        Vamos conversar e esclarecer todas as suas dúvidas sobre o seu futuro apartamento.
                     </h4>
-                    <div className="bg-[#D0A388] button_f flex flex-row justify-around items-center px-14 mx-auto laptop:mx-0 py-2 gap-2 rounded-2xl uppercase text-white font-bold ">
+                    {/* <div className="bg-[#D0A388] button_f flex flex-row justify-around items-center px-7 mx-auto tablet:px-14 laptop:mx-0 py-2 gap-2 rounded-2xl uppercase text-white font-bold ">
                         <p>fale conosco</p> 
                         <BsArrowRightShort size={'2em'} className='fill-white rotate-90 laptop:rotate-0'/>
-                    </div>
+                    </div> */}
                 </div>
 
-                <div className='right basis-[45%] mt-12 laptop:mt-0 w-full'>
+                <div id="form-contato" className='right basis-[45%] mt-1 pt-12 laptop:-mt-12 w-full'>
                     {
                         isSent
                         ? <ThankYou />

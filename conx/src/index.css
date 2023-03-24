@@ -2,8 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+
+/* @font-face {
+  font-family: "SF-Pro-Display-Bold";
+  src: local("SF Pro Display"),
+    url("../public/fonts/SF-Pro-Display-Bold.otf");
+  font-display: swap;
+} */
 
 * {
   padding:0;
@@ -50,14 +56,16 @@ body {
 }
 
 h1, h2, h3, h4 {
-  fon-weight: bold;
+  font-weight: bold;
 }
 .hero {
   background: linear-gradient(89.78deg, #465361 0.15%, rgba(70, 83, 97, 0.91) 19.87%, rgba(70, 83, 97, 0.22) 54.75%, rgba(70, 83, 97, 0) 99.78%);
 }
 
-
-
+.menu1 .menu_item  {
+  font-weight: 700;
+  color: black;
+}
 .menu_item, .menu2 > button {
   text-transform: uppercase;
   font-weight: 600;
@@ -74,8 +82,8 @@ h1, h2, h3, h4 {
 }
 
 .m-r {
-  margin-left: 7.5%;
-  margin-right: 7.5%;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 .head {
   background: rgba(70, 83, 97, 0.8);
@@ -106,6 +114,17 @@ h1, h2, h3, h4 {
   min-width: 100%;
   margin-bottom: 15px;
 }
+.input2 {
+  max-width: 20%;
+  min-width: 1%;
+  margin-bottom: 0;
+}
+@media (max-width:1024px){
+  .input2, .container-input2{
+    min-width: 100%;
+    margin-bottom: 15px;
+  }
+}
 
 #check {
   all:unset;
@@ -117,7 +136,7 @@ h1, h2, h3, h4 {
 }
 
 input[type=checkbox] + p::before{
-  content: '✓';
+  //content: '✓';
   width: 13px;
   height: 13px;
   position: absolute;
@@ -171,7 +190,25 @@ select , textarea
 }
 
 .form-bg {
-  background-image: url(img/Ellipse 4.svg), url(img/Ellipse 5.svg);
   background-repeat: no-repeat, no-repeat;
   background-position: bottom center, top right;
+}
+
+.button_d5 {
+  box-shadow: 5px 0px 13px rgba(0, 0, 0, 0.25);
+}
+
+.hide-scroll {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hide-scroll::-webkit-scrollbar{
+  display: none;
+}
+
+
+.popup-image > span > svg > polyline {
+  stroke: white !important;
+  border-radius: 50%;
 }

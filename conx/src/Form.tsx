@@ -1,7 +1,4 @@
-import user from './img/User.svg';
-import chat from './img/ChatsCircle.svg';
-import envelope from './img/Envelope.svg';
-import phone from './img/Phone.svg';
+import NextImgSrc from './NextImgSrc';
 
 interface Props {
   setSend: (isSent: boolean) => void;
@@ -16,8 +13,13 @@ export default function Form(props: Props) {
     const formData = new FormData(form)
 
     try {
-      
-      const response = await fetch('email/form.php', {
+      const base = window.location.pathname
+
+      const url = base.endsWith('/')
+                  ? `${base}email/form.php`
+                  : `${base}/email/form.php`
+
+      const response = await fetch(url, {
         method: 'POST',
         body: formData
       })
@@ -33,17 +35,17 @@ export default function Form(props: Props) {
     } catch (error) {
 
       console.error(error)
-      alert("Error inesperado. Por favor, tente novamente mais tarde!")
+      alert("Erro inesperado. Por favor, tente novamente mais tarde!")
 
     }
 
   }
 
   return(
-    <form id="form-contato" onSubmit={submitForm}>
+    <form onSubmit={submitForm}>
         <div className='container-input relative flex flex-row '>
             <div className=' p-4 flex'>
-                <img src={user} alt="user" width='30px' />
+                <img src={NextImgSrc("img/User.svg")} alt="Usuário" width='30' height='30' loading='lazy' />
             </div>
             <span className='pipe'>
                 |
@@ -53,7 +55,7 @@ export default function Form(props: Props) {
 
         <div className='container-input relative flex flex-row '>
             <div className='p-4 flex'>
-                <img src={chat} alt="Como voce gostaria de receber o contato?" width='30px' />
+                <img src={NextImgSrc("img/ChatsCircle.svg")} alt="Como voce gostaria de receber o contato?" width='30' height='30' loading='lazy' />
             </div>
             <span className='pipe'>
                 |
@@ -69,7 +71,7 @@ export default function Form(props: Props) {
 
         <div className='container-input relative flex flex-row '>
             <div className=' p-4 flex'>
-                <img src={envelope} alt="E-mail" width='30px' />
+                <img src={NextImgSrc("img/Envelope.svg")} alt="E-mail" width='30' height='30' loading='lazy' />
             </div>
             <span className='pipe'>
                 |
@@ -79,12 +81,12 @@ export default function Form(props: Props) {
 
         <div className='container-input relative flex flex-row '>
             <div className=' p-4 flex'>
-                <img src={phone} alt="Contato" width='30px' />
+                <img src={NextImgSrc("img/Phone.svg")} alt="Contato" width='30' height='30' loading='lazy' />
             </div>
             <span className='pipe'>
                 |
             </span>
-            <input type="tel" name='celular' placeholder='Digite seu telefone' required />
+            <input type="tel" name='celular' placeholder='Digite seu telefone' required minLength={9} />
         </div>
 
         <div className='container-input relative flex flex-row '>
@@ -96,7 +98,7 @@ export default function Form(props: Props) {
             <p> Concordo com a <a href='https://conx.com.br/politica-de-privacidade/' target='_blank' className="underline hover:text-sub" rel="noreferrer">Política de Privacidade.</a></p>
         </label>
 
-        <button className="bg-[#D0A388] items-center px-[71.55px] mx-auto laptop:mx-0 py-[15.4px] rounded-2xl uppercase text-white font-bold text-[13.81px] mt-3 hover:bg-[#94725E]">
+        <button className="bg-[#D0A388] items-center px-[71.55px] mx-auto laptop:mx-0 py-[15.4px] rounded-2xl uppercase text-white font-bold text-[13.81px] mt-3 hover:bg-[#94725E]" aria-label='Enviar dados do formulário'>
             <p>enviar</p>
         </button>
 
