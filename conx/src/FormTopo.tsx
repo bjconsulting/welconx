@@ -43,10 +43,10 @@ export default function Form(props: Props) {
 
     return (
         <form onSubmit={submitForm} className="flex flex-col max-w-full items-start justify-center">
-            <div className='flex flex-col laptop:flex-row items-center flex-wrap container-input2'>
+            <div className='flex flex-col laptop:flex-row items-center container-input2 max-w-max'>
                 <div className='container-input input2 mr-4 relative flex flex-row '>
-                    <div className=' p-4 flex'>
-                        <img src={NextImgSrc("img/User.svg")} alt="Usuário" width='30' height='30' loading='lazy' />
+                    <div className=' p-3 flex'>
+                        <img src={NextImgSrc("img/User.svg")} alt="Usuário" width='25' height='25' loading='lazy' />
                     </div>
                     <span className='pipe'>
                         |
@@ -55,8 +55,8 @@ export default function Form(props: Props) {
                 </div>
 
                 <div className='container-input input2 mr-4 relative flex flex-row '>
-                    <div className='p-4 flex'>
-                        <img src={NextImgSrc("img/ChatsCircle.svg")} alt="Como voce gostaria de receber o contato?" width='30' height='30' loading='lazy' />
+                    <div className='p-3 flex'>
+                        <img src={NextImgSrc("img/ChatsCircle.svg")} alt="Como voce gostaria de receber o contato?" width='25' height='25' loading='lazy' />
                     </div>
                     <span className='pipe'>
                         |
@@ -71,8 +71,8 @@ export default function Form(props: Props) {
                 </div>
 
                 <div className='container-input input2 mr-4 relative flex flex-row '>
-                    <div className=' p-4 flex'>
-                        <img src={NextImgSrc("img/Envelope.svg")} alt="E-mail" width='30' height='30' loading='lazy' />
+                    <div className=' p-3 flex'>
+                        <img src={NextImgSrc("img/Envelope.svg")} alt="E-mail" width='25' height='25' loading='lazy' />
                     </div>
                     <span className='pipe'>
                         |
@@ -81,8 +81,8 @@ export default function Form(props: Props) {
                 </div>
 
                 <div className='container-input input2 mr-4 relative flex flex-row '>
-                    <div className=' p-4 flex'>
-                        <img src={NextImgSrc("img/Phone.svg")} alt="Contato" width='30' height='30' loading='lazy' />
+                    <div className=' p-3 flex'>
+                        <img src={NextImgSrc("img/Phone.svg")} alt="Contato" width='25' height='25' loading='lazy' />
                     </div>
                     <span className='pipe'>
                         |
@@ -90,13 +90,13 @@ export default function Form(props: Props) {
                     <input type="tel" name='celular' placeholder='Digite seu telefone' required minLength={9} />
                 </div>
 
+        
+                <button className="bg-[#D0A388] items-center px-[70px] mx-auto laptop:mx-0 py-[15px] rounded-3xl uppercase text-white font-bold text-[13.81px] hover:bg-[#94725E]" aria-label='Enviar dados do formulário'>
+                    <p>enviar</p>
+                </button>
 
             </div>
             <div className='my-4 flex flex-row items-center justify-center gap-2'>
-
-                <button className="bg-[#D0A388] items-center px-[71.55px] mx-auto laptop:mx-0 py-[15.4px] rounded-2xl uppercase text-white font-bold text-[13.81px] hover:bg-[#94725E]" aria-label='Enviar dados do formulário'>
-                    <p>enviar</p>
-                </button>
 
                 <label htmlFor="aceito" className='text-white font-normal relative text-[0.6em] flex justify-start items-center gap-2'>
                     <input type="checkbox" id='aceito' name='aceito' required />
