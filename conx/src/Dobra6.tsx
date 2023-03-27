@@ -40,14 +40,14 @@ function Dobra6(){
     }
 
     return(
-        <div className="flex flex-col gap-12 py-10 justify-center items-center laptop:pb-56" id='planta'>
+        <div className="flex flex-col gap-12 py-10 justify-center items-center laptop:pb-48" id='planta'>
             <h2 className=" font-bold text-[1.7em] laptop:text-[2.4em] text-[#111827] text-center laptop:max-w-[55%]">
                 Plantas projetadas para garantir a melhor experiência de viver.
             </h2>
 
             <div className='relative mt-10 laptop:mt-0'>
                 <Carousel navButtonBgColor='bg-sub' navButtonFillColor='fill-[#D0A388]' className='relative mx-auto image-container hide-scroll overflow-x-scroll scroll-smooth snap-x snap-mandatory snap-always max-w-[300px] laptop:max-w-[700px]'>
-                    <div className="relative snap-start flex flex-col gap-4 justify-center items-center w-[754px] max-w-[300px] shrink-0 laptop:max-w-[700px]">
+                    <div className="relative snap-start flex flex-col gap-8 justify-center items-center w-[754px] max-w-[300px] shrink-0 laptop:max-w-[700px] ">
                         <h3 className="uppercase font-bold text-sub text-2xl text-center">
                             STUDIO | 31 m²
                         </h3>
@@ -66,7 +66,7 @@ function Dobra6(){
 
                     </div>
 
-                    <div className="relative snap-start flex flex-col gap-4 justify-center items-center">
+                    <div className="relative snap-start flex flex-col gap-8 justify-center items-center">
                         <h3 className="uppercase font-bold text-sub text-2xl text-center">
                             APARTAMENTO | 31 m²
                         </h3>

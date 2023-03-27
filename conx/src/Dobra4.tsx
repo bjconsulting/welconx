@@ -234,7 +234,7 @@ function Dobra4() {
                 <h2 className='font-bold mb-8 text-[#37414D] text-[1.8em] laptop:text-[2.6em] leading-[50px] max-w-[80%] laptop:max-w-[60%] mx-auto'>
                     A experiência de morar muito além dos metros quadrados.
                 </h2>
-                <p className='text-[#37414D] text-[1.4em] leading-[37px]'>
+                <p className='text-[#37414D] laptop:text-lg leading-6 px-4 laptop:px-0 laptop:leading-[37px]'>
                     Espaços completos para você relaxar, se reunir com a família, amigos e viver o melhor da vida com muito mais qualidade e praticidade.
                 </p>
             </div>
