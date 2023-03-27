@@ -230,8 +230,8 @@ function Dobra4() {
 
     return (
         <div className='relative min-w-screen bg-[#F9FAFB] flex flex-col justify-center items-center' id='lazer'>
-            <div className='py-20 max-w-[80%] laptop:max-w-[60%] text-center mx-auto'>
-                <h2 className='font-bold mb-8 text-[#37414D] text-[1.8em] laptop:text-[2.6em] leading-[50px]'>
+            <div className='py-20  text-center mx-auto'>
+                <h2 className='font-bold mb-8 text-[#37414D] text-[1.8em] laptop:text-[2.6em] leading-[50px] max-w-[80%] laptop:max-w-[60%] mx-auto'>
                     A experiência de morar muito além dos metros quadrados.
                 </h2>
                 <p className='text-[#37414D] text-[1.4em] leading-[37px]'>

@@ -40,9 +40,9 @@ function Dobra6(){
     }
 
     return(
-        <div className="flex flex-col gap-24 py-10 justify-center items-center laptop:pb-56" id='planta'>
+        <div className="flex flex-col gap-12 py-10 justify-center items-center laptop:pb-56" id='planta'>
             <h2 className=" font-bold text-[1.7em] laptop:text-[2.4em] text-[#111827] text-center laptop:max-w-[55%]">
-                Plantas desenhadas e projetadas para proporcionar a melhor experiência de viver.
+                Plantas projetadas para garantir a melhor experiência de viver.
             </h2>
 
             <div className='relative mt-10 laptop:mt-0'>

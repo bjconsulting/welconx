@@ -20,7 +20,7 @@ function Dobra2() {
 
             <div className='flex m-r mx-auto flex-col desktop:flex-row justify-center items-center py-16 gap-12' id='local'>
                 <div className='left basis-[45%] flex flex-col text-left justify-center items-start gap-12 desktop:basis-[55%]'>
-                    <h2 className='text-[2em]  text-prim font-bold leading-[1.4em]'>
+                    <h2 className='text-[2em]  text-prim font-bold leading-[1.2em]'>
                         Você na sua melhor versão.<br />
                         Você no lugar certo.
                     </h2>
