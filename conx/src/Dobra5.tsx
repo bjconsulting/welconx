@@ -103,7 +103,7 @@ function Dobra5() {
 
                 </div>
 
-                <a href="#form-contato" className='button_d5 rounded-md flex flex-row justify-center items-center px-3 py-6 max-w-[320px] bg-[#465361] text-sub font-bold uppercase mx-auto hover:bg-slate-800 tablet:px-5'>
+                <a href="#form-contato" className='button_d5 rounded-md flex flex-row justify-center items-center px-3 mt-3 py-3 text-[.9em] max-w-[320px] bg-[#465361] text-sub font-bold uppercase mx-auto hover:bg-slate-800 tablet:px-5'>
                     Fale com um consultor
                 </a>
 

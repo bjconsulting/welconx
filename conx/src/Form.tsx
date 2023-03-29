@@ -93,7 +93,7 @@ export default function Form(props: Props) {
             <textarea name='mensagem' placeholder='Mensagem' className='resize-none pt-4 pl-16 min-h-[100px]' />
         </div>
 
-        <label htmlFor="aceito" className='text-white font-normal relative text-[0.6em] flex justify-center items-center gap-2'>
+        <label htmlFor="aceito" className='text-white font-normal relative text-[0.6em] flex justify-start items-center gap-2'>
             <input type="checkbox" id='aceito' name='aceito' required />
             <p> Concordo com a <a href='https://conx.com.br/politica-de-privacidade/' target='_blank' className="underline hover:text-sub" rel="noreferrer">Política de Privacidade.</a></p>
         </label>

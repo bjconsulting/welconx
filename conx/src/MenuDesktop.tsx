@@ -28,7 +28,7 @@ function MenuDesktop() {
                 Contato
             </a>
 
-            <a href="#form-contato" className="uppercase flex justify-center items-center px-6 py-3 font-semibold bg-sub text-white rounded-md hover:bg-prim  transition-all">
+            <a href="#form-contato" className="uppercase flex justify-center items-center text-[.75em] px-3 py-3 font-semibold bg-sub text-white rounded-md hover:bg-prim  transition-all">
                 Fale com um consultor
             </a>
 

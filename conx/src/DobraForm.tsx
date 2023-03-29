@@ -14,7 +14,7 @@ export default function DobraForm() {
                         ? <ThankYouTopo />
                         : 
                             <>
-                                <h3 className="text-lg font-bold text-white mb-5 pl-1">
+                                <h3 className="text-lg font-bold text-white mb-5 pl-1 text-center">
                                     Gostaria de ter mais informações? Preencha os dados abaixo e nossa equipe de especialistas entrará em contato.
                                 </h3>
                                 <FormTopo setSend={setSend} />

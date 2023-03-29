@@ -96,9 +96,9 @@ export default function Form(props: Props) {
                 </button>
 
             </div>
-            <div className='my-4 flex flex-row items-center justify-center gap-2'>
+            <div className='my-4 flex flex-row items-center justify-center gap-2 mx-auto'>
 
-                <label htmlFor="aceito" className='text-white font-normal relative text-[0.6em] flex justify-start items-center gap-2'>
+                <label htmlFor="aceito" className='text-white font-normal relative text-[0.6em] flex justify-center items-center gap-2'>
                     <input type="checkbox" id='aceito' name='aceito' required />
                     <p> Concordo com a <a href='https://conx.com.br/politica-de-privacidade/' target='_blank' className="underline hover:text-sub" rel="noreferrer">Política de Privacidade.</a></p>
                 </label>

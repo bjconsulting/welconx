@@ -42,7 +42,7 @@ function Dobra1() {
                         Aptos. e Studios de 31 m² |<br className='laptop:hidden'/> lazer completo
                     </p>
 
-                    <a href="#form-contato" className='hero_b uppercase bg-sub text-white flex flex-row justify-center items-center gap-4 min-w-[217px] px-5 py-[10px] font-semibold rounded-md hover:bg-[#94725E]'>
+                    <a href="#form-contato" className='hero_b uppercase bg-sub text-base text-white flex flex-row justify-center items-center gap-4 min-w-[217px] px-3 py-[8px] font-semibold rounded-md hover:bg-[#94725E]'>
                         Fale com um consultor
                     </a>
 
