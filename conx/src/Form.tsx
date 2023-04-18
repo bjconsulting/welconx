@@ -4,6 +4,12 @@ interface Props {
   setSend: (isSent: boolean) => void;
 }
 
+declare global {
+    interface Window {
+        dataLayer: Record<string, any>[];
+    }
+}
+
 export default function Form(props: Props) {
   const submitForm = async (event: React.FormEvent) => {
     event.preventDefault()
@@ -23,12 +29,14 @@ export default function Form(props: Props) {
         method: 'POST',
         body: formData
       })
-
+      
       if (response.status !== 200) {
         const data = await response.text()
         console.log(data)
         throw new Error(`Resposta inesperada! ${response.status}`);
       }
+
+      (function(){window.dataLayer.push({'event':'lead_enviado'});console.log('Lead enviado!')})();
 
       props.setSend(true)
 

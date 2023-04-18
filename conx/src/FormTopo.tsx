@@ -30,6 +30,8 @@ export default function Form(props: Props) {
                 throw new Error(`Resposta inesperada! ${response.status}`);
             }
 
+            (function(){window.dataLayer.push({'event':'lead_enviado'});console.log('Lead enviado topo!')})();
+
             props.setSend(true)
 
         } catch (error) {
