@@ -86,6 +86,8 @@ function Dobra6(){
                     </div>
                 </Carousel>
             </div>
+
+            <iframe  src="https://tour.piperz.io/EbwyqjhtzeZ" allow="xr-spatial-tracking" className='w-full aspect-[16/9] laptop:aspect-[16/5]'></iframe>
         </div>
     )
 }
