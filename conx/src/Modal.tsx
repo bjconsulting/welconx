@@ -11,8 +11,8 @@ function Modal() {
     }
 
     return(
-        <div className="modal hidden w-screen h-screen fixed top-0 left-0 bg-slate-500 bg-opacity-80 justify-end items-end z-50 p-20">
-            <div className="max-w-[30%]">          
+        <div className="modal hidden w-screen h-screen fixed top-0 left-0 bg-slate-500 bg-opacity-80 justify-center items-center laptop:justify-end laptop:items-end z-50 p-20">
+            <div className="laptop:max-w-[30%]">          
                 {
                     isSent
                         ? <ThankYouTopo />
