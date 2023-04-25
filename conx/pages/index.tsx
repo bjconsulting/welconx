@@ -10,11 +10,13 @@ import Dobra9 from '../src/Dobra9';
 import Dobra10 from '../src/Dobra10';
 import Dobra11 from '../src/Dobra11';
 import DobraForm from '../src/DobraForm';
+import Modal from '../src/Modal';
 
 function App() {
   return (
     <>
       <Dobra1/>
+      <Modal/>
       <DobraForm/>
       <Dobra2/>
       <Dobra3/>

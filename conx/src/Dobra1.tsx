@@ -2,8 +2,14 @@ import Header from './Header';
 import { HiMapPin } from 'react-icons/hi2'
 import { useEffect } from 'react'
 import CheckImgSupport from './CheckImgSupport'
+import { RiWhatsappFill } from 'react-icons/ri';
+import NextImgSrc from './NextImgSrc';
 
 function Dobra1() {
+    function openWpp() {
+        const modal = document.querySelector('.modal')! as HTMLDivElement
+        modal.style.display = "flex";
+    }
 
     useEffect(() => {
         if (!window) return
@@ -55,6 +61,9 @@ function Dobra1() {
                 </p>
 
             </div>
+            <img src={NextImgSrc("img/wpp.png")} height={64} width={64} alt="Fale conosco pelo whatsapp" id="wpp" className='fixed bottom-[5%] right-[2%]' 
+                onClick={openWpp}
+            />
         </div>
     )
 }
