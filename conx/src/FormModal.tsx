@@ -36,7 +36,7 @@ export default function FormModal(props: Props) {
         throw new Error(`Resposta inesperada! ${response.status}`);
       }
 
-      (function(){window.dataLayer.push({'event':'lead_enviado'});console.log('Lead enviado!')})();
+      (function(){window.dataLayer.push({'event':'lead_enviado'});console.log('Lead enviado modal/pop!')})();
 
       props.setSend(true)
 
