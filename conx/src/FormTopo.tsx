@@ -1,15 +1,87 @@
 import NextImgSrc from './NextImgSrc';
+import React, { ChangeEventHandler, FormEventHandler, FormEvent, FocusEventHandler } from 'react';
 
 interface Props {
     setSend: (isSent: boolean) => void;
 }
 
 export default function Form(props: Props) {
+    const isValidBrazilianMobileNumber = (number: string) => {
+        const validDdd = /^((1[1-9])|(2[12478])|(3[1-5]|[37-8])|(4[1-9])|(5[134]|[1-9])|(6[1-9])|(7[1-35-79])|(8[1-9])|(9[1-9]))/;
+        
+        // Remove non-numeric characters
+        const cleanedNumber = number.replace(/\D+/g, '');
+        
+        // Regular expression to validate Brazilian mobile numbers
+        // Assumes the number starts with 9 and has a total length of 11 digits (including the area code)
+        const brMobileNumber = /^(\d{2})9\d{8}$/;
+        
+        // Check if all digits are the same
+        const allDigitsSame = /^(\d)\1+$/;
+        const allDigitsSame2 = /^(?:\d{2})(\d)\1+$/;
+        
+        // Check for repeating 2-digit patterns
+        const repeatingPattern = /^(\d{2})\1+$/;
+        
+        return (
+            validDdd.test(cleanedNumber) &&
+            brMobileNumber.test(cleanedNumber) &&
+            !allDigitsSame.test(cleanedNumber) &&
+            !allDigitsSame2.test(cleanedNumber) &&
+            !repeatingPattern.test(cleanedNumber.slice(2)) // Ignore the area code for this check
+        );
+    }
+    
+    const checkTel: ChangeEventHandler<HTMLInputElement> = async (event) => {
+        const telInput = event.target
+        if (!isValidBrazilianMobileNumber(telInput.value)) {
+            telInput.setCustomValidity('Telefone inválido.')
+        } else {
+            telInput.setCustomValidity('')
+        }
+        telInput.reportValidity()
+    }
+    
+    const checkForm = async (form: HTMLFormElement) => {
+        if (!form.checkValidity()) {
+            alert('Dados inválidos. Por favor reveja as informações do formulário.')
+            return false
+        }
+        return true
+    }
+    
+    const mobileNumberOnInput: FormEventHandler<HTMLInputElement> = async (event) => {
+        const input = event.target as HTMLInputElement
+        let value = input.value.replace(/\D/g, ''); // Remove non-numeric characters
+        
+        // Apply the mask
+        value = value.replace(/^(\d{2})(\d)/g, '($1) $2'); // Add area code parentheses
+        value = value.replace(/(\d{5})(\d)/, '$1-$2'); // Add a dash after the 5th digit
+        
+        // Limit the input length
+        value = value.slice(0, 15);
+        
+        input.value = value;
+    }
+    
+    const mobileNumberOnBlur: FocusEventHandler<HTMLInputElement> = async (event) => {
+        const input = event.target
+        if (input.value.length === 2) {
+            input.value = '';
+        }
+    }
+
     const submitForm = async (event: React.FormEvent) => {
         event.preventDefault()
         event.stopPropagation()
 
+        debugger
+
         const form = event.target as HTMLFormElement
+
+        const isOk = await checkForm(form)
+        if (!isOk) return
+
         const formData = new FormData(form)
 
         try {
@@ -89,7 +161,7 @@ export default function Form(props: Props) {
                     <span className='pipe'>
                         |
                     </span>
-                    <input type="tel" name='celular' placeholder='Digite seu telefone' required minLength={9} />
+                    <input type="tel" name='celular' placeholder='Digite seu telefone' required minLength={9} onChange={checkTel} onInput={mobileNumberOnInput} onBlur={mobileNumberOnBlur} />
                 </div>
 
         
