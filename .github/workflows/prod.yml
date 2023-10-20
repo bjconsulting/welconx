@@ -27,7 +27,7 @@ jobs:
         cp -f src\NextImgSrc.prod.tsx src\NextImgSrc.tsx
         npm ci
         npm run build # Replace with your build command if different
-      working-directory: ./conx/
+      working-directory: ./conx
 
     # ...
     - name: Deploy to FTP server
